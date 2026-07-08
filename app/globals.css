@@ -1,6 +1,29 @@
 @import "tailwindcss";
 
-body {
-  background-color: #000;
-  color: #fff;
+/* 💡 Tailwind v4 වලට Class-based dark mode enable කරන්නේ මෙහෙමයි */
+@variant dark (&:where(.dark, .dark *));
+
+/* enable color-scheme switching when .dark is present */
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  .dark {
+    color-scheme: dark;
+  }
+}
+
+/* font variable kept */
+:root {
+  --font-figtree:
+    "Figtree", "Figtree Fallback", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+@layer base {
+  html {
+    transition:
+      background-color 200ms ease,
+      color 200ms ease;
+  }
 }

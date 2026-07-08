@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Download } from "lucide-react";
+import { Icon } from "@iconify/react";
 import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
 import {
   SiNextdotjs,
@@ -11,31 +12,173 @@ import {
   SiPostgresql,
   SiMongodb,
 } from "react-icons/si";
+import ThemeToggle from "../components/ThemeToggle";
 import AnimatedTooltip from "../components/AnimatedTooltip";
+import Link from "next/link";
 
 export default function Portfolio() {
   return (
-    <main className="min-h-screen selection:bg-white selection:text-black px-6 md:px-12 py-12 max-w-5xl mx-auto">
+    <main className="min-h-screen selection:bg-white selection:text-black px-5 md:px-12 py-0 md:py-8 max-w-5xl mx-auto">
       {/* Hero Section */}
       <section className="mt-20 w-full">
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-4xl md:text-5xl font-bold tracking-tight mb-6"
-        >
-          Hi, I'm Dimuthu Rathnayaka
-        </motion.h1>
+        <div className="flex items-center justify-between mb-6">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-4xl md:text-4xl font-semibold tracking-tight mb-2"
+          >
+            <span className="underline decoration-2 underline-offset-[15px] decoration-gray-300">
+              Hi, I'm Dimuthu Rathnayaka
+            </span>
+          </motion.h2>
+
+          <ThemeToggle />
+        </div>
+
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-gray-400 text-lg leading-relaxed mb-6 text-justify"
+          className="text-lg leading-relaxed mb-6 text-justify"
         >
-          I'm a software engineer who loves to build products with purpose,
-          merging technical problem-solving with a designer's eye for detail
-          that don't just work, but leave an impression so I stay a little
-          longer, ask a little more, and build like someone's going to remember
-          it.
+          I'm an <strong>Electronics and Computer Science undergraduate</strong>{" "}
+          and an aspiring <strong>Full-Stack Developer</strong> who loves to
+          build products with <strong>purpose</strong>. With over 9 years of
+          experience as a{" "}
+          <strong>
+            Graphic Designer & Art Director on{" "}
+            <span
+              className="inline-flex items-center gap-1 px-2 py-1 mx-1 rounded-xl border font-bold text-base align-middle transition-colors duration-300
+            bg-[#e5e5e5] border-[#d4d4d4] text-black 
+            dark:bg-[#333333] dark:border-[#696969] dark:text-white"
+            >
+              <Icon icon="ri:fiverr-fill" className="text-[#00b22d] text-2xl" />
+              Fiverr
+            </span>
+          </strong>
+          , I combine <strong>technical problem-solving</strong> in frontend and
+          backend with a <strong>designer's eye for detail</strong>. Great apps
+          shouldn't just work well; they need amazing{" "}
+          <strong>UI/UX design</strong>. I build things so people will{" "}
+          <strong>remember them</strong>.
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="text-lg leading-relaxed mb-6 text-justify"
+        >
+          When someone gives me a project, they are <strong>trusting me</strong>
+          , and I take that seriously. Whether I'm building web apps, exploring{" "}
+          <strong>AI Development</strong>, or writing{" "}
+          <Link href="/dev-tips" className="relative group inline-block">
+            {/* Gradient Text Animation */}
+            <motion.span
+              animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
+              transition={{
+                duration: 2,
+                ease: "easeInOut",
+                repeat: Infinity,
+                repeatDelay: 0.5,
+              }}
+              className="font-bold cursor-pointer inline-block bg-[linear-gradient(90deg,#06b6d4,#a855f7,#06b6d4)] bg-[length:200%_auto] bg-clip-text text-transparent"
+            >
+              DEV TIPS articles on LinkedIn
+            </motion.span>
+
+            {/* Hover කරාම එන 1:1 Image Cards ටික */}
+            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 w-64 opacity-0 group-hover:opacity-100 group-hover:-translate-y-2 transition-all duration-300 pointer-events-none z-50 flex justify-center">
+              <div className="relative w-full h-40 flex items-end justify-center pb-2">
+                {/* Back Left Card (Tip #02) */}
+                <div className="absolute w-24 h-24 rounded-lg shadow-xl border border-gray-700 transform -rotate-12 -translate-x-14 overflow-hidden bg-gray-900 z-10 transition-transform duration-300 group-hover:-rotate-[15deg]">
+                  {/* ඔයාගෙ Image Path එක මෙතනට දෙන්න */}
+                  <img
+                    src="/images/tip-02.jpg"
+                    alt="Conventional Commits"
+                    className="w-full h-full object-cover"
+                  />
+                  {/* Dark Overlay with Text */}
+                  <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center p-1">
+                    <span className="text-[10px] text-gray-300 text-center font-bold font-mono">
+                      Semantic
+                      <br />
+                      Versioning
+                    </span>
+                  </div>
+                </div>
+
+                {/* Back Right Card (Tip #01) */}
+                <div className="absolute w-24 h-24 rounded-lg shadow-xl border border-gray-700 transform rotate-12 translate-x-14 overflow-hidden bg-gray-900 z-10 transition-transform duration-300 group-hover:rotate-[15deg]">
+                  {/* ඔයාගෙ Image Path එක මෙතනට දෙන්න */}
+                  <img
+                    src="/images/tip-01.jpg"
+                    alt="GitHub Licenses"
+                    className="w-full h-full object-cover"
+                  />
+
+                  <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center p-1">
+                    <span className="text-[10px] text-gray-300 text-center font-bold font-mono">
+                      GitHub
+                      <br />
+                      Licenses
+                    </span>
+                  </div>
+                </div>
+
+                <div className="absolute w-32 h-32 rounded-lg shadow-2xl border border-sky-400/80 transform transition-transform duration-300 group-hover:scale-110 overflow-hidden bg-black z-20">
+                  <img
+                    src="/images/tip-03.jpg"
+                    alt="Semantic Versioning"
+                    className="w-full h-full object-cover"
+                  />
+
+                  <div className="absolute inset-0 flex flex-col items-center justify-end p-2 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
+                    <div className="bg-sky-400 text-white font-bold text-[8px] px-2 py-0.5 rounded-full mb-1">
+                      DEV TIP #01
+                    </div>
+                    <span className="text-[11px] text-white text-center font-bold leading-tight drop-shadow-md">
+                      Conventional
+                      <br />
+                      Commits
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Link>{" "}
+          , I love creating useful tools. Mixing code with art, working with
+          clients, and learning new things has tested my patience and my sleep
+          schedule and I've <strong>loved every second of it</strong>.
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="text-lg leading-relaxed mb-6 text-justify"
+        >
+          Beyond work, I spend my time hunting for the latest{" "}
+          <strong className="font-bold">tech news</strong> or relaxing while
+          listening to music on {/* Spotify Badge Container */}
+          <span
+            className="inline-flex items-center gap-1.5 px-3 py-1 mx-1 rounded-xl border font-bold text-base align-middle transition-colors duration-300
+            bg-[#e5e5e5] border-[#d4d4d4] text-black 
+            dark:bg-[#333333] dark:border-[#696969] dark:text-white"
+          >
+            <Icon icon="selfhst:youtube" className="text-[#FF0000] text-xl" />
+            YouTube
+          </span>{" "}
+          and {/* YouTube Badge Container */}
+          <span
+            className="inline-flex items-center gap-1.5 px-3 py-1 mx-1 rounded-xl border font-bold text-base align-middle transition-colors duration-300
+            bg-[#e5e5e5] border-[#d4d4d4] text-black 
+            dark:bg-[#333333] dark:border-[#696969] dark:text-white"
+          >
+            <Icon icon="selfhst:spotify" className="text-[#1DB954] text-xl" />
+            Spotify
+          </span>
+          .
         </motion.p>
 
         {/* Social Links */}
@@ -47,25 +190,25 @@ export default function Portfolio() {
         >
           <a
             href="#"
-            className="p-2 border border-gray-800 rounded-full hover:bg-gray-800 transition"
+            className="p-2 border border-gray-300 dark:border-gray-800 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition"
           >
             <FaTwitter size={20} />
           </a>
           <a
             href="#"
-            className="p-2 border border-gray-800 rounded-full hover:bg-gray-800 transition"
+            className="p-2 border border-gray-300 dark:border-gray-800 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition"
           >
             <FaGithub size={20} />
           </a>
           <a
             href="#"
-            className="p-2 border border-gray-800 rounded-full hover:bg-gray-800 transition"
+            className="p-2 border border-gray-300 dark:border-gray-800 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition"
           >
             <FaLinkedin size={20} />
           </a>
           <a
             href="#"
-            className="flex items-center gap-2 px-4 py-2 bg-white text-black font-medium rounded-full hover:bg-gray-200 transition"
+            className="flex items-center gap-2 px-4 py-2 bg-white text-black dark:bg-gray-900 dark:text-white font-medium rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition"
           >
             <Download size={16} /> Resume
           </a>
@@ -76,7 +219,11 @@ export default function Portfolio() {
       <section className="mt-32 w-full">
         <h2 className="text-2xl font-semibold mb-6">Tools I use?</h2>
         <div className="flex flex-wrap gap-4">
-          <AnimatedTooltip icon={SiNextdotjs} name="Next.js" />
+          <AnimatedTooltip
+            icon={SiNextdotjs}
+            name="Next.js"
+            colorClass="text-white"
+          />
           <AnimatedTooltip
             icon={SiReact}
             name="React"
@@ -155,8 +302,10 @@ export default function Portfolio() {
           Curious? Check out my projects.
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="group border border-gray-800 rounded-2xl p-6 hover:bg-gray-900 transition cursor-pointer flex flex-col h-full">
-            <h3 className="text-xl font-medium mb-2">Shipped UI</h3>
+          <div className="group border border-gray-300 dark:border-gray-800 rounded-2xl p-6 bg-white dark:bg-black transition hover:bg-gray-50 dark:hover:bg-gray-900 cursor-pointer flex flex-col h-full">
+            <h3 className="text-xl font-medium mb-2 text-black dark:text-white">
+              Shipped UI
+            </h3>
             <p className="text-gray-400 text-sm mb-6 text-justify flex-grow">
               Find your favourite components in seconds.
             </p>
@@ -173,8 +322,10 @@ export default function Portfolio() {
             </div>
           </div>
 
-          <div className="group border border-gray-800 rounded-2xl p-6 hover:bg-gray-900 transition cursor-pointer flex flex-col h-full">
-            <h3 className="text-xl font-medium mb-2">DevQuest</h3>
+          <div className="group border border-gray-300 dark:border-gray-800 rounded-2xl p-6 bg-white dark:bg-black transition hover:bg-gray-50 dark:hover:bg-gray-900 cursor-pointer flex flex-col h-full">
+            <h3 className="text-xl font-medium mb-2 text-black dark:text-white">
+              DevQuest
+            </h3>
             <p className="text-gray-400 text-sm mb-6 text-justify flex-grow">
               Make open-source contributions, discover bounty-paying issues.
             </p>
