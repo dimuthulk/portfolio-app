@@ -63,42 +63,57 @@ export default function Portfolio() {
           <strong>remember them</strong>.
         </motion.p>
 
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
           className="text-lg leading-relaxed mb-6 text-justify"
         >
-          When someone gives me a project, they are <strong>trusting me</strong>
-          , and I take that seriously. Whether I'm building web apps, exploring{" "}
-          <strong>AI Development</strong>, or writing{" "}
-          <Link href="/dev-tips" className="relative group inline-block">
-            {/* Gradient Text Animation */}
-            <motion.span
-              animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
-              transition={{
-                duration: 2,
-                ease: "easeInOut",
-                repeat: Infinity,
-                repeatDelay: 0.5,
-              }}
-              className="font-bold cursor-pointer inline-block bg-[linear-gradient(90deg,#06b6d4,#a855f7,#06b6d4)] bg-[length:200%_auto] bg-clip-text text-transparent"
-            >
-              DEV TIPS articles on LinkedIn
-            </motion.span>
+          <div className="relative inline-block group">
+            <p>
+              When someone gives me a project, they are{" "}
+              <strong>trusting me</strong>, and I take that seriously. Whether
+              I'm building web apps, exploring <strong>AI Development</strong>,
+              or writing{" "}
+              <Link href="/dev-tips" className="inline-block">
+                <motion.span
+                  animate={{
+                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                  }}
+                  transition={{
+                    duration: 2,
+                    ease: "easeInOut",
+                    repeat: Infinity,
+                    repeatDelay: 0.5,
+                  }}
+                  className="font-bold cursor-pointer inline-block bg-[linear-gradient(90deg,#06b6d4,#a855f7,#06b6d4)] bg-[length:200%_auto] bg-clip-text text-transparent"
+                >
+                  DEV TIPS articles on LinkedIn
+                </motion.span>
+              </Link>
+              , I love creating useful tools. Mixing code with art, working with
+              clients, and learning new things has tested my patience and my
+              sleep schedule and I've <strong>loved every second of it</strong>.
+            </p>
 
-            {/* Hover කරාම එන 1:1 Image Cards ටික */}
-            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 w-64 opacity-0 group-hover:opacity-100 group-hover:-translate-y-2 transition-all duration-300 pointer-events-none z-50 flex justify-center">
+            {/* Tooltip OUTSIDE <p> but still inside group wrapper */}
+            <div
+              className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 w-64 
+        opacity-0 group-hover:opacity-100 group-hover:-translate-y-2 
+        transition-all duration-300 pointer-events-none z-50 flex justify-center"
+            >
+              {/* Tooltip Cards */}
               <div className="relative w-full h-40 flex items-end justify-center pb-2">
-                {/* Back Left Card (Tip #02) */}
-                <div className="absolute w-24 h-24 rounded-lg shadow-xl border border-gray-700 transform -rotate-12 -translate-x-14 overflow-hidden bg-gray-900 z-10 transition-transform duration-300 group-hover:-rotate-[15deg]">
-                  {/* ඔයාගෙ Image Path එක මෙතනට දෙන්න */}
+                {/* Card 1 */}
+                <div
+                  className="absolute w-24 h-24 rounded-lg shadow-xl border border-gray-700 
+            transform -rotate-12 -translate-x-14 overflow-hidden bg-gray-900 z-10 
+            transition-transform duration-300 group-hover:-rotate-[15deg]"
+                >
                   <img
                     src="/images/tip-02.jpg"
-                    alt="Conventional Commits"
                     className="w-full h-full object-cover"
                   />
-                  {/* Dark Overlay with Text */}
                   <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center p-1">
                     <span className="text-[10px] text-gray-300 text-center font-bold font-mono">
                       Semantic
@@ -108,15 +123,16 @@ export default function Portfolio() {
                   </div>
                 </div>
 
-                {/* Back Right Card (Tip #01) */}
-                <div className="absolute w-24 h-24 rounded-lg shadow-xl border border-gray-700 transform rotate-12 translate-x-14 overflow-hidden bg-gray-900 z-10 transition-transform duration-300 group-hover:rotate-[15deg]">
-                  {/* ඔයාගෙ Image Path එක මෙතනට දෙන්න */}
+                {/* Card 2 */}
+                <div
+                  className="absolute w-24 h-24 rounded-lg shadow-xl border border-gray-700 
+            transform rotate-12 translate-x-14 overflow-hidden bg-gray-900 z-10 
+            transition-transform duration-300 group-hover:rotate-[15deg]"
+                >
                   <img
                     src="/images/tip-01.jpg"
-                    alt="GitHub Licenses"
                     className="w-full h-full object-cover"
                   />
-
                   <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center p-1">
                     <span className="text-[10px] text-gray-300 text-center font-bold font-mono">
                       GitHub
@@ -126,14 +142,20 @@ export default function Portfolio() {
                   </div>
                 </div>
 
-                <div className="absolute w-32 h-32 rounded-lg shadow-2xl border border-sky-400/80 transform transition-transform duration-300 group-hover:scale-110 overflow-hidden bg-black z-20">
+                {/* Card 3 */}
+                <div
+                  className="absolute w-32 h-32 rounded-lg shadow-2xl border border-sky-400/80 
+            transform transition-transform duration-300 group-hover:scale-110 
+            overflow-hidden bg-black z-20"
+                >
                   <img
                     src="/images/tip-03.jpg"
-                    alt="Semantic Versioning"
                     className="w-full h-full object-cover"
                   />
-
-                  <div className="absolute inset-0 flex flex-col items-center justify-end p-2 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
+                  <div
+                    className="absolute inset-0 flex flex-col items-center justify-end p-2 
+              bg-gradient-to-t from-black/90 via-black/40 to-transparent"
+                  >
                     <div className="bg-sky-400 text-white font-bold text-[8px] px-2 py-0.5 rounded-full mb-1">
                       DEV TIP #01
                     </div>
@@ -146,11 +168,8 @@ export default function Portfolio() {
                 </div>
               </div>
             </div>
-          </Link>{" "}
-          , I love creating useful tools. Mixing code with art, working with
-          clients, and learning new things has tested my patience and my sleep
-          schedule and I've <strong>loved every second of it</strong>.
-        </motion.p>
+          </div>
+        </motion.div>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
