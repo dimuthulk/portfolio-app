@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Download } from "lucide-react";
 import { Icon } from "@iconify/react";
+import LinkedInPreview from "@/components/LinkedInPreview";
 import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
 import {
   SiNextdotjs,
@@ -81,103 +82,29 @@ export default function Portfolio() {
           . I build things so people will <strong>remember them</strong>.
         </motion.p>
 
-        {/* Second Paragraph with Tooltip */}
+        {/* Second Paragraph - <p> වෙනුවට <motion.div> ඇතුළේ <div> එකක් පාවිච්චි කරමු */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
           className="text-gray-600 dark:text-gray-300 text-lg leading-8 mb-6 text-justify"
         >
-          <div className="relative inline-block group w-full">
-            <p>
-              When someone gives me a project, they are{" "}
-              <strong>trusting me</strong>, and I take that seriously. Whether
-              I'm building web apps, exploring{" "}
-              <span className="inline-flex items-center gap-1 px-2 py-1 mx-1 rounded-xl border font-semibold text-base align-middle transition-all duration-300 hover:scale-105 bg-indigo-50 border-indigo-200 text-indigo-700 dark:bg-indigo-950/40 dark:border-indigo-700/40 dark:text-indigo-300">
-                <Icon
-                  icon="solar:graph-up-bold-duotone"
-                  className="text-indigo-500 text-xl"
-                />
-                AI Development
-              </span>
-              , or writing{" "}
-              <Link href="/dev-tips" className="inline-block">
-                <motion.span
-                  animate={{
-                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-                  }}
-                  transition={{
-                    duration: 2,
-                    ease: "easeInOut",
-                    repeat: Infinity,
-                    repeatDelay: 0.5,
-                  }}
-                  className="font-bold cursor-pointer inline-block bg-[linear-gradient(90deg,#06b6d4,#a855f7,#06b6d4)] bg-[length:200%_auto] bg-clip-text text-transparent underline decoration-sky-400 decoration-wavy underline-offset-4"
-                >
-                  DEV TIPS articles on LinkedIn
-                </motion.span>
-              </Link>
-              , I love creating useful tools. Mixing code with art, working with
-              clients, and learning new things has tested my patience and my
-              sleep schedule and I've <strong>loved every second of it</strong>.
-            </p>
-
-            {/* Tooltip OUTSIDE <p> but still inside group wrapper */}
-            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 w-64 opacity-0 group-hover:opacity-100 group-hover:-translate-y-2 transition-all duration-300 pointer-events-none z-50 flex justify-center">
-              {/* Tooltip Cards */}
-              <div className="relative w-full h-40 flex items-end justify-center pb-2">
-                {/* Card 1 */}
-                <div className="absolute w-24 h-24 rounded-lg shadow-xl border border-gray-700 transform -rotate-12 -translate-x-14 overflow-hidden bg-gray-900 z-10 transition-transform duration-300 group-hover:-rotate-[15deg]">
-                  <img
-                    src="/images/tip-02.jpg"
-                    className="w-full h-full object-cover"
-                    alt="Semantic Versioning"
-                  />
-                  <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center p-1">
-                    <span className="text-[10px] text-gray-300 text-center font-bold font-mono">
-                      Semantic
-                      <br />
-                      Versioning
-                    </span>
-                  </div>
-                </div>
-
-                {/* Card 2 */}
-                <div className="absolute w-24 h-24 rounded-lg shadow-xl border border-gray-700 transform rotate-12 translate-x-14 overflow-hidden bg-gray-900 z-10 transition-transform duration-300 group-hover:rotate-[15deg]">
-                  <img
-                    src="/images/tip-01.jpg"
-                    className="w-full h-full object-cover"
-                    alt="GitHub Licenses"
-                  />
-                  <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center p-1">
-                    <span className="text-[10px] text-gray-300 text-center font-bold font-mono">
-                      GitHub
-                      <br />
-                      Licenses
-                    </span>
-                  </div>
-                </div>
-
-                {/* Card 3 */}
-                <div className="absolute w-32 h-32 rounded-lg shadow-2xl border border-sky-400/80 transform transition-transform duration-300 group-hover:scale-110 overflow-hidden bg-black z-20">
-                  <img
-                    src="/images/tip-03.jpg"
-                    className="w-full h-full object-cover"
-                    alt="Conventional Commits"
-                  />
-                  <div className="absolute inset-0 flex flex-col items-center justify-end p-2 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
-                    <div className="bg-sky-400 text-white font-bold text-[8px] px-2 py-0.5 rounded-full mb-1">
-                      DEV TIP #01
-                    </div>
-                    <span className="text-[11px] text-white text-center font-bold leading-tight drop-shadow-md">
-                      Conventional
-                      <br />
-                      Commits
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
+          {/* 1. මෙතන <p> tag එක <div> එකකට වෙනස් කළා */}
+          <div>
+            When someone gives me a project, they are{" "}
+            <strong>trusting me</strong>, and I take that seriously. Whether I'm
+            building web apps, exploring{" "}
+            <span className="inline-flex items-center gap-1 px-2 py-1 mx-1 rounded-xl border font-semibold text-base align-middle transition-all duration-300 hover:scale-105 bg-indigo-50 border-indigo-200 text-indigo-700 dark:bg-indigo-950/40 dark:border-indigo-700/40 dark:text-indigo-300">
+              <Icon
+                icon="solar:graph-up-bold-duotone"
+                className="text-indigo-500 text-xl"
+              />
+              AI Development
+            </span>
+            , or writing <LinkedInPreview />, I love creating useful tools.
+            Mixing code with art, working with clients, and learning new things
+            has tested my patience and my sleep schedule and I've{" "}
+            <strong>loved every second of it</strong>.
           </div>
         </motion.div>
 
