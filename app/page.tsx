@@ -21,6 +21,7 @@ export default function Portfolio() {
     <main className="min-h-screen selection:bg-white selection:text-black px-5 md:px-12 py-0 md:py-8 max-w-5xl mx-auto">
       {/* Hero Section */}
       <section className="mt-20 w-full">
+        {/* Title Section */}
         <div className="flex items-center justify-between mb-6">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -35,23 +36,34 @@ export default function Portfolio() {
           <ThemeToggle />
         </div>
 
+        {/* First Paragraph */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-lg leading-relaxed mb-6 text-justify"
+          className="text-gray-600 dark:text-gray-300 text-lg leading-8 mb-6 text-justify"
         >
-          I'm an <strong>Electronics and Computer Science undergraduate</strong>{" "}
-          and an aspiring <strong>Full-Stack Developer</strong> who loves to
-          build products with <strong>purpose</strong>. With over 9 years of
-          experience as a{" "}
+          I'm an{" "}
+          <span className="inline-flex items-center gap-1 px-2 py-1 mx-1 rounded-xl border font-semibold text-base align-middle transition-all duration-300 hover:scale-105 bg-amber-50 border-amber-200 text-amber-700 dark:bg-amber-950/40 dark:border-amber-700/40 dark:text-amber-300">
+            <Icon
+              icon="solar:cpu-bolt-bold-duotone"
+              className="text-amber-500 text-xl"
+            />
+            Electronics & Computer Science undergraduate
+          </span>{" "}
+          and an aspiring{" "}
+          <span className="inline-flex items-center gap-1 px-2 py-1 mx-1 rounded-xl border font-semibold text-base align-middle transition-all duration-300 hover:scale-105 bg-blue-50 border-blue-200 text-blue-700 dark:bg-blue-950/40 dark:border-blue-700/40 dark:text-blue-300">
+            <Icon
+              icon="solar:code-circle-bold-duotone"
+              className="text-blue-500 text-xl"
+            />
+            Full-Stack Developer
+          </span>{" "}
+          who loves to build products with <strong>purpose</strong>. With over 9
+          years of experience as a{" "}
           <strong>
             Graphic Designer & Art Director on{" "}
-            <span
-              className="inline-flex items-center gap-1 px-2 py-1 mx-1 rounded-xl border font-bold text-base align-middle transition-colors duration-300
-            bg-[#e5e5e5] border-[#d4d4d4] text-black 
-            dark:bg-[#333333] dark:border-[#696969] dark:text-white"
-            >
+            <span className="inline-flex items-center gap-1 px-2 py-1 mx-1 rounded-xl border font-bold text-base align-middle transition-all duration-300 hover:scale-105 bg-emerald-50 border-emerald-200 text-emerald-700 dark:bg-emerald-950/40 dark:border-emerald-700/40 dark:text-emerald-300">
               <Icon icon="ri:fiverr-fill" className="text-[#00b22d] text-2xl" />
               Fiverr
             </span>
@@ -59,22 +71,36 @@ export default function Portfolio() {
           , I combine <strong>technical problem-solving</strong> in frontend and
           backend with a <strong>designer's eye for detail</strong>. Great apps
           shouldn't just work well; they need amazing{" "}
-          <strong>UI/UX design</strong>. I build things so people will{" "}
-          <strong>remember them</strong>.
+          <span className="inline-flex items-center gap-1 px-2 py-1 mx-1 rounded-xl border font-semibold text-base align-middle transition-all duration-300 hover:scale-105 bg-purple-50 border-purple-200 text-purple-700 dark:bg-purple-950/40 dark:border-purple-700/40 dark:text-purple-300">
+            <Icon
+              icon="solar:palette-bold-duotone"
+              className="text-purple-500 text-xl"
+            />
+            UI/UX design
+          </span>
+          . I build things so people will <strong>remember them</strong>.
         </motion.p>
 
+        {/* Second Paragraph with Tooltip */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-lg leading-relaxed mb-6 text-justify"
+          className="text-gray-600 dark:text-gray-300 text-lg leading-8 mb-6 text-justify"
         >
-          <div className="relative inline-block group">
+          <div className="relative inline-block group w-full">
             <p>
               When someone gives me a project, they are{" "}
               <strong>trusting me</strong>, and I take that seriously. Whether
-              I'm building web apps, exploring <strong>AI Development</strong>,
-              or writing{" "}
+              I'm building web apps, exploring{" "}
+              <span className="inline-flex items-center gap-1 px-2 py-1 mx-1 rounded-xl border font-semibold text-base align-middle transition-all duration-300 hover:scale-105 bg-indigo-50 border-indigo-200 text-indigo-700 dark:bg-indigo-950/40 dark:border-indigo-700/40 dark:text-indigo-300">
+                <Icon
+                  icon="solar:graph-up-bold-duotone"
+                  className="text-indigo-500 text-xl"
+                />
+                AI Development
+              </span>
+              , or writing{" "}
               <Link href="/dev-tips" className="inline-block">
                 <motion.span
                   animate={{
@@ -86,7 +112,7 @@ export default function Portfolio() {
                     repeat: Infinity,
                     repeatDelay: 0.5,
                   }}
-                  className="font-bold cursor-pointer inline-block bg-[linear-gradient(90deg,#06b6d4,#a855f7,#06b6d4)] bg-[length:200%_auto] bg-clip-text text-transparent"
+                  className="font-bold cursor-pointer inline-block bg-[linear-gradient(90deg,#06b6d4,#a855f7,#06b6d4)] bg-[length:200%_auto] bg-clip-text text-transparent underline decoration-sky-400 decoration-wavy underline-offset-4"
                 >
                   DEV TIPS articles on LinkedIn
                 </motion.span>
@@ -97,22 +123,15 @@ export default function Portfolio() {
             </p>
 
             {/* Tooltip OUTSIDE <p> but still inside group wrapper */}
-            <div
-              className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 w-64 
-        opacity-0 group-hover:opacity-100 group-hover:-translate-y-2 
-        transition-all duration-300 pointer-events-none z-50 flex justify-center"
-            >
+            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 w-64 opacity-0 group-hover:opacity-100 group-hover:-translate-y-2 transition-all duration-300 pointer-events-none z-50 flex justify-center">
               {/* Tooltip Cards */}
               <div className="relative w-full h-40 flex items-end justify-center pb-2">
                 {/* Card 1 */}
-                <div
-                  className="absolute w-24 h-24 rounded-lg shadow-xl border border-gray-700 
-            transform -rotate-12 -translate-x-14 overflow-hidden bg-gray-900 z-10 
-            transition-transform duration-300 group-hover:-rotate-[15deg]"
-                >
+                <div className="absolute w-24 h-24 rounded-lg shadow-xl border border-gray-700 transform -rotate-12 -translate-x-14 overflow-hidden bg-gray-900 z-10 transition-transform duration-300 group-hover:-rotate-[15deg]">
                   <img
                     src="/images/tip-02.jpg"
                     className="w-full h-full object-cover"
+                    alt="Semantic Versioning"
                   />
                   <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center p-1">
                     <span className="text-[10px] text-gray-300 text-center font-bold font-mono">
@@ -124,14 +143,11 @@ export default function Portfolio() {
                 </div>
 
                 {/* Card 2 */}
-                <div
-                  className="absolute w-24 h-24 rounded-lg shadow-xl border border-gray-700 
-            transform rotate-12 translate-x-14 overflow-hidden bg-gray-900 z-10 
-            transition-transform duration-300 group-hover:rotate-[15deg]"
-                >
+                <div className="absolute w-24 h-24 rounded-lg shadow-xl border border-gray-700 transform rotate-12 translate-x-14 overflow-hidden bg-gray-900 z-10 transition-transform duration-300 group-hover:rotate-[15deg]">
                   <img
                     src="/images/tip-01.jpg"
                     className="w-full h-full object-cover"
+                    alt="GitHub Licenses"
                   />
                   <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center p-1">
                     <span className="text-[10px] text-gray-300 text-center font-bold font-mono">
@@ -143,19 +159,13 @@ export default function Portfolio() {
                 </div>
 
                 {/* Card 3 */}
-                <div
-                  className="absolute w-32 h-32 rounded-lg shadow-2xl border border-sky-400/80 
-            transform transition-transform duration-300 group-hover:scale-110 
-            overflow-hidden bg-black z-20"
-                >
+                <div className="absolute w-32 h-32 rounded-lg shadow-2xl border border-sky-400/80 transform transition-transform duration-300 group-hover:scale-110 overflow-hidden bg-black z-20">
                   <img
                     src="/images/tip-03.jpg"
                     className="w-full h-full object-cover"
+                    alt="Conventional Commits"
                   />
-                  <div
-                    className="absolute inset-0 flex flex-col items-center justify-end p-2 
-              bg-gradient-to-t from-black/90 via-black/40 to-transparent"
-                  >
+                  <div className="absolute inset-0 flex flex-col items-center justify-end p-2 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
                     <div className="bg-sky-400 text-white font-bold text-[8px] px-2 py-0.5 rounded-full mb-1">
                       DEV TIP #01
                     </div>
@@ -171,29 +181,22 @@ export default function Portfolio() {
           </div>
         </motion.div>
 
+        {/* Third Paragraph */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="text-lg leading-relaxed mb-6 text-justify"
+          className="text-gray-600 dark:text-gray-300 text-lg leading-8 mb-6 text-justify"
         >
           Beyond work, I spend my time hunting for the latest{" "}
           <strong className="font-bold">tech news</strong> or relaxing while
-          listening to music on {/* Spotify Badge Container */}
-          <span
-            className="inline-flex items-center gap-1.5 px-3 py-1 mx-1 rounded-xl border font-bold text-base align-middle transition-colors duration-300
-            bg-[#e5e5e5] border-[#d4d4d4] text-black 
-            dark:bg-[#333333] dark:border-[#696969] dark:text-white"
-          >
+          listening to music on{" "}
+          <span className="inline-flex items-center gap-1 px-2 py-1 mx-1 rounded-xl border font-semibold text-base align-middle transition-all duration-300 hover:scale-105 bg-red-50 border-red-200 text-red-700 dark:bg-red-950/40 dark:border-red-700/40 dark:text-red-300">
             <Icon icon="selfhst:youtube" className="text-[#FF0000] text-xl" />
             YouTube
           </span>{" "}
-          and {/* YouTube Badge Container */}
-          <span
-            className="inline-flex items-center gap-1.5 px-3 py-1 mx-1 rounded-xl border font-bold text-base align-middle transition-colors duration-300
-            bg-[#e5e5e5] border-[#d4d4d4] text-black 
-            dark:bg-[#333333] dark:border-[#696969] dark:text-white"
-          >
+          and{" "}
+          <span className="inline-flex items-center gap-1 px-2 py-1 mx-1 rounded-xl border font-semibold text-base align-middle transition-all duration-300 hover:scale-105 bg-emerald-50 border-emerald-200 text-emerald-700 dark:bg-emerald-950/40 dark:border-emerald-700/40 dark:text-emerald-300">
             <Icon icon="selfhst:spotify" className="text-[#1DB954] text-xl" />
             Spotify
           </span>
