@@ -76,14 +76,14 @@ export default function SpotifyHover({
             animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
             exit={{ opacity: 0, y: 10, scale: 0.95, filter: "blur(6px)" }}
             transition={{ type: "spring", stiffness: 240, damping: 20 }}
-            className="absolute left-0 bottom-full mb-3 z-50 w-[250px]"
+            className="absolute -right-2 sm:right-auto sm:left-1/2 sm:-translate-x-1/2 bottom-full mb-3 z-50 w-[250px]"
           >
             {/* 🔽 Tooltip Arrow */}
-            <div className="absolute left-6 -bottom-2 w-3 h-3 bg-white dark:bg-zinc-900 rotate-45 border-l border-t border-zinc-300 dark:border-zinc-700"></div>
+            <div className="absolute right-6 sm:right-auto sm:left-1/2 sm:-translate-x-1/2 -bottom-[6px] w-3 h-3 bg-white dark:bg-zinc-900 rotate-45 border-b border-r border-zinc-300 dark:border-zinc-700"></div>
 
             <motion.div
               whileHover={{ scale: 1.02 }}
-              className="overflow-hidden rounded-xl border border-zinc-700/40 dark:bg-zinc-950/90 bg-white/95 backdrop-blur-xl shadow-xl"
+              className="relative z-10 overflow-hidden rounded-xl border border-zinc-700/40 dark:bg-zinc-950/90 bg-white/95 backdrop-blur-xl shadow-xl"
             >
               {isLoading && !data ? (
                 <div className="flex items-center gap-2 p-3 text-sm text-zinc-500">
