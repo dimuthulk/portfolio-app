@@ -1,31 +1,27 @@
 "use client";
 
+import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 
 export default function ThemeToggle3D() {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
-  const [flipped, setFlipped] = useState(false);
+  const { theme, setTheme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
+  // Hydration mismatch එක වළක්වා ගැනීමට
   useEffect(() => {
-    const saved = localStorage.getItem("theme") as "light" | "dark" | null;
-    if (saved) {
-      setTheme(saved);
-      document.documentElement.classList.toggle("dark", saved === "dark");
-      setFlipped(saved === "dark");
-      return;
-    }
-    const hasDark = document.documentElement.classList.contains("dark");
-    setTheme(hasDark ? "dark" : "light");
-    setFlipped(hasDark);
+    setMounted(true);
   }, []);
 
+  if (!mounted) {
+    return <div className="w-10 h-10"></div>; // Component එක load වෙනකම් හිස් ඉඩක් ලබා දීම
+  }
+
+  // System theme එකත් එක්කම දැනට තියෙන theme එක මොකක්ද කියලා හඳුනාගැනීම
+  const isDark = theme === "dark" || resolvedTheme === "dark";
+
   const toggleTheme = () => {
-    const next = theme === "light" ? "dark" : "light";
-    setTheme(next);
-    setFlipped(next === "dark");
-    localStorage.setItem("theme", next);
-    document.documentElement.classList.toggle("dark", next === "dark");
+    setTheme(isDark ? "light" : "dark");
   };
 
   return (
@@ -43,7 +39,7 @@ export default function ThemeToggle3D() {
           relative w-full h-full 
           transition-transform duration-500 
           [transform-style:preserve-3d]
-          ${flipped ? "[transform:rotateY(180deg)]" : ""}
+          ${isDark ? "[transform:rotateY(180deg)]" : ""}
         `}
       >
         {/* Front - Light (Moon) */}
