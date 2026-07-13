@@ -1,22 +1,98 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
 import BackgroundAnimation from "@/components/BackgroundAnimation";
-
 import devTipsData from "@/data/devtips.json";
+
+// 1. Independent Card Component for Individual Loading States
+const DevTipCard = ({ post, index }) => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 28 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: index * 0.18 }}
+      whileHover={{ scale: 1.03 }}
+      className="w-[504px] h-[670px] max-w-full rounded-2xl overflow-hidden border border-gray-300 dark:border-gray-800 
+                 bg-white/40 dark:bg-black/40 backdrop-blur-md transition-all duration-300 shadow-2xl relative flex flex-col"
+    >
+      {/* ⭐ PREMIUM STRUCTURED SKELETON */}
+      {isLoading && (
+        <div className="absolute inset-0 z-20 w-full h-full bg-white/80 dark:bg-zinc-950/90 backdrop-blur-xl p-6 flex flex-col pointer-events-none overflow-hidden">
+          {/* Framer Motion Sweeping Glass Shimmer */}
+          <motion.div
+            className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/50 dark:via-white/5 to-transparent z-10"
+            animate={{ x: ["-100%", "100%"] }}
+            transition={{
+              repeat: Infinity,
+              duration: 1.5,
+              ease: "easeInOut",
+            }}
+          />
+
+          {/* Tailwind Pulse Layout (Mimics a LinkedIn Post) */}
+          <div className="animate-pulse flex flex-col h-full w-full relative z-0">
+            {/* Header: Profile Pic & Name */}
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-14 h-14 rounded-full bg-gray-200 dark:bg-zinc-800 shrink-0"></div>
+              <div className="flex flex-col gap-2.5 w-full">
+                <div className="h-3.5 bg-gray-200 dark:bg-zinc-800 rounded-full w-2/5"></div>
+                <div className="h-2.5 bg-gray-200 dark:bg-zinc-800 rounded-full w-1/4"></div>
+              </div>
+            </div>
+
+            {/* Body: Post Text */}
+            <div className="flex flex-col gap-3 mb-6">
+              <div className="h-3 bg-gray-200 dark:bg-zinc-800 rounded-full w-full"></div>
+              <div className="h-3 bg-gray-200 dark:bg-zinc-800 rounded-full w-[90%]"></div>
+              <div className="h-3 bg-gray-200 dark:bg-zinc-800 rounded-full w-[75%]"></div>
+            </div>
+
+            {/* Media: Big Image/Video Attachment Box */}
+            <div className="w-full bg-gray-200 dark:bg-zinc-800 rounded-xl flex-grow mb-6 border border-gray-100 dark:border-zinc-800/50"></div>
+
+            {/* Footer: Like / Comment / Share / Send Buttons */}
+            <div className="flex justify-between items-center mt-auto pt-4 border-t border-gray-200 dark:border-zinc-800/50">
+              <div className="h-6 bg-gray-200 dark:bg-zinc-800 rounded-md w-[20%]"></div>
+              <div className="h-6 bg-gray-200 dark:bg-zinc-800 rounded-md w-[20%]"></div>
+              <div className="h-6 bg-gray-200 dark:bg-zinc-800 rounded-md w-[20%]"></div>
+              <div className="h-6 bg-gray-200 dark:bg-zinc-800 rounded-md w-[20%]"></div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Actual Iframe */}
+      <iframe
+        src={post.url}
+        height="670"
+        width="504"
+        frameBorder="0"
+        allowFullScreen
+        loading="lazy"
+        onLoad={() => setIsLoading(false)}
+        sandbox="allow-scripts allow-same-origin allow-popups"
+        className={`bg-transparent max-w-full absolute inset-0 z-10 transition-opacity duration-700 ${
+          isLoading ? "opacity-0" : "opacity-100"
+        }`}
+      ></iframe>
+    </motion.div>
+  );
+};
 
 export default function DevTipsPage() {
   return (
-    // Main container (background colors අයින් කරලා තියෙන්නේ)
     <div className="relative min-h-screen w-full overflow-hidden text-black dark:text-gray-200 font-sans">
-      {/* 1. LAYER 1: Background Animation (z-0 දාලා තියෙන්නේ) */}
+      {/* 1. LAYER 1: Background Animation (z-0) */}
       <div className="fixed inset-0 z-0 pointer-events-none bg-transparent">
         <BackgroundAnimation />
       </div>
 
-      {/* 2. LAYER 2: Main Content (relative z-10 දාලා Animation එකට උඩින් තිබ්බා) */}
+      {/* 2. LAYER 2: Main Content (relative z-10) */}
       <div className="relative z-10 flex flex-col items-center py-20 px-4">
         {/* Back Button */}
         <div className="w-full max-w-2xl mb-8">
@@ -24,7 +100,7 @@ export default function DevTipsPage() {
             href="/"
             className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white transition-colors flex items-center gap-2 w-fit"
           >
-            {/* ← Back to Portfolio */}← git checkout portfolio
+            ← Back to Portfolio
           </Link>
         </div>
 
@@ -39,19 +115,14 @@ export default function DevTipsPage() {
             My
             <span
               className="inline-flex items-center justify-center px-3 py-2 rounded-xl border 
-                 bg-[#f3f4f6] border-[#e5e7eb] text-black 
-                 dark:bg-[#111827] dark:border-[#374151] dark:text-white
+                  bg-[#f3f4f6] border-[#e5e7eb] text-black 
+                  dark:bg-[#111827] dark:border-[#374151] dark:text-white
                  transition-colors duration-300"
             >
               <Icon icon="logos:linkedin" className="w-40 h-auto max-w-full" />
             </span>
             DEV TIPS
           </h1>
-          {/* <p className="text-gray-500 dark:text-gray-300 text-lg max-w-xl mx-auto drop-shadow-md">
-            Sharing practical developer tips, real-world solutions, Git & GitHub
-            best practices, and lessons I learn while building modern web
-            applications.
-          </p> */}
 
           <p className="text-gray-600 dark:text-gray-300 text-lg max-w-3xl mx-auto leading-8">
             Sharing practical{" "}
@@ -115,28 +186,7 @@ export default function DevTipsPage() {
         {/* Posts Section */}
         <div className="w-full flex flex-wrap justify-center gap-10">
           {devTipsData.map((post, i) => (
-            <motion.div
-              key={post.id}
-              initial={{ opacity: 0, y: 28 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: i * 0.18 }}
-              whileHover={{ scale: 1.03 }}
-              className="w-[504px] max-w-full rounded-2xl overflow-hidden border border-gray-700 
-                         bg-white/10 dark:bg-black/40 backdrop-blur-md transition-all duration-300 shadow-2xl"
-            >
-              <div className="relative">
-                <iframe
-                  src={post.url}
-                  height="670"
-                  width="504"
-                  frameBorder="0"
-                  allowFullScreen
-                  loading="lazy"
-                  sandbox="allow-scripts allow-same-origin allow-popups"
-                  className="bg-transparent max-w-full"
-                ></iframe>
-              </div>
-            </motion.div>
+            <DevTipCard key={post.id} post={post} index={i} />
           ))}
         </div>
       </div>

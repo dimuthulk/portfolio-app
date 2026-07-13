@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 import LinkedInPreview from "@/components/LinkedInPreview";
 import DeveloperJourney from "@/components/DeveloperJourney";
+import SpotifyHover from "@/components/SpotifyHover";
 import {
   SiNextdotjs,
   SiTailwindcss,
@@ -14,6 +15,7 @@ import {
 } from "react-icons/si";
 import ThemeToggle from "../components/ThemeToggle";
 import AnimatedTooltip from "../components/AnimatedTooltip";
+import GitHubGraph from "../components/GitHubGraph";
 
 export default function Portfolio() {
   return (
@@ -108,7 +110,7 @@ export default function Portfolio() {
         </motion.div>
 
         {/* Third Paragraph */}
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
@@ -125,15 +127,17 @@ export default function Portfolio() {
             YouTube
           </span>{" "}
           and{" "}
-          <span className="inline-flex items-center gap-1 px-2 py-0.5 my-1 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-emerald-50 border-emerald-200 text-emerald-700 dark:bg-emerald-950/40 dark:border-emerald-700/40 dark:text-emerald-300 whitespace-nowrap">
-            <Icon
-              icon="selfhst:spotify"
-              className="text-[#1DB954] text-lg md:text-xl"
-            />
-            Spotify
-          </span>
+          <SpotifyHover>
+            <span className="inline-flex items-center gap-1 px-2 py-0.5 my-1 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-emerald-50 border-emerald-200 text-emerald-700 dark:bg-emerald-950/40 dark:border-emerald-700/40 dark:text-emerald-300 whitespace-nowrap">
+              <Icon
+                icon="selfhst:spotify"
+                className="text-[#1DB954] text-lg md:text-xl"
+              />
+              Spotify
+            </span>
+          </SpotifyHover>
           .
-        </motion.p>
+        </motion.div>
 
         {/* Social Links Container */}
         <motion.div
@@ -218,6 +222,13 @@ export default function Portfolio() {
             </a>
           </div>
         </motion.div>
+      </section>
+
+      <section className="mt-3 md:mt-3 w-full">
+        {/* <h2 className="text-2xl font-semibold mb-6 text-gray-950 dark:text-white">
+          GitHub Contributions
+        </h2> */}
+        <GitHubGraph />
       </section>
 
       <section className="mt-0 md:mt-0 w-full">
