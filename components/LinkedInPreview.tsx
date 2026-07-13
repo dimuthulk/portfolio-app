@@ -10,37 +10,44 @@ const articles = [
     id: 1,
     title: "Conventional Commits",
     subtitle: "DEV TIP #01",
-    image: "/images/tip-03.jpg",
+    // image: "/images/tip-03.jpg",
+    image:
+      "https://res.cloudinary.com/diiqwckpb/image/upload/v1783931916/tip-03_bym6av.jpg",
   },
   {
     id: 2,
     title: "Semantic Versioning",
     subtitle: "DEV TIP #02",
-    image: "/images/tip-02.jpg",
+    image:
+      "https://res.cloudinary.com/diiqwckpb/image/upload/v1783931916/tip-02_euebet.jpg",
   },
   {
     id: 3,
     title: "GitHub Licenses",
     subtitle: "DEV TIP #03",
-    image: "/images/tip-01.jpg",
+    image:
+      "https://res.cloudinary.com/diiqwckpb/image/upload/v1783931913/tip-01_tkz0ya.jpg",
   },
   {
     id: 4,
     title: "Conventional Commits",
     subtitle: "DEV TIP #01",
-    image: "/images/tip-03.jpg",
+    image:
+      "https://res.cloudinary.com/diiqwckpb/image/upload/v1783931916/tip-03_bym6av.jpg",
   },
   {
     id: 5,
     title: "Semantic Versioning",
     subtitle: "DEV TIP #02",
-    image: "/images/tip-02.jpg",
+    image:
+      "https://res.cloudinary.com/diiqwckpb/image/upload/v1783931916/tip-02_euebet.jpg",
   },
   {
     id: 6,
     title: "GitHub Licenses",
     subtitle: "DEV TIP #03",
-    image: "/images/tip-01.jpg",
+    image:
+      "https://res.cloudinary.com/diiqwckpb/image/upload/v1783931913/tip-01_tkz0ya.jpg",
   },
 ];
 
