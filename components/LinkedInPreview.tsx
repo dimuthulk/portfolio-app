@@ -83,7 +83,8 @@ export default function LinkedInPreview() {
             <motion.div
               animate={{ y: [0, -6, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="relative overflow-hidden w-[400px] rounded-3xl p-4
+              // w-[400px] වෙනුවට w-[320px] sm:w-[400px] max-w-[90vw] යොදන්න
+              className="relative overflow-hidden w-[320px] sm:w-[400px] max-w-[90vw] rounded-3xl p-4
                          border border-slate-200/50 bg-white/70 backdrop-blur-2xl shadow-[0_30px_60px_rgba(15,23,42,0.1)]
                          dark:border-white/10 dark:bg-black/20 dark:shadow-[0_30px_80px_rgba(0,0,0,0.6)]"
             >
