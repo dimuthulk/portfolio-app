@@ -58,7 +58,7 @@ export default function GitHubGraph() {
       </div>
 
       {/* Centering */}
-      <div className="w-full overflow-x-auto flex justify-center items-center">
+      <div className="w-full overflow-x-auto flex justify-start md:justify-center items-center pb-2 custom-scrollbar">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -70,10 +70,10 @@ export default function GitHubGraph() {
               },
             },
           }}
-          className="min-w-[340px] sm:min-w-0 flex justify-center items-center"
+          className="min-w-max flex justify-start md:justify-center items-center px-4 md:px-0"
         >
           <GitHubCalendar
-            key={theme} // ⭐ FIX: re-render on theme change
+            key={theme}
             username="dimuthulk"
             blockSize={12}
             blockMargin={3}
