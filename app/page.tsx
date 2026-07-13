@@ -44,7 +44,7 @@ export default function Portfolio() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-gray-600 dark:text-gray-300 text-base md:text-lg leading-7 md:leading-8 mb-6 text-justify"
+          className="text-gray-600 dark:text-gray-300 text-base md:text-lg leading-7 md:leading-8 mb-6 text-left md:text-justify"
         >
           I'm an{" "}
           <span className="inline-flex items-center gap-1 px-2 py-0.5 my-1 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-amber-50 border-amber-200 text-amber-700 dark:bg-amber-950/40 dark:border-amber-700/40 dark:text-amber-300 whitespace-nowrap">
@@ -89,7 +89,7 @@ export default function Portfolio() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-gray-600 dark:text-gray-300 text-base md:text-lg leading-7 md:leading-8 mb-6 text-justify"
+          className="text-gray-600 dark:text-gray-300 text-base md:text-lg leading-7 md:leading-8 mb-6 text-left md:text-justify"
         >
           <div>
             When someone gives me a project, they are{" "}
@@ -114,7 +114,7 @@ export default function Portfolio() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="text-gray-600 dark:text-gray-300 text-base md:text-lg leading-7 md:leading-8 mb-6 text-justify"
+          className="text-gray-600 dark:text-gray-300 text-base md:text-lg leading-7 md:leading-8 mb-6 text-left md:text-justify"
         >
           Beyond work, I spend my time hunting for the latest{" "}
           <strong className="font-bold">tech news</strong> or relaxing while
@@ -146,7 +146,7 @@ export default function Portfolio() {
           transition={{ delay: 0.2 }}
           className="flex flex-col gap-3 mt-8"
         >
-          <p className="text-gray-600 dark:text-gray-300 text-base md:text-lg leading-6 text-justify">
+          <p className="text-gray-600 dark:text-gray-300 text-base md:text-lg leading-6 text-left md:text-justify">
             Got a project in mind? Let's bring it to life!
           </p>
 
