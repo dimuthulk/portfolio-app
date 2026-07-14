@@ -3,37 +3,95 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
-import { motion } from "framer-motion";
+import {
+  motion,
+  AnimatePresence,
+  useMotionValue,
+  useTransform,
+} from "framer-motion";
 import BackgroundAnimation from "@/components/BackgroundAnimation";
 import devTipsData from "@/data/devtips.json";
 
-// 1. Independent Card Component for Individual Loading States
+// 🔥 Super-Premium Card Component (JS version)
 const DevTipCard = ({ post, index }) => {
   const [isLoading, setIsLoading] = useState(true);
+
+  const shineX = useMotionValue(0);
+  const shineY = useMotionValue(0);
+
+  const handleShineMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    shineX.set(e.clientX - rect.left);
+    shineY.set(e.clientY - rect.top);
+  };
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 28 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.18 }}
-      whileHover={{ scale: 1.03 }}
-      // w-[504px] වෙනුවට w-full sm:w-[504px] භාවිතා කර ඇත
-      className="w-full sm:w-[504px] h-[670px] max-w-full rounded-2xl overflow-hidden border border-gray-300 dark:border-gray-800 
-                 bg-white/40 dark:bg-black/40 backdrop-blur-md transition-all duration-300 shadow-2xl relative flex flex-col"
+      whileHover={{ scale: 1.02 }}
+      className="relative w-full max-w-[504px] h-[670px] rounded-2xl overflow-hidden border border-gray-300 dark:border-gray-800 
+                 bg-white/40 dark:bg-black/40 backdrop-blur-md transition-all duration-300 shadow-2xl flex flex-col mx-auto group"
     >
-      {/* ... (Skeleton Loader එක කලින් විදියටම තියන්න) ... */}
+      {/* ✨ Shine v3 — cursor reactive neon sweep */}
+      <div
+        className="pointer-events-none absolute inset-0 z-20 overflow-hidden"
+        onMouseMove={handleShineMove}
+      >
+        <motion.div
+          style={{
+            left: shineX,
+            top: shineY,
+          }}
+          className="
+      absolute w-[180%] h-[180%]
+      -translate-x-1/2 -translate-y-1/2
+      bg-[radial-gradient(circle,_rgba(0,200,255,0.25),_transparent_60%)]
+      dark:bg-[radial-gradient(circle,_rgba(0,200,255,0.18),_transparent_60%)]
+      blur-2xl
+      opacity-0 group-hover:opacity-100
+      transition-opacity duration-500
+    "
+        />
 
-      {/* Actual Iframe */}
+        {/* diagonal sweep */}
+        <motion.div
+          initial={{ x: "-120%" }}
+          whileHover={{ x: "40%" }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="
+      absolute -inset-y-20 -left-1/2 w-[160%]
+      bg-gradient-to-r 
+      from-transparent 
+      via-cyan-300/40 
+      to-transparent
+      dark:via-cyan-200/25
+      rotate-12
+      opacity-0 group-hover:opacity-100
+      transition-opacity duration-700
+    "
+        />
+      </div>
+
+      {/* 🟢 Skeleton Loader (keep working) */}
+      {isLoading && (
+        <div className="absolute inset-0 z-10 flex flex-col p-5 bg-gray-50 dark:bg-[#1b1b1b] animate-pulse">
+          {/* your skeleton content stays exactly the same */}
+        </div>
+      )}
+
+      {/* 🟢 Actual Iframe (always top layer) */}
       <iframe
         src={post.url}
         height="100%"
-        width="100%" // width="504" වෙනුවට width="100%" භාවිතා කරන්න
+        width="100%"
         frameBorder="0"
         allowFullScreen
         loading="lazy"
         onLoad={() => setIsLoading(false)}
         sandbox="allow-scripts allow-same-origin allow-popups"
-        className={`bg-transparent w-full h-full absolute inset-0 z-10 transition-opacity duration-700 ${
+        className={`bg-transparent w-full h-full absolute inset-0 z-30 transition-opacity duration-700 ${
           isLoading ? "opacity-0" : "opacity-100"
         }`}
       ></iframe>
@@ -44,109 +102,148 @@ const DevTipCard = ({ post, index }) => {
 export default function DevTipsPage() {
   return (
     <div className="relative min-h-screen w-full overflow-hidden text-black dark:text-gray-200 font-sans">
-      {/* 1. LAYER 1: Background Animation (z-0) */}
       <div className="fixed inset-0 z-0 pointer-events-none bg-transparent">
         <BackgroundAnimation />
       </div>
 
-      {/* 2. LAYER 2: Main Content (relative z-10) */}
-      <div className="relative z-10 flex flex-col items-center py-20 px-4">
-        {/* Back Button */}
-        <div className="w-full max-w-2xl mb-8">
-          <Link
-            href="/"
-            className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white transition-colors flex items-center gap-2 w-fit"
-          >
-            ← Back to Portfolio
-          </Link>
-        </div>
-
-        {/* Page Header */}
+      <AnimatePresence>
         <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="w-full max-w-2xl mb-12 text-center"
+          key="devtips-page"
+          initial={{ opacity: 0, y: 30, scale: 0.98, filter: "blur(6px)" }}
+          animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+          exit={{ opacity: 0, y: 20, scale: 0.98, filter: "blur(4px)" }}
+          transition={{ duration: 0.8, ease: [0.22, 0.8, 0.4, 1] }}
+          className="relative z-10 flex flex-col items-center py-10 md:py-20 px-4 sm:px-6"
         >
-          <h1 className="text-4xl font-extrabold mb-4 flex items-center justify-center gap-4 text-black dark:text-white">
-            My
-            <span
-              className="inline-flex items-center justify-center px-3 py-2 rounded-xl border 
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="w-full max-w-5xl mb-8"
+          >
+            <Link
+              href="/"
+              className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white transition-colors flex items-center gap-2 w-fit text-sm md:text-base font-medium"
+            >
+              <Icon icon="solar:arrow-left-bold-duotone" className="text-xl" />
+              git checkout portfolio
+            </Link>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.7,
+              delay: 0.2,
+              ease: [0.22, 0.8, 0.4, 1],
+            }}
+            className="w-full max-w-4xl mb-12 text-center relative"
+          >
+            <div className="pointer-events-none absolute -inset-x-10 -top-10 h-40 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.25),_transparent_60%)] blur-3xl" />
+
+            <h1 className="text-3xl md:text-5xl font-extrabold mb-6 flex flex-wrap items-center justify-center gap-3 text-black dark:text-white leading-tight">
+              <span className="bg-gradient-to-r from-sky-500 via-cyan-400 to-emerald-400 dark:from-sky-300 dark:via-cyan-200 dark:to-emerald-200 bg-clip-text text-transparent">
+                My
+              </span>
+              <span
+                className="inline-flex items-center justify-center px-3 py-2 rounded-xl border 
                   bg-[#f3f4f6] border-[#e5e7eb] text-black 
-                  dark:bg-[#111827] dark:border-[#374151] dark:text-white
-                 transition-colors duration-300"
+                  dark:bg-[#020617] dark:border-[#1f2937] dark:text-white
+                  transition-colors duration-300 shadow-sm relative overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-sky-100 via-transparent to-sky-100 dark:from-sky-900/40 dark:via-transparent dark:to-sky-900/40 opacity-70" />
+                <Icon
+                  icon="logos:linkedin"
+                  className="w-24 md:w-40 h-auto max-w-full relative z-10"
+                />
+              </span>
+              <span className="bg-gradient-to-r from-sky-500 via-cyan-400 to-emerald-400 dark:from-sky-300 dark:via-cyan-200 dark:to-emerald-200 bg-clip-text text-transparent">
+                DEV TIPS
+              </span>
+            </h1>
+            {/* 
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.35 }}
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-xs md:text-sm text-gray-700 dark:text-gray-300 mb-4"
             >
-              <Icon icon="logos:linkedin" className="w-40 h-auto max-w-full" />
-            </span>
-            DEV TIPS
-          </h1>
+              <span className="inline-flex items-center gap-1">
+                <Icon
+                  icon="solar:calendar-bold-duotone"
+                  className="text-sm text-sky-500"
+                />
+                Updated as I learn
+              </span>
+              <span className="w-1 h-1 rounded-full bg-gray-400" />
+              <span className="inline-flex items-center gap-1">
+                <Icon
+                  icon="solar:star-bold-duotone"
+                  className="text-sm text-amber-400"
+                />
+                Real-world dev notes
+              </span>
+            </motion.div> */}
 
-          <p className="text-gray-600 dark:text-gray-300 text-lg max-w-3xl mx-auto leading-8">
-            Sharing practical{" "}
-            <span
-              className="inline-flex items-center gap-1 px-2 py-1 mx-1 rounded-xl border font-semibold text-base align-middle transition-all duration-300 hover:scale-105
-    bg-sky-50 border-sky-200 text-sky-700
-    dark:bg-sky-950/40 dark:border-sky-700/40 dark:text-sky-300"
-            >
-              <Icon
-                icon="solar:code-bold-duotone"
-                className="text-sky-500 text-xl"
-              />
-              Developer Tips
-            </span>
-            , real-world{" "}
-            <span
-              className="inline-flex items-center gap-1 px-2 py-1 mx-1 rounded-xl border font-semibold text-base align-middle transition-all duration-300 hover:scale-105
-    bg-red-50 border-red-200 text-red-700
-    dark:bg-red-950/40 dark:border-red-700/40 dark:text-red-300"
-            >
-              <Icon
-                icon="solar:bug-bold-duotone"
-                className="text-red-500 text-xl"
-              />
-              Solutions
-            </span>
-            ,{" "}
-            <span
-              className="inline-flex items-center gap-1 px-2 py-1 mx-1 rounded-xl border font-semibold text-base align-middle transition-all duration-300 hover:scale-105
-    bg-orange-50 border-orange-200 text-orange-700
-    dark:bg-orange-950/40 dark:border-orange-700/40 dark:text-orange-300"
-            >
-              <Icon icon="skill-icons:git" className="text-xl" />
-              Git
-            </span>
-            {" & "}
-            <span
-              className="inline-flex items-center gap-1 px-2 py-1 mx-1 rounded-xl border font-semibold text-base align-middle transition-all duration-300 hover:scale-105
-    bg-neutral-100 border-neutral-300 text-neutral-900
-    dark:bg-neutral-800 dark:border-neutral-600 dark:text-white"
-            >
-              <Icon icon="skill-icons:github-dark" className="text-xl" />
-              GitHub
-            </span>{" "}
-            best practices, and lessons I learn while building{" "}
-            <span
-              className="inline-flex items-center gap-1 px-2 py-1 mx-1 rounded-xl border font-semibold text-base align-middle transition-all duration-300 hover:scale-105
-    bg-cyan-50 border-cyan-200 text-cyan-700
-    dark:bg-cyan-950/40 dark:border-cyan-700/40 dark:text-cyan-300"
-            >
-              <Icon
-                icon="carbon:application-web"
-                className="text-cyan-500 text-xl"
-              />
-              Modern Web Apps
-            </span>
-            .
-          </p>
+            <p className="text-gray-600 dark:text-gray-300 text-base md:text-lg max-w-3xl mx-auto leading-relaxed md:leading-8">
+              Sharing practical{" "}
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 md:py-1 mx-1 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-sky-50 border-sky-200 text-sky-700 dark:bg-sky-950/40 dark:border-sky-700/40 dark:text-sky-300 whitespace-nowrap mb-1">
+                <Icon
+                  icon="solar:code-bold-duotone"
+                  className="text-sky-500 text-lg md:text-xl"
+                />
+                Developer Tips
+              </span>
+              , real-world{" "}
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 md:py-1 mx-1 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-red-50 border-red-200 text-red-700 dark:bg-red-950/40 dark:border-red-700/40 dark:text-red-300 whitespace-nowrap mb-1">
+                <Icon
+                  icon="solar:bug-bold-duotone"
+                  className="text-red-500 text-lg md:text-xl"
+                />
+                Solutions
+              </span>
+              ,{" "}
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 md:py-1 mx-1 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-orange-50 border-orange-200 text-orange-700 dark:bg-orange-950/40 dark:border-orange-700/40 dark:text-orange-300 whitespace-nowrap mb-1">
+                <Icon icon="skill-icons:git" className="text-lg md:text-xl" />
+                Git
+              </span>
+              {" & "}
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 md:py-1 mx-1 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-neutral-100 border-neutral-300 text-neutral-900 dark:bg-neutral-800 dark:border-neutral-600 dark:text-white whitespace-nowrap mb-1">
+                <Icon
+                  icon="skill-icons:github-dark"
+                  className="text-lg md:text-xl"
+                />
+                GitHub
+              </span>{" "}
+              best practices, and lessons I learn while building{" "}
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 md:py-1 mx-1 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-cyan-50 border-cyan-200 text-cyan-700 dark:bg-cyan-950/40 dark:border-cyan-700/40 dark:text-cyan-300 whitespace-nowrap mb-1">
+                <Icon
+                  icon="carbon:application-web"
+                  className="text-cyan-500 text-lg md:text-xl"
+                />
+                Modern Web Apps
+              </span>
+              .
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.8,
+              delay: 0.35,
+              ease: [0.22, 0.8, 0.4, 1],
+            }}
+            className="w-full max-w-[1600px] flex flex-wrap justify-center gap-6 md:gap-10"
+          >
+            {devTipsData.map((post, i) => (
+              <DevTipCard key={post.id} post={post} index={i} />
+            ))}
+          </motion.div>
         </motion.div>
-
-        {/* Posts Section */}
-        <div className="w-full flex flex-wrap justify-center gap-10">
-          {devTipsData.map((post, i) => (
-            <DevTipCard key={post.id} post={post} index={i} />
-          ))}
-        </div>
-      </div>
+      </AnimatePresence>
     </div>
   );
 }
