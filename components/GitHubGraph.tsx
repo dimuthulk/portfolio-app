@@ -19,7 +19,6 @@ export default function GitHubGraph() {
     );
   }
 
-  // ⭐ Correct theme format (arrays only)
   const customTheme = {
     light: ["#ebedf0", "#c6e48b", "#7bc96f", "#239a3b", "#196127"],
     dark: ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"],
@@ -29,48 +28,36 @@ export default function GitHubGraph() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      whileHover={{ rotateX: 4, rotateY: -4 }}
+      initial={{ opacity: 0, y: 40, scale: 0.95, filter: "blur(6px)" }}
+      animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      whileHover={{
+        rotateX: 6,
+        rotateY: -6,
+        scale: 1.02,
+        transition: { duration: 0.3 },
+      }}
       className="
         relative
-        w-full 
-        max-w-6xl 
-        mx-auto 
-        p-4 sm:p-6 
-        rounded-2xl 
+        w-full
+        max-w-6xl
+        mx-auto
+        p-3 sm:p-3
+        rounded-2xl
         border border-black/10 dark:border-white/10
         bg-white/60 dark:bg-zinc-800/40
-        backdrop-blur-xl 
-        shadow-[0_8px_30px_rgb(0,0,0,0.08)]
-        transition-all
+        shadow-[0_12px_40px_rgb(0,0,0,0.12)]
+        overflow-hidden
       "
     >
-      {/* Glow */}
-      <div className="absolute inset-0 rounded-2xl pointer-events-none">
-        <div className="absolute inset-0 rounded-2xl animate-glow opacity-30 dark:opacity-60" />
-      </div>
-
-      {/* Particles */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="particles opacity-10 dark:opacity-25" />
-      </div>
-
-      {/* Centering */}
-      <div className="w-full overflow-x-auto flex justify-start md:justify-center items-center pb-2 custom-scrollbar">
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: {},
-            visible: {
-              transition: {
-                staggerChildren: 0.015,
-              },
-            },
-          }}
-          className="min-w-max flex justify-start md:justify-center items-center px-4 md:px-0"
+      {/* Content */}
+      <div className="w-full flex justify-center items-center overflow-hidden px-2">
+        <div
+          className="
+          w-full
+          origin-top
+          flex justify-center
+        "
         >
           <GitHubCalendar
             key={theme}
@@ -81,7 +68,7 @@ export default function GitHubGraph() {
             colorScheme={colorScheme}
             theme={customTheme}
           />
-        </motion.div>
+        </div>
       </div>
     </motion.div>
   );
