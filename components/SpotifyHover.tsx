@@ -49,10 +49,10 @@ export default function SpotifyHover({
     },
   );
 
-  // 🔥 Auto-hide after 5 seconds
+  // 🔥 Auto-hide after 10 seconds (Display time එක වැඩි කළා)
   useEffect(() => {
     if (isHovered) {
-      const t = setTimeout(() => setIsHovered(false), 5000);
+      const t = setTimeout(() => setIsHovered(false), 10000); // 5000 -> 10000
       return () => clearTimeout(t);
     }
   }, [isHovered]);
@@ -62,8 +62,8 @@ export default function SpotifyHover({
       className="relative inline-block cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      onTouchStart={() => setIsHovered(true)}
-      onTouchEnd={() => setIsHovered(false)}
+      // onTouchStart සහ onTouchEnd අයින් කරලා onClick දැම්මා (Mobile fix)
+      onClick={() => setIsHovered(!isHovered)}
     >
       <span className="font-semibold text-emerald-600 dark:text-emerald-400 underline decoration-dashed underline-offset-4">
         {children}
@@ -76,14 +76,15 @@ export default function SpotifyHover({
             animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
             exit={{ opacity: 0, y: 10, scale: 0.95, filter: "blur(6px)" }}
             transition={{ type: "spring", stiffness: 240, damping: 20 }}
-            className="absolute -right-2 sm:right-auto sm:left-1/2 sm:-translate-x-1/2 bottom-full mb-3 z-50 w-[250px]"
+            // 🔥 Mobile වලදී fixed bottom widget එකක් වෙනවා, Desktop (sm) වලදී absolute tooltip එකක් වෙනවා.
+            className="fixed bottom-8 left-1/2 -translate-x-1/2 sm:absolute sm:bottom-full sm:mb-3 z-[100] w-[90vw] sm:w-[260px]"
           >
-            {/* 🔽 Tooltip Arrow */}
-            <div className="absolute right-6 sm:right-auto sm:left-1/2 sm:-translate-x-1/2 -bottom-[6px] w-3 h-3 bg-white dark:bg-zinc-900 rotate-45 border-b border-r border-zinc-300 dark:border-zinc-700"></div>
+            {/* 🔽 Tooltip Arrow (Mobile වලදී මේක hide කරලා තියෙන්නේ 'hidden sm:block' දීලා) */}
+            <div className="hidden sm:block absolute left-1/2 -translate-x-1/2 -bottom-[6px] w-3 h-3 bg-white dark:bg-zinc-900 rotate-45 border-b border-r border-zinc-300 dark:border-zinc-700"></div>
 
             <motion.div
               whileHover={{ scale: 1.02 }}
-              className="relative z-10 overflow-hidden rounded-xl border border-zinc-700/40 dark:bg-zinc-950/90 bg-white/95 backdrop-blur-xl shadow-xl"
+              className="relative z-10 overflow-hidden rounded-xl border border-zinc-700/40 dark:bg-zinc-950/90 bg-white/95 backdrop-blur-xl shadow-2xl"
             >
               {isLoading && !data ? (
                 <div className="flex items-center gap-2 p-3 text-sm text-zinc-500">
