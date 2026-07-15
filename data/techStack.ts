@@ -195,8 +195,13 @@ export const techCategories = [
         color: "text-[#007ACC]",
       },
       {
+        name: "IntelliJ IDEA",
+        icon: "logos:intellij-idea",
+        color: "text-[#007ACC]",
+      },
+      {
         name: "Postman",
-        icon: "logos:postman-icon",
+        icon: "skill-icons:postman",
         color: "text-[#FF6C37]",
       },
     ],

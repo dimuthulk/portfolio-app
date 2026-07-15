@@ -7,16 +7,9 @@ import LinkedInPreview from "@/components/LinkedInPreview";
 import DeveloperJourney from "@/components/DeveloperJourney";
 import TechStack from "@/components/TechStack";
 import SpotifyHover from "@/components/SpotifyHover";
-import {
-  SiNextdotjs,
-  SiTailwindcss,
-  SiReact,
-  SiPostgresql,
-  SiMongodb,
-} from "react-icons/si";
 import ThemeToggle from "../components/ThemeToggle";
-import AnimatedTooltip from "../components/AnimatedTooltip";
 import GitHubGraph from "../components/GitHubGraph";
+import Experience from "@/components/Experience";
 
 export default function Portfolio() {
   return (
@@ -294,7 +287,7 @@ export default function Portfolio() {
               and <strong>real-world impact</strong>. My interests focus on{" "}
               <span className="inline-flex items-center gap-1 px-2 py-0.5 my-0 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-blue-50 border-blue-200 text-blue-700 dark:bg-blue-950/40 dark:border-blue-700/40 dark:text-blue-300 whitespace-nowrap">
                 <Icon
-                  icon="streamline-stickies-color:programming"
+                  icon="jam:code"
                   className="text-blue-500 text-lg md:text-xl"
                 />
                 Software Engineering
@@ -338,7 +331,7 @@ export default function Portfolio() {
                 to developing{" "}
                 <span className="inline-flex items-center gap-1 px-2 py-0.5 my-0 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-indigo-50 border-indigo-200 text-indigo-700 dark:bg-indigo-950/40 dark:border-indigo-700/40 dark:text-indigo-300 whitespace-nowrap">
                   <Icon
-                    icon="hugeicons:developer"
+                    icon="eos-icons:application"
                     className="text-indigo-500 text-lg md:text-xl"
                   />
                   full-stack applications
@@ -498,7 +491,7 @@ export default function Portfolio() {
       </section>
 
       {/* Story So Far (Experience Timeline) */}
-      <section className="mt-20 md:mt-28 w-full">
+      {/* <section className="mt-20 md:mt-28 w-full">
         <h2 className="text-2xl font-semibold mb-10 text-gray-950 dark:text-white">
           Story So Far
         </h2>
@@ -550,7 +543,9 @@ export default function Portfolio() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
+
+      <Experience limit={3} />
 
       {/* Projects Gallery */}
       <section className="mt-24 md:mt-32 mb-12 w-full">
