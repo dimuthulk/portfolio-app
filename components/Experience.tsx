@@ -218,7 +218,7 @@ export default function Experience({ limit }: { limit?: number }) {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/5 to-transparent opacity-40 dark:from-white/5"></div>
 
         {/* Glow Layer */}
-        <div
+        {/* <div
           className="
             pointer-events-none absolute inset-0 
             opacity-0 group-hover/card:opacity-100 
@@ -226,7 +226,7 @@ export default function Experience({ limit }: { limit?: number }) {
             bg-gradient-to-br from-cyan-400/20 via-purple-500/20 to-transparent 
             blur-3xl
           "
-        />
+        /> */}
 
         {/* Shine Sweep */}
         <motion.div
@@ -250,15 +250,11 @@ export default function Experience({ limit }: { limit?: number }) {
               {index !== displayedExperiences.length - 1 && (
                 <div
                   className="
-    w-full h-[2px] 
-    my-6
-    bg-gradient-to-r 
-    from-purple-500/0 
-    via-purple-500/40 
-    to-purple-500/0 
-    dark:via-purple-300/40
-    blur-[0.5px]
-  "
+  w-full my-6 
+  border-t border-dashed 
+  border-gray-400/60 
+  dark:border-white/30
+"
                 ></div>
               )}
             </div>
