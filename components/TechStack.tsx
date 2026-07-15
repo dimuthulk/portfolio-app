@@ -57,9 +57,9 @@ export default function TechStack() {
         />
 
         {/* MAIN TEXT */}
-        <div className="text-base md:text-lg space-y-3">
+        <div className="text-base md:text-lg space-y-5">
           <p>
-            My primary tech stack includes{" "}
+            <span className="font-bold">My primary tech stack includes</span>{" "}
             <TechBadge
               icon="logos:react"
               name="React"
