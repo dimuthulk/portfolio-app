@@ -256,35 +256,21 @@ export default function Portfolio() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="
-          group relative p-4 md:p-4 rounded-3xl          bg-white/40 dark:bg-zinc-900/40 
-          backdrop-blur-xl 
-          border border-gray-200/50 dark:border-white/10 
-          shadow-[0_12px_28px_rgba(0,0,0,0.06)]
-          dark:shadow-[0_18px_40px_rgba(0,0,0,0.45)]
-          overflow-hidden leading-relaxed text-gray-700 dark:text-gray-300
+          className="group relative p-4 md:p-6 rounded-3xl 
+          leading-relaxed text-gray-700 dark:text-gray-300
         "
         >
-          {/* Glow Layer */}
-          <div
-            className="
-            absolute inset-0 -z-10 opacity-0 group-hover:opacity-100 
-            transition-opacity duration-700
-            bg-gradient-to-br from-cyan-400/10 via-purple-500/10 to-transparent
-            blur-2xl
-          "
-          />
+          <div className="absolute inset-0 z-0 overflow-hidden rounded-3xl bg-white/60 dark:bg-zinc-800/40 backdrop-blur-xl border border-black/10 dark:border-white/10 shadow-[0_12px_40px_rgb(0,0,0,0.12)]">
+            {/* Glow Layer */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-br from-cyan-400/10 via-purple-500/10 to-transparent blur-2xl" />
 
-          {/* Shine Sweep */}
-          <motion.div
-            animate={{ x: ["-150%", "250%"] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-            className="
-            absolute inset-y-0 w-24 
-            bg-gradient-to-r from-transparent via-white/20 to-transparent 
-            dark:via-white/10 blur-xl rotate-12 pointer-events-none
-          "
-          />
+            {/* Shine Sweep */}
+            <motion.div
+              animate={{ x: ["-150%", "250%"] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+              className="absolute inset-y-0 w-24 bg-gradient-to-r from-transparent via-white/20 to-transparent dark:via-white/10 blur-xl rotate-12 pointer-events-none"
+            />
+          </div>
 
           {/* MAIN TEXT CONTENT */}
           <div className="relative z-10 text-base md:text-lg space-y-6">

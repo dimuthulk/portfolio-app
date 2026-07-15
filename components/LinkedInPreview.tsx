@@ -3,14 +3,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { Icon } from "@iconify/react";
 
 const articles = [
   {
     id: 1,
     title: "Conventional Commits",
     subtitle: "DEV TIP #01",
-    // image: "/images/tip-03.jpg",
     image:
       "https://res.cloudinary.com/diiqwckpb/image/upload/v1783931916/tip-03_bym6av.jpg",
   },
@@ -54,21 +54,66 @@ const articles = [
 export default function LinkedInPreview() {
   const [isHovered, setIsHovered] = useState(false);
 
+  // 🔥 Auto Align කරන්න ඕන State එකයි Ref එකයි
+  const [align, setAlign] = useState<"left" | "right" | "center">("center");
+  const containerRef = useRef<HTMLAnchorElement>(null);
+
+  // 🔥 Element එක තියෙන තැන බලලා Align වෙන්න ඕන පැත්ත තීරණය කරන function එක
+  const calculateAlignment = () => {
+    if (containerRef.current) {
+      const rect = containerRef.current.getBoundingClientRect();
+      const screenWidth = window.innerWidth;
+      // Mobile වලදී popup එක 320px, Desktop වලදී 400px
+      const tooltipHalfWidth = window.innerWidth < 640 ? 160 : 200;
+
+      if (rect.left + rect.width / 2 + tooltipHalfWidth > screenWidth - 20) {
+        setAlign("right"); // දකුණෙන් එළියට පනිනවා නම් දකුණට align කරන්න
+      } else if (rect.left + rect.width / 2 - tooltipHalfWidth < 20) {
+        setAlign("left"); // වමෙන් එළියට පනිනවා නම් වමට align කරන්න
+      } else {
+        setAlign("center"); // අවුලක් නැත්නම් මැදට ගන්න
+      }
+    }
+  };
+
+  const handleMouseEnter = () => {
+    calculateAlignment();
+    setIsHovered(true);
+  };
+
+  // 🔥 Align state එක අනුව Tailwind classes තෝරනවා
+  const popupAlignClass =
+    align === "right"
+      ? "right-0"
+      : align === "left"
+        ? "left-0"
+        : "left-1/2 -translate-x-1/2"; // Center
+
   return (
     <Link
       href="/dev-tips"
-      className="relative inline-block cursor-pointer"
-      onMouseEnter={() => setIsHovered(true)}
+      ref={containerRef} // 🔥 Ref එක Link එකට set කරා
+      className="relative inline-block cursor-pointer group"
+      onMouseEnter={handleMouseEnter}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Text Animation */}
-      <motion.span
-        animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        className="font-bold bg-[linear-gradient(90deg,#06b6d4,#a855f7,#06b6d4)] bg-[length:200%_auto] bg-clip-text text-transparent underline decoration-blue-700 underline-offset-4"
-      >
-        DEV TIPS articles on LinkedIn
-      </motion.span>
+      {/* Text Animation - (ඔයාගේ Manual Updates එක්කම) */}
+      <span className="inline-flex items-center gap-1.5 font-semibold text-blue-600 dark:text-blue-400 transition-colors duration-300">
+        <motion.span className="relative inline-block">
+          DEV TIPS articles on{" "}
+          <span className="inline-flex items-center gap-1 px-2 py-0.5 my-0 rounded-lg border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-blue-50 border-blue-200 text-blue-700 dark:bg-blue-950/40 dark:border-blue-700/40 dark:text-blue-300 whitespace-nowrap">
+            <Icon
+              icon="logos:linkedin"
+              className="text-emerald-500 text-lg md:text-xl"
+            />
+          </span>
+          <span className="absolute left-0 bottom-0 w-full h-[1.5px] bg-blue-600/40 dark:bg-blue-400/40 group-hover:bg-blue-600 dark:group-hover:bg-blue-400 transition-colors duration-300"></span>
+        </motion.span>
+        <Icon
+          icon="mdi:arrow-top-right"
+          className="text-sm md:text-base opacity-70 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300"
+        />
+      </span>
 
       {/* Pop-up Box */}
       <AnimatePresence>
@@ -78,12 +123,12 @@ export default function LinkedInPreview() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 15, scale: 0.95 }}
             transition={{ type: "spring", stiffness: 250, damping: 22 }}
-            className="absolute left-1/2 -translate-x-1/2 bottom-full mb-5 z-50 pointer-events-auto"
+            // 🔥 mb-5 වෙනුවට mb-2 යොදා gap එක අඩු කළා
+            className={`absolute bottom-full mb-0 z-[100] pointer-events-auto ${popupAlignClass}`}
           >
             <motion.div
               animate={{ y: [0, -6, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              // w-[400px] වෙනුවට w-[320px] sm:w-[400px] max-w-[90vw] යොදන්න
               className="relative overflow-hidden w-[320px] sm:w-[400px] max-w-[90vw] rounded-3xl p-4
                          border border-slate-200/50 bg-white/70 backdrop-blur-2xl shadow-[0_30px_60px_rgba(15,23,42,0.1)]
                          dark:border-white/10 dark:bg-black/20 dark:shadow-[0_30px_80px_rgba(0,0,0,0.6)]"
@@ -138,7 +183,7 @@ export default function LinkedInPreview() {
                         {/* Gradient Overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
-                        {/* ⭐ මෙන්න සුපිරියට හදපු Mini Glass Badge එක */}
+                        {/* Mini Glass Badge */}
                         <div className="absolute bottom-1 left-2">
                           <span
                             className="inline-flex items-center justify-center text-[7.5px] font-bold font-mono uppercase tracking-wider w-max h-auto leading-none px-1.5 py-[2px] rounded-md border
