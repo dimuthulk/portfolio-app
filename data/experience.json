@@ -1,0 +1,122 @@
+[
+  {
+    "company": "Freelance",
+    "logo": "https://camo.githubusercontent.com/62cf3b1249cb16e770ea25bb3e7a12925f50065e8aa4bd0b26e805b2a10b7689/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f313336302f302a37513379765349765f7430696f4a2d5a2e676966",
+    "role": "Full Stack Developer & UI/UX Designer",
+    "startDate": "Mar 2025",
+    "endDate": "Present",
+    "location": "Sri Lanka",
+    "employmentType": "Freelance",
+    "workMode": "Remote",
+    "expanded": true,
+    "description": [
+      "Worked with multiple clients to build modern web applications and user experiences.",
+      "Developed responsive websites using React, Next.js, Tailwind CSS and TypeScript.",
+      "Built backend services with Node.js, Express.js and Spring Boot.",
+      "Designed UI/UX using Figma and Adobe XD.",
+      "Integrated APIs, optimized performance and deployed production-ready applications."
+    ],
+    "technologies": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "Spring Boot",
+      "MongoDB",
+      "MySQL",
+      "Docker",
+      "Git",
+      "GitHub",
+      "Figma",
+      "Adobe XD",
+      "Vercel"
+    ]
+  },
+  {
+    "company": "Electronics and Computer Science Club",
+    "logo": "https://res.cloudinary.com/dntnpxxst/image/upload/v1784135439/images_1_qalcfm.png",
+    "role": "Head of Design",
+    "startDate": "May 2024",
+    "endDate": "Apr 2025",
+    "location": "Kelaniya, Sri Lanka",
+    "employmentType": "Volunteer",
+    "workMode": "Hybrid",
+    "expanded": false,
+    "description": [
+      "Led the design team of the Electronics and Computer Science Club.",
+      "Managed branding and visual identity for technical events and workshops.",
+      "Mentored junior designers and coordinated creative workflows.",
+      "Collaborated with the EXCO to deliver promotional materials on schedule."
+    ],
+    "technologies": [
+      "Adobe Photoshop",
+      "Adobe Illustrator",
+      "Figma",
+      "Brand Identity",
+      "Leadership"
+    ]
+  },
+  {
+    "company": "Electronics and Computer Science Club",
+    "logo": "https://res.cloudinary.com/dntnpxxst/image/upload/v1784135439/images_1_qalcfm.png",
+    "role": "Graphic Designer",
+    "startDate": "Sep 2023",
+    "endDate": "May 2024",
+    "location": "Kelaniya, Sri Lanka",
+    "employmentType": "Volunteer",
+    "workMode": "On-site",
+    "expanded": false,
+    "description": [
+      "Designed posters, banners and social media creatives for club activities.",
+      "Created marketing materials for workshops, competitions and events.",
+      "Worked closely with organizing committees to maintain consistent branding."
+    ],
+    "technologies": ["Adobe Photoshop", "Adobe Illustrator", "Graphic Design"]
+  },
+  {
+    "company": "VidE - University of Kelaniya",
+    "logo": "https://res.cloudinary.com/dntnpxxst/image/upload/v1784135433/vide_logo_ncojga.jpg",
+    "role": "Graphic Designer",
+    "startDate": "Jan 2024",
+    "endDate": "Jan 2025",
+    "location": "Kelaniya, Sri Lanka",
+    "employmentType": "Volunteer",
+    "workMode": "Hybrid",
+    "expanded": false,
+    "description": [
+      "Designed promotional graphics and event branding.",
+      "Produced social media campaigns and digital artwork.",
+      "Worked with the media team to deliver creative assets for university events."
+    ],
+    "technologies": [
+      "Adobe Photoshop",
+      "Adobe Illustrator",
+      "Brand Design",
+      "Social Media Design"
+    ]
+  },
+  {
+    "company": "Jay Jay Mills Lanka (Pvt) Ltd",
+    "logo": "https://res.cloudinary.com/dntnpxxst/image/upload/v1784135444/1630615510984_dstqbo.jpg",
+    "role": "Data Entry Assistant",
+    "startDate": "Apr 2022",
+    "endDate": "May 2023",
+    "location": "Trincomalee, Sri Lanka",
+    "employmentType": "Full-Time",
+    "workMode": "On-site",
+    "expanded": false,
+    "description": [
+      "Maintained accurate production and operational data.",
+      "Verified and organized records to ensure data integrity.",
+      "Collaborated with team members to achieve daily operational targets."
+    ],
+    "technologies": [
+      "Microsoft Excel",
+      "Data Entry",
+      "Documentation",
+      "Teamwork"
+    ]
+  }
+]
