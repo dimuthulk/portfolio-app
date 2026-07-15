@@ -3,7 +3,7 @@
 import useSWR from "swr";
 import { motion, AnimatePresence } from "framer-motion";
 import { Icon } from "@iconify/react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -36,12 +36,14 @@ function timeAgoSafe(timestamp?: string | number) {
 export default function SpotifyHover() {
   const [isHovered, setIsHovered] = useState(false);
 
-  // 1. Initial fetch පමණයි. Background interval එක අයින් කලා performance වලට.
+  // 🔥 Auto Align කරන්න ඕන State එකයි Ref එකයි
+  const [align, setAlign] = useState<"left" | "right" | "center">("center");
+  const buttonRef = useRef<HTMLDivElement>(null);
+
   const { data, isLoading, mutate } = useSWR("/api/spotify", fetcher, {
     revalidateOnFocus: false,
   });
 
-  // Auto-hide after 8 seconds
   useEffect(() => {
     if (isHovered) {
       const t = setTimeout(() => setIsHovered(false), 8000);
@@ -49,27 +51,65 @@ export default function SpotifyHover() {
     }
   }, [isHovered]);
 
-  // 2. Hover කරද්දී සහ Click කරද්දී අලුත්ම data ටික ගන්නවා
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-    mutate(); // Fetch fresh data on hover
-  };
+  // 🔥 Element එක තියෙන තැන බලලා Align වෙන්න ඕන පැත්ත තීරණය කරන function එක
+  const calculateAlignment = () => {
+    if (buttonRef.current) {
+      const rect = buttonRef.current.getBoundingClientRect();
+      const screenWidth = window.innerWidth;
+      const tooltipHalfWidth = 140; // Popup එකේ පළල 280px / 2
 
-  const handleClick = () => {
-    setIsHovered(!isHovered);
-    if (!isHovered) {
-      mutate(); // Fetch fresh data on tap (Mobile)
+      // දකුණු පැත්තෙන් screen එකෙන් එළියට පනිනවා නම්
+      if (rect.left + rect.width / 2 + tooltipHalfWidth > screenWidth - 20) {
+        setAlign("right");
+      }
+      // වම් පැත්තෙන් screen එකෙන් එළියට පනිනවා නම්
+      else if (rect.left + rect.width / 2 - tooltipHalfWidth < 20) {
+        setAlign("left");
+      }
+      // අවුලක් නැත්නම් මැදට ගන්නවා
+      else {
+        setAlign("center");
+      }
     }
   };
 
+  const handleMouseEnter = () => {
+    calculateAlignment();
+    setIsHovered(true);
+    mutate();
+  };
+
+  const handleClick = () => {
+    if (!isHovered) {
+      calculateAlignment();
+      mutate();
+    }
+    setIsHovered(!isHovered);
+  };
+
+  // 🔥 Align state එක අනුව Tailwind classes තෝරනවා
+  const tooltipAlignClass =
+    align === "right"
+      ? "right-0"
+      : align === "left"
+        ? "left-0"
+        : "left-1/2 -translate-x-1/2"; // Center
+
+  const arrowAlignClass =
+    align === "right"
+      ? "right-6"
+      : align === "left"
+        ? "left-6"
+        : "left-1/2 -translate-x-1/2"; // Center
+
   return (
     <div
+      ref={buttonRef} // 🔥 Ref එක මෙතනට set කලා
       className="relative inline-block cursor-pointer"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={() => setIsHovered(false)}
       onClick={handleClick}
     >
-      {/* 3. Animated Badge (කලින් children විදිහට ආපු එක) */}
       <motion.span
         whileHover={{ scale: 1.05 }}
         className={`inline-flex items-center gap-1.5 px-3 py-1 my-1 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 ${
@@ -87,7 +127,6 @@ export default function SpotifyHover() {
           } text-lg md:text-xl`}
         />
         Spotify
-        {/* EQ Bars (සින්දුව අහනවා නම් පමණක් පෙන්වයි) */}
         {data?.isPlaying && (
           <div className="flex items-end gap-[2px] ml-1 h-[14px]">
             <motion.div
@@ -109,7 +148,6 @@ export default function SpotifyHover() {
         )}
       </motion.span>
 
-      {/* 4. Popup Component */}
       <AnimatePresence>
         {isHovered && (
           <motion.div
@@ -117,11 +155,13 @@ export default function SpotifyHover() {
             animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
             exit={{ opacity: 0, y: 10, scale: 0.95, filter: "blur(6px)" }}
             transition={{ type: "spring", stiffness: 240, damping: 20 }}
-            // 🔥 Mobile Responsive Fix: Mobile වල left-0, Desktop වල left-1/2
-            className="absolute bottom-full left-0 md:left-1/2 md:-translate-x-1/2 mb-3 z-[100] w-[260px] md:w-[280px]"
+            // 🔥 Dynamic class එක මෙතනට apply වෙනවා
+            className={`absolute bottom-full mb-3 z-[100] w-[260px] md:w-[280px] ${tooltipAlignClass}`}
           >
-            {/* Tooltip Arrow Mobile Responsive Fix */}
-            <div className="absolute left-6 md:left-1/2 -translate-x-1/2 -bottom-[5px] w-3 h-3 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md rotate-45 border-b border-r border-gray-200/50 dark:border-white/10 z-0"></div>
+            {/* 🔥 Arrow එකත් අදාළ පැත්තට Auto හැරෙනවා */}
+            <div
+              className={`absolute -bottom-[5px] w-3 h-3 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md rotate-45 border-b border-r border-gray-200/50 dark:border-white/10 z-0 ${arrowAlignClass}`}
+            ></div>
 
             <motion.div
               whileHover={{ scale: 1.02 }}
