@@ -24,13 +24,13 @@ export default function Portfolio() {
       {/* Hero Section */}
       <section className="mt-4 md:mt-10 w-full">
         {/* Title Section */}
-        <div className="flex flex-col-reverse sm:flex-row items-start sm:items-center justify-between mb-2">
+        <div className="flex flex-col-reverse sm:flex-row items-start sm:items-center justify-between mb-4">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-xl md:text-xl pb-0 font-reckless font-semibold"
+            className="text-xl md:text-2xl pb-0 font-reckless font-semibold text-gray-900 dark:text-white"
           >
-            <span className="flex items-center gap-2 underline decoration-1 underline-offset-[8px] decoration-black dark:decoration-white">
+            <span className="flex items-center gap-2 underline decoration-1 underline-offset-[8px] decoration-black dark:decoration-gray-400">
               <motion.span
                 className="text-sky-500 font-semibold"
                 animate={{
@@ -39,9 +39,9 @@ export default function Portfolio() {
                   y: [0, -3, 0],
                   color: ["#0ea5e9", "#38bdf8", "#0ea5e9"],
                   textShadow: [
-                    "0px 0px 0px #38bdf8",
-                    "0px 0px 12px #38bdf8",
-                    "0px 0px 0px #38bdf8",
+                    "0px 0px 0px rgba(56,189,248,0)",
+                    "0px 0px 12px rgba(56,189,248,0.6)",
+                    "0px 0px 0px rgba(56,189,248,0)",
                   ],
                 }}
                 transition={{
@@ -54,16 +54,15 @@ export default function Portfolio() {
               </motion.span>
               I'm Dimuthu Rathnayaka
             </span>
-            {/* nayaka */}
           </motion.h2>
 
-          <div className="self-end sm:self-auto">
+          <div className="self-end sm:self-auto mb-4 sm:mb-0">
             <ThemeToggle />
           </div>
         </div>
 
         {/* First Paragraph */}
-        <motion.p
+        {/* <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
@@ -72,76 +71,80 @@ export default function Portfolio() {
           I'm an{" "}
           <span className="inline-flex items-center gap-1 px-2 py-0.5 my-1 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-amber-50 border-amber-200 text-amber-700 dark:bg-amber-950/40 dark:border-amber-700/40 dark:text-amber-300 whitespace-nowrap">
             <Icon
-              icon="solar:cpu-bolt-bold-duotone"
+              icon="mdi:university"
               className="text-amber-500 text-lg md:text-xl"
             />
             Electronics & Computer Science undergraduate
           </span>{" "}
-          and an aspiring{" "}
+          passionate about building modern software with{" "}
+          <strong>clean code</strong>, <strong>thoughtful design</strong>, and{" "}
+          <strong>real-world impact</strong>.<br /> My interests focus on{" "}
           <span className="inline-flex items-center gap-1 px-2 py-0.5 my-1 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-blue-50 border-blue-200 text-blue-700 dark:bg-blue-950/40 dark:border-blue-700/40 dark:text-blue-300 whitespace-nowrap">
             <Icon
-              icon="solar:code-circle-bold-duotone"
+              icon="streamline-stickies-color:programming"
               className="text-blue-500 text-lg md:text-xl"
             />
-            Full-Stack Developer
-          </span>{" "}
-          who loves to build products with <strong>purpose</strong>. With over 9
-          years of experience as a{" "}
-          <strong>
-            Graphic Designer & Art Director on{" "}
-            <span className="inline-flex items-center gap-1 px-2 py-0.5 my-1 rounded-xl border font-bold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-emerald-50 border-emerald-200 text-emerald-700 dark:bg-emerald-950/40 dark:border-emerald-700/40 dark:text-emerald-300 whitespace-nowrap">
-              <Icon icon="ri:fiverr-fill" className="text-[#00b22d] text-xl" />
-              Fiverr
-            </span>
-          </strong>
-          , I combine <strong>technical problem-solving</strong> in frontend and
-          backend with a <strong>designer's eye for detail</strong>. Great apps
-          shouldn't just work well; they need amazing{" "}
+            Software Engineering
+          </span>
+          ,{" "}
           <span className="inline-flex items-center gap-1 px-2 py-0.5 my-1 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-purple-50 border-purple-200 text-purple-700 dark:bg-purple-950/40 dark:border-purple-700/40 dark:text-purple-300 whitespace-nowrap">
             <Icon
-              icon="solar:palette-bold-duotone"
-              className="text-purple-500 text-lg md:text-xl"
+              icon="unjs:theme-colors"
+              className="text-purple-500 text-md md:text-lg"
             />
-            UI/UX design
+            UI/UX Engineering
           </span>
-          . I build things so people will <strong>remember them</strong>.
-        </motion.p>
+          , and{" "}
+          <span className="inline-flex items-center gap-1 px-2 py-0.5 my-1 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-emerald-50 border-emerald-200 text-emerald-700 dark:bg-emerald-950/40 dark:border-emerald-700/40 dark:text-emerald-300 whitespace-nowrap">
+            <Icon
+              icon="mingcute:ai-fill"
+              className="text-emerald-500 text-lg md:text-xl"
+            />
+            AI/ML
+          </span>
+          , where I enjoy turning ideas into{" "}
+          <strong>intuitive digital experiences</strong>.
+        </motion.p> */}
 
         {/* Second Paragraph */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
           className="text-gray-600 dark:text-gray-300 text-base md:text-lg leading-7 md:leading-8 mb-6 text-left md:text-justify"
         >
           <div>
-            When someone gives me a project, they are{" "}
-            <strong>trusting me</strong>, and I take that seriously. Whether I'm
-            building web apps, exploring{" "}
+            From{" "}
+            <span className="inline-flex items-center gap-1 px-2 py-0.5 my-1 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-pink-50 border-pink-200 text-pink-700 dark:bg-pink-950/40 dark:border-pink-700/40 dark:text-pink-300 whitespace-nowrap">
+              <Icon
+                icon="ix:theme-filled"
+                className="text-pink-500 text-lg md:text-xl"
+              />
+              designing interfaces
+            </span>{" "}
+            to developing{" "}
             <span className="inline-flex items-center gap-1 px-2 py-0.5 my-1 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-indigo-50 border-indigo-200 text-indigo-700 dark:bg-indigo-950/40 dark:border-indigo-700/40 dark:text-indigo-300 whitespace-nowrap">
               <Icon
-                icon="solar:graph-up-bold-duotone"
+                icon="hugeicons:developer"
                 className="text-indigo-500 text-lg md:text-xl"
               />
-              AI Development
+              full-stack applications
             </span>
-            , or writing <LinkedInPreview />, I love creating useful tools.
-            Mixing code with art, working with clients, and learning new things
-            has tested my patience and my sleep schedule and I've{" "}
-            <strong>loved every second of it</strong>.
+            , I love creating products that are both <strong>functional</strong>{" "}
+            and <strong>enjoyable to use</strong>. I also share what I learn by
+            writing <LinkedInPreview />, helping other developers grow along the
+            way.
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Third Paragraph */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
           className="text-gray-600 dark:text-gray-300 text-base md:text-lg leading-7 md:leading-8 mb-6 text-left md:text-justify"
         >
-          Beyond work, I spend my time hunting for the latest{" "}
-          <strong className="font-bold">tech news</strong> or relaxing while
-          listening to music on{" "}
+          Beyond work, I usually have music playing on{" "}
           <span className="inline-flex items-center gap-1 px-2 py-0.5 my-1 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-red-50 border-red-200 text-red-700 dark:bg-red-950/40 dark:border-red-700/40 dark:text-red-300 whitespace-nowrap">
             <Icon
               icon="selfhst:youtube"
@@ -149,7 +152,7 @@ export default function Portfolio() {
             />
             YouTube
           </span>{" "}
-          and{" "}
+          or{" "}
           <SpotifyHover>
             <span className="inline-flex items-center gap-1 px-2 py-0.5 my-1 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-emerald-50 border-emerald-200 text-emerald-700 dark:bg-emerald-950/40 dark:border-emerald-700/40 dark:text-emerald-300 whitespace-nowrap">
               <Icon
@@ -158,37 +161,23 @@ export default function Portfolio() {
               />
               Spotify
             </span>
-          </SpotifyHover>
-          .
-        </motion.div>
+          </SpotifyHover>{" "}
+          whether I'm <strong>coding</strong>, <strong>designing</strong>, or
+          just <strong>taking a break</strong>.
+        </motion.div> */}
 
         {/* Social Links Container */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
           className="flex flex-col gap-3 mt-8"
         >
           <p className="text-gray-600 dark:text-gray-300 text-base md:text-lg leading-6 text-left md:text-justify">
-            Got a project in mind? Let's bring it to life!
+            Interested in working together? Let's connect.
           </p>
 
           <div className="flex flex-wrap gap-2 items-center">
-            {/* LinkedIn */}
-            <a
-              href="https://www.linkedin.com/in/dimuthu-rathnayaka/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-white border-gray-200 text-gray-700 dark:bg-zinc-900/50 dark:border-zinc-800 dark:text-gray-300 shadow-sm"
-            >
-              <Icon
-                icon="fa7-brands:square-linkedin"
-                className="text-[#0A66C2] text-xl"
-              />
-              LinkedIn
-            </a>
-
-            {/* GitHub */}
             <a
               href="https://github.com/dimuthulk"
               target="_blank"
@@ -196,13 +185,36 @@ export default function Portfolio() {
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-white border-gray-200 text-gray-700 dark:bg-zinc-900/50 dark:border-zinc-800 dark:text-gray-300 shadow-sm"
             >
               <Icon
-                icon="fa7-brands:github-square"
-                className="text-black dark:text-white text-xl"
+                icon="mdi:github"
+                className="text-black dark:text-white text-lg"
               />
               GitHub
             </a>
 
-            {/* Medium */}
+            <a
+              href="https://www.linkedin.com/in/dimuthu-rathnayaka/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-white border-gray-200 text-gray-700 dark:bg-zinc-900/50 dark:border-zinc-800 dark:text-gray-300 shadow-sm"
+            >
+              <Icon
+                icon="selfhst:linkedin"
+                className="text-[#0A66C2] text-lg"
+              />
+              LinkedIn
+            </a>
+            <a
+              href="https://drive.google.com/file/d/1dB-6jeOpj2RbDQI08O5kbXrOzwiCAoJ-/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-blue-400 dark:border-blue-500 font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 shadow-[0_0_12px_rgba(96,165,250,0.5)] hover:shadow-[0_0_16px_rgba(96,165,250,0.7)] dark:shadow-[0_0_12px_rgba(59,130,246,0.4)] dark:hover:shadow-[0_0_16px_rgba(59,130,246,0.6)]"
+            >
+              <Icon
+                icon="ph:download-fill"
+                className="text-blue-600 dark:text-blue-400 text-lg"
+              />
+              Download Resume
+            </a>
             <a
               href="https://medium.com/@dimuthulk"
               target="_blank"
@@ -210,27 +222,20 @@ export default function Portfolio() {
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-white border-gray-200 text-gray-700 dark:bg-zinc-900/50 dark:border-zinc-800 dark:text-gray-300 shadow-sm"
             >
               <Icon
-                icon="fa7-brands:medium"
-                className="text-black dark:text-white text-xl"
+                icon="simple-icons:medium"
+                className="text-black dark:text-white text-lg"
               />
               Medium
             </a>
-
-            {/* Resume */}
             <a
-              href="https://drive.google.com/file/d/1dB-6jeOpj2RbDQI08O5kbXrOzwiCAoJ-/view?usp=sharing"
+              href="mailto:info.dimuthulk@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-white border-gray-200 text-gray-700 dark:bg-zinc-900/50 dark:border-zinc-800 dark:text-gray-300 shadow-sm"
             >
-              <Icon
-                icon="mdi:resume"
-                className="text-black dark:text-white text-xl"
-              />
-              Resume
+              <Icon icon="selfhst:gmail" className="text-[#EA4335] text-lg" />
+              Email
             </a>
-
-            {/* WhatsApp */}
             <a
               href="https://wa.me/94768050633"
               target="_blank"
@@ -238,11 +243,255 @@ export default function Portfolio() {
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-white border-gray-200 text-gray-700 dark:bg-zinc-900/50 dark:border-zinc-800 dark:text-gray-300 shadow-sm"
             >
               <Icon
-                icon="fa7-brands:square-whatsapp"
-                className="text-[#25D366] text-xl"
+                icon="logos:whatsapp-icon"
+                className="text-[#25D366] text-lg"
               />
               WhatsApp
             </a>
+          </div>
+        </motion.div> */}
+
+        {/* ABOUT ME PREMIUM CARD */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="
+          group relative p-4 md:p-4 rounded-3xl          bg-white/40 dark:bg-zinc-900/40 
+          backdrop-blur-xl 
+          border border-gray-200/50 dark:border-white/10 
+          shadow-[0_12px_28px_rgba(0,0,0,0.06)]
+          dark:shadow-[0_18px_40px_rgba(0,0,0,0.45)]
+          overflow-hidden leading-relaxed text-gray-700 dark:text-gray-300
+        "
+        >
+          {/* Glow Layer */}
+          <div
+            className="
+            absolute inset-0 -z-10 opacity-0 group-hover:opacity-100 
+            transition-opacity duration-700
+            bg-gradient-to-br from-cyan-400/10 via-purple-500/10 to-transparent
+            blur-2xl
+          "
+          />
+
+          {/* Shine Sweep */}
+          <motion.div
+            animate={{ x: ["-150%", "250%"] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+            className="
+            absolute inset-y-0 w-24 
+            bg-gradient-to-r from-transparent via-white/20 to-transparent 
+            dark:via-white/10 blur-xl rotate-12 pointer-events-none
+          "
+          />
+
+          {/* MAIN TEXT CONTENT */}
+          <div className="relative z-10 text-base md:text-lg space-y-6">
+            {/* First Paragraph */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="leading-7 md:leading-8 text-left md:text-justify m-0"
+            >
+              I'm an{" "}
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 my-0 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-amber-50 border-amber-200 text-amber-700 dark:bg-amber-950/40 dark:border-amber-700/40 dark:text-amber-300 whitespace-nowrap">
+                <Icon
+                  icon="mdi:university"
+                  className="text-amber-500 text-lg md:text-xl"
+                />
+                Electronics & Computer Science undergraduate
+              </span>{" "}
+              passionate about building modern software with{" "}
+              <strong>clean code</strong>, <strong>thoughtful design</strong>,
+              and <strong>real-world impact</strong>.<br /> My interests focus
+              on{" "}
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 my-0 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-blue-50 border-blue-200 text-blue-700 dark:bg-blue-950/40 dark:border-blue-700/40 dark:text-blue-300 whitespace-nowrap">
+                <Icon
+                  icon="streamline-stickies-color:programming"
+                  className="text-blue-500 text-lg md:text-xl"
+                />
+                Software Engineering
+              </span>
+              ,{" "}
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 my-0 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-purple-50 border-purple-200 text-purple-700 dark:bg-purple-950/40 dark:border-purple-700/40 dark:text-purple-300 whitespace-nowrap">
+                <Icon
+                  icon="unjs:theme-colors"
+                  className="text-purple-500 text-md md:text-lg"
+                />
+                UI/UX Engineering
+              </span>
+              , and{" "}
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 my-0 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-emerald-50 border-emerald-200 text-emerald-700 dark:bg-emerald-950/40 dark:border-emerald-700/40 dark:text-emerald-300 whitespace-nowrap">
+                <Icon
+                  icon="mingcute:ai-fill"
+                  className="text-emerald-500 text-lg md:text-xl"
+                />
+                AI/ML
+              </span>
+              , where I enjoy turning ideas into{" "}
+              <strong>intuitive digital experiences</strong>.
+            </motion.p>
+
+            {/* Second Paragraph */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="leading-7 md:leading-8 text-left md:text-justify mt-4"
+            >
+              <div>
+                From{" "}
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 my-0 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-pink-50 border-pink-200 text-pink-700 dark:bg-pink-950/40 dark:border-pink-700/40 dark:text-pink-300 whitespace-nowrap">
+                  <Icon
+                    icon="ix:theme-filled"
+                    className="text-pink-500 text-lg md:text-xl"
+                  />
+                  designing interfaces
+                </span>{" "}
+                to developing{" "}
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 my-0 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-indigo-50 border-indigo-200 text-indigo-700 dark:bg-indigo-950/40 dark:border-indigo-700/40 dark:text-indigo-300 whitespace-nowrap">
+                  <Icon
+                    icon="hugeicons:developer"
+                    className="text-indigo-500 text-lg md:text-xl"
+                  />
+                  full-stack applications
+                </span>
+                , I love creating products that are both{" "}
+                <strong>functional</strong> and{" "}
+                <strong>enjoyable to use</strong>. I also share what I learn by
+                writing <LinkedInPreview />, helping other developers grow along
+                the way.
+              </div>
+            </motion.div>
+
+            {/* Third Paragraph */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="leading-7 md:leading-8 text-left md:text-justify mt-4"
+            >
+              Beyond work, I usually have music playing on{" "}
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 my-0 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-red-50 border-red-200 text-red-700 dark:bg-red-950/40 dark:border-red-700/40 dark:text-red-300 whitespace-nowrap">
+                <Icon
+                  icon="selfhst:youtube"
+                  className="text-[#FF0000] text-lg md:text-xl"
+                />
+                YouTube
+              </span>{" "}
+              or{" "}
+              <SpotifyHover>
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 my-0 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-emerald-50 border-emerald-200 text-emerald-700 dark:bg-emerald-950/40 dark:border-emerald-700/40 dark:text-emerald-300 whitespace-nowrap">
+                  <Icon
+                    icon="selfhst:spotify"
+                    className="text-[#1DB954] text-lg md:text-xl"
+                  />
+                  Spotify
+                </span>
+              </SpotifyHover>{" "}
+              whether I'm <strong>coding</strong>, <strong>designing</strong>,
+              or just <strong>taking a break</strong>.
+            </motion.div>
+
+            {/* Social Links Container */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="flex flex-col gap-2 pt-4 border-t border-gray-200/50 dark:border-white/10"
+            >
+              <p className="leading-6 text-left md:text-justify font-medium">
+                Interested in working together? Let's connect.
+              </p>
+
+              <div className="flex flex-wrap gap-1 items-center">
+                {/* GitHub */}
+                <a
+                  href="https://github.com/dimuthulk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-white border-gray-200 text-gray-700 dark:bg-zinc-900/50 dark:border-zinc-800 dark:text-gray-300 shadow-sm"
+                >
+                  <Icon
+                    icon="mdi:github"
+                    className="text-black dark:text-white text-lg"
+                  />
+                  GitHub
+                </a>
+
+                {/* LinkedIn */}
+                <a
+                  href="https://www.linkedin.com/in/dimuthu-rathnayaka/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-white border-gray-200 text-gray-700 dark:bg-zinc-900/50 dark:border-zinc-800 dark:text-gray-300 shadow-sm"
+                >
+                  <Icon
+                    icon="selfhst:linkedin"
+                    className="text-[#0A66C2] text-lg"
+                  />
+                  LinkedIn
+                </a>
+
+                {/* Download Resume (Highlighted) */}
+                <a
+                  href="https://drive.google.com/file/d/1dB-6jeOpj2RbDQI08O5kbXrOzwiCAoJ-/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-white dark:bg-zinc-900/50 border-blue-300 dark:border-blue-600/40 text-black dark:text-white shadow-sm hover:shadow-[0_0_12px_rgba(59,130,246,0.25)] dark:hover:shadow-[0_0_12px_rgba(59,130,246,0.15)]"
+                >
+                  <Icon
+                    icon="ph:download-fill"
+                    className="text-green-600 dark:text-green-400 text-lg"
+                  />
+                  Download Resume
+                </a>
+
+                {/* Medium */}
+                <a
+                  href="https://medium.com/@dimuthulk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-white border-gray-200 text-gray-700 dark:bg-zinc-900/50 dark:border-zinc-800 dark:text-gray-300 shadow-sm"
+                >
+                  <Icon
+                    icon="simple-icons:medium"
+                    className="text-black dark:text-white text-lg"
+                  />
+                  Medium
+                </a>
+
+                {/* Email */}
+                <a
+                  href="mailto:info.dimuthulk@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-white border-gray-200 text-gray-700 dark:bg-zinc-900/50 dark:border-zinc-800 dark:text-gray-300 shadow-sm"
+                >
+                  <Icon
+                    icon="selfhst:gmail"
+                    className="text-[#EA4335] text-lg"
+                  />
+                  Email
+                </a>
+
+                {/* WhatsApp */}
+                <a
+                  href="https://wa.me/94768050633"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-white border-gray-200 text-gray-700 dark:bg-zinc-900/50 dark:border-zinc-800 dark:text-gray-300 shadow-sm"
+                >
+                  <Icon
+                    icon="logos:whatsapp-icon"
+                    className="text-[#25D366] text-lg"
+                  />
+                  WhatsApp
+                </a>
+              </div>
+            </motion.div>
           </div>
         </motion.div>
       </section>
