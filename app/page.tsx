@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 import LinkedInPreview from "@/components/LinkedInPreview";
 import DeveloperJourney from "@/components/DeveloperJourney";
+import TechStack from "@/components/TechStack";
 import SpotifyHover from "@/components/SpotifyHover";
 import {
   SiNextdotjs,
@@ -19,19 +20,41 @@ import GitHubGraph from "../components/GitHubGraph";
 
 export default function Portfolio() {
   return (
-    <main className="min-h-screen selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black px-4 sm:px-6 md:px-12 py-6 md:py-8 max-w-5xl mx-auto overflow-x-hidden">
+    <main className="min-h-screen selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black px-4 sm:px-6 md:px-12 py-0 md:py-0 max-w-5xl mx-auto overflow-x-hidden">
       {/* Hero Section */}
       <section className="mt-4 md:mt-10 w-full">
         {/* Title Section */}
-        <div className="flex flex-col-reverse sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
+        <div className="flex flex-col-reverse sm:flex-row items-start sm:items-center justify-between mb-2">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-3xl md:text-4xl font-semibold tracking-tight pb-2"
+            className="text-xl md:text-xl pb-0 font-reckless font-semibold"
           >
-            <span className="underline decoration-2 underline-offset-[12px] md:underline-offset-[15px] decoration-gray-300 dark:decoration-zinc-700">
-              Hi, I'm Dimuthu Rathnayaka
+            <span className="flex items-center gap-2 underline decoration-1 underline-offset-[8px] decoration-black dark:decoration-white">
+              <motion.span
+                className="text-sky-500 font-semibold"
+                animate={{
+                  scale: [1, 1.18, 1],
+                  rotate: [0, -4, 4, 0],
+                  y: [0, -3, 0],
+                  color: ["#0ea5e9", "#38bdf8", "#0ea5e9"],
+                  textShadow: [
+                    "0px 0px 0px #38bdf8",
+                    "0px 0px 12px #38bdf8",
+                    "0px 0px 0px #38bdf8",
+                  ],
+                }}
+                transition={{
+                  duration: 2.2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              >
+                Hi,
+              </motion.span>
+              I'm Dimuthu Rathnayaka
             </span>
+            {/* nayaka */}
           </motion.h2>
 
           <div className="self-end sm:self-auto">
@@ -44,7 +67,7 @@ export default function Portfolio() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-gray-600 dark:text-gray-300 text-base md:text-lg leading-7 md:leading-8 mb-6 text-left md:text-justify"
+          className="text-gray-600 dark:text-gray-300 text-base md:text-lg leading-7 md:leading-8 mb-0 text-left md:text-justify"
         >
           I'm an{" "}
           <span className="inline-flex items-center gap-1 px-2 py-0.5 my-1 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-amber-50 border-amber-200 text-amber-700 dark:bg-amber-950/40 dark:border-amber-700/40 dark:text-amber-300 whitespace-nowrap">
@@ -231,42 +254,13 @@ export default function Portfolio() {
         <GitHubGraph />
       </section>
 
-      <section className="mt-0 md:mt-0 w-full">
+      {/* <section className="mt-0 md:mt-0 w-full">
         <DeveloperJourney />
-      </section>
+      </section> */}
 
       {/* Tech Stack Section */}
-      <section className="mt-20 md:mt-28 w-full">
-        <h2 className="text-2xl font-semibold mb-6 text-gray-950 dark:text-white">
-          Tools I use?
-        </h2>
-        <div className="flex flex-wrap gap-4 items-center">
-          <AnimatedTooltip
-            icon={SiNextdotjs}
-            name="Next.js"
-            colorClass="text-black dark:text-white"
-          />
-          <AnimatedTooltip
-            icon={SiReact}
-            name="React"
-            colorClass="text-blue-400"
-          />
-          <AnimatedTooltip
-            icon={SiTailwindcss}
-            name="Tailwind CSS"
-            colorClass="text-cyan-400"
-          />
-          <AnimatedTooltip
-            icon={SiPostgresql}
-            name="PostgreSQL"
-            colorClass="text-blue-500"
-          />
-          <AnimatedTooltip
-            icon={SiMongodb}
-            name="MongoDB"
-            colorClass="text-green-500"
-          />
-        </div>
+      <section className="mt-4 md:mt-6 w-full">
+        <TechStack />
       </section>
 
       {/* Story So Far (Experience Timeline) */}

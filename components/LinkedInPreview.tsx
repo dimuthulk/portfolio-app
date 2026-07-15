@@ -65,7 +65,7 @@ export default function LinkedInPreview() {
       <motion.span
         animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        className="font-bold bg-[linear-gradient(90deg,#06b6d4,#a855f7,#06b6d4)] bg-[length:200%_auto] bg-clip-text text-transparent underline decoration-sky-400 decoration-wavy underline-offset-4"
+        className="font-bold bg-[linear-gradient(90deg,#06b6d4,#a855f7,#06b6d4)] bg-[length:200%_auto] bg-clip-text text-transparent underline decoration-blue-700 underline-offset-4"
       >
         DEV TIPS articles on LinkedIn
       </motion.span>

@@ -52,7 +52,7 @@ export default function SpotifyHover({
   // 🔥 Auto-hide after 10 seconds (Display time එක වැඩි කළා)
   useEffect(() => {
     if (isHovered) {
-      const t = setTimeout(() => setIsHovered(false), 10000); // 5000 -> 10000
+      const t = setTimeout(() => setIsHovered(false), 8000); // 5000 -> 10000
       return () => clearTimeout(t);
     }
   }, [isHovered]);
