@@ -301,12 +301,11 @@ export default function Portfolio() {
                   icon="mdi:university"
                   className="text-amber-500 text-lg md:text-xl"
                 />
-                Electronics & Computer Science undergraduate
+                Computer Science undergraduate
               </span>{" "}
               passionate about building modern software with{" "}
               <strong>clean code</strong>, <strong>thoughtful design</strong>,
-              and <strong>real-world impact</strong>.<br /> My interests focus
-              on{" "}
+              and <strong>real-world impact</strong>. My interests focus on{" "}
               <span className="inline-flex items-center gap-1 px-2 py-0.5 my-0 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-blue-50 border-blue-200 text-blue-700 dark:bg-blue-950/40 dark:border-blue-700/40 dark:text-blue-300 whitespace-nowrap">
                 <Icon
                   icon="streamline-stickies-color:programming"
@@ -383,13 +382,13 @@ export default function Portfolio() {
               </span>{" "}
               or{" "}
               <SpotifyHover>
-                <span className="inline-flex items-center gap-1 px-2 py-0.5 my-0 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-emerald-50 border-emerald-200 text-emerald-700 dark:bg-emerald-950/40 dark:border-emerald-700/40 dark:text-emerald-300 whitespace-nowrap">
+                {/* <span className="inline-flex items-center gap-1 px-2 py-0.5 my-0 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-emerald-50 border-emerald-200 text-emerald-700 dark:bg-emerald-950/40 dark:border-emerald-700/40 dark:text-emerald-300 whitespace-nowrap">
                   <Icon
                     icon="selfhst:spotify"
                     className="text-[#1DB954] text-lg md:text-xl"
                   />
                   Spotify
-                </span>
+                </span> */}
               </SpotifyHover>{" "}
               whether I'm <strong>coding</strong>, <strong>designing</strong>,
               or just <strong>taking a break</strong>.
@@ -440,7 +439,7 @@ export default function Portfolio() {
                   href="https://drive.google.com/file/d/1dB-6jeOpj2RbDQI08O5kbXrOzwiCAoJ-/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-white dark:bg-zinc-900/50 border-blue-300 dark:border-blue-600/40 text-black dark:text-white shadow-sm hover:shadow-[0_0_12px_rgba(59,130,246,0.25)] dark:hover:shadow-[0_0_12px_rgba(59,130,246,0.15)]"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-white border-gray-200 text-gray-700 dark:bg-zinc-900/50 dark:border-zinc-800 dark:text-gray-300 shadow-sm"
                 >
                   <Icon
                     icon="ph:download-fill"
