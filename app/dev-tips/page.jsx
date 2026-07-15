@@ -11,6 +11,8 @@ import {
 } from "framer-motion";
 import BackgroundAnimation from "@/components/BackgroundAnimation";
 import devTipsData from "@/data/devtips.json";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 // 🔥 Super-Premium Card Component (JS version)
 const DevTipCard = ({ post, index }) => {
@@ -74,10 +76,53 @@ const DevTipCard = ({ post, index }) => {
         />
       </div>
 
-      {/* 🟢 Skeleton Loader (keep working) */}
+      {/* 🟢 Premium Skeleton Loader */}
       {isLoading && (
-        <div className="absolute inset-0 z-10 flex flex-col p-5 bg-gray-50 dark:bg-[#1b1b1b] animate-pulse">
-          {/* your skeleton content stays exactly the same */}
+        <div className="absolute inset-0 z-10 flex flex-col p-5 bg-white dark:bg-[#18181b] rounded-2xl overflow-hidden pointer-events-none">
+          {/* Header Section: Profile Pic & Info */}
+          <div className="flex items-center gap-3 mb-4">
+            <Skeleton
+              circle
+              width={48}
+              height={48}
+              baseColor="#e5e7eb"
+              highlightColor="#f3f4f6"
+              className="dark:!bg-zinc-800 dark:after:!bg-gradient-to-r dark:after:!from-zinc-800 dark:after:!via-zinc-700 dark:after:!to-zinc-800"
+            />
+            <div className="flex-1 flex flex-col gap-1">
+              <Skeleton width="45%" height={14} borderRadius={4} />
+              <Skeleton width="65%" height={10} borderRadius={4} />
+              <Skeleton width="25%" height={10} borderRadius={4} />
+            </div>
+          </div>
+
+          {/* Body Section: Post Text */}
+          <div className="mb-4">
+            <Skeleton
+              count={2}
+              height={12}
+              className="mb-1.5"
+              borderRadius={4}
+            />
+            <Skeleton width="75%" height={12} borderRadius={4} />
+          </div>
+
+          {/* Media Section: The large image/link preview */}
+          <div className="flex-1 w-full relative">
+            <Skeleton
+              height="100%"
+              containerClassName="h-full block"
+              className="absolute inset-0 rounded-xl"
+              borderRadius={12}
+            />
+          </div>
+
+          {/* Footer Section: Like, Comment, Share buttons */}
+          <div className="flex justify-between items-center mt-5 pt-3 border-t border-gray-100 dark:border-zinc-800/50">
+            <Skeleton width={60} height={20} borderRadius={16} />
+            <Skeleton width={80} height={20} borderRadius={16} />
+            <Skeleton width={60} height={20} borderRadius={16} />
+          </div>
         </div>
       )}
 
