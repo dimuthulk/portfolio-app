@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import BackgroundAnimation from "@/components/BackgroundAnimation";
 import { ThemeProvider } from "next-themes";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const figtree = Figtree({
   subsets: ["latin"],
@@ -65,6 +66,7 @@ export default function RootLayout({
           <BackgroundAnimation />
           <div className="relative z-10">{children}</div>
         </ThemeProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
