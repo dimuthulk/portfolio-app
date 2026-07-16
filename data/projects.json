@@ -1,0 +1,148 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Creative Portfolio & UI Library",
+      "description": "A comprehensive portfolio showcasing graphic design, brand identity, and modern UI components.",
+      "status": "live",
+      "thumbnail": {
+        "type": "image",
+        "url": "https://res.cloudinary.com/dntnpxxst/image/upload/v1759728775/main-sample.png"
+      },
+      "techStack": [
+        {
+          "name": "Next.js",
+          "icon": "logos:nextjs-icon"
+        },
+        {
+          "name": "React",
+          "icon": "logos:react"
+        },
+        {
+          "name": "SCSS",
+          "icon": "logos:sass"
+        }
+      ],
+      "links": [
+        {
+          "platform": "Live Demo",
+          "url": "https://your-portfolio.com",
+          "icon": "mdi:web"
+        },
+        {
+          "platform": "GitHub",
+          "url": "https://github.com/yourusername/portfolio",
+          "icon": "mdi:github"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "IoT & Cloud Monitor Dashboard",
+      "description": "A real-time dashboard for monitoring electronic sensors, automated deployments, and cloud infrastructure.",
+      "status": "building",
+      "thumbnail": {
+        "type": "video",
+        "url": "https://res.cloudinary.com/dntnpxxst/video/upload/v1759728760/samples/cld-sample-video.mp4"
+      },
+      "techStack": [
+        {
+          "name": "JavaScript",
+          "icon": "logos:javascript"
+        },
+        {
+          "name": "Tailwind CSS",
+          "icon": "logos:tailwindcss-icon"
+        },
+        {
+          "name": "Git",
+          "icon": "logos:git-icon"
+        }
+      ],
+      "links": [
+        {
+          "platform": "Live",
+          "url": "https://cloud-dashboard.app",
+          "icon": "mdi:web"
+        },
+        {
+          "platform": "Hugging Face",
+          "url": "https://huggingface.co/",
+          "icon": "logos:huggingface-icon"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "title": "Creative Portfolio & UI Library",
+      "description": "A comprehensive portfolio showcasing graphic design, brand identity, and modern UI components.",
+      "status": "live",
+      "thumbnail": {
+        "type": "image",
+        "url": "https://res.cloudinary.com/dntnpxxst/image/upload/v1759728775/main-sample.png"
+      },
+      "techStack": [
+        {
+          "name": "Next.js",
+          "icon": "logos:nextjs-icon"
+        },
+        {
+          "name": "React",
+          "icon": "logos:react"
+        },
+        {
+          "name": "SCSS",
+          "icon": "logos:sass"
+        }
+      ],
+      "links": [
+        {
+          "platform": "Live Demo",
+          "url": "https://your-portfolio.com",
+          "icon": "mdi:web"
+        },
+        {
+          "platform": "GitHub",
+          "url": "https://github.com/yourusername/portfolio",
+          "icon": "mdi:github"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "IoT & Cloud Monitor Dashboard",
+      "description": "A real-time dashboard for monitoring electronic sensors, automated deployments, and cloud infrastructure.",
+      "status": "building",
+      "thumbnail": {
+        "type": "video",
+        "url": "https://res.cloudinary.com/dntnpxxst/video/upload/v1759728760/samples/cld-sample-video.mp4"
+      },
+      "techStack": [
+        {
+          "name": "JavaScript",
+          "icon": "logos:javascript"
+        },
+        {
+          "name": "Tailwind CSS",
+          "icon": "logos:tailwindcss-icon"
+        },
+        {
+          "name": "Git",
+          "icon": "logos:git-icon"
+        }
+      ],
+      "links": [
+        {
+          "platform": "Live",
+          "url": "https://cloud-dashboard.app",
+          "icon": "mdi:web"
+        },
+        {
+          "platform": "Hugging Face",
+          "url": "https://huggingface.co/",
+          "icon": "logos:huggingface-icon"
+        }
+      ]
+    }
+  ]
+}

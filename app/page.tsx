@@ -10,6 +10,7 @@ import SpotifyHover from "@/components/SpotifyHover";
 import ThemeToggle from "../components/ThemeToggle";
 import GitHubGraph from "../components/GitHubGraph";
 import Experience from "@/components/Experience";
+import Projects from "@/components/Projects";
 
 export default function Portfolio() {
   return (
@@ -53,196 +54,6 @@ export default function Portfolio() {
             <ThemeToggle />
           </div>
         </div>
-
-        {/* First Paragraph */}
-        {/* <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-          className="text-gray-600 dark:text-gray-300 text-base md:text-lg leading-7 md:leading-8 mb-0 text-left md:text-justify"
-        >
-          I'm an{" "}
-          <span className="inline-flex items-center gap-1 px-2 py-0.5 my-1 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-amber-50 border-amber-200 text-amber-700 dark:bg-amber-950/40 dark:border-amber-700/40 dark:text-amber-300 whitespace-nowrap">
-            <Icon
-              icon="mdi:university"
-              className="text-amber-500 text-lg md:text-xl"
-            />
-            Electronics & Computer Science undergraduate
-          </span>{" "}
-          passionate about building modern software with{" "}
-          <strong>clean code</strong>, <strong>thoughtful design</strong>, and{" "}
-          <strong>real-world impact</strong>.<br /> My interests focus on{" "}
-          <span className="inline-flex items-center gap-1 px-2 py-0.5 my-1 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-blue-50 border-blue-200 text-blue-700 dark:bg-blue-950/40 dark:border-blue-700/40 dark:text-blue-300 whitespace-nowrap">
-            <Icon
-              icon="streamline-stickies-color:programming"
-              className="text-blue-500 text-lg md:text-xl"
-            />
-            Software Engineering
-          </span>
-          ,{" "}
-          <span className="inline-flex items-center gap-1 px-2 py-0.5 my-1 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-purple-50 border-purple-200 text-purple-700 dark:bg-purple-950/40 dark:border-purple-700/40 dark:text-purple-300 whitespace-nowrap">
-            <Icon
-              icon="unjs:theme-colors"
-              className="text-purple-500 text-md md:text-lg"
-            />
-            UI/UX Engineering
-          </span>
-          , and{" "}
-          <span className="inline-flex items-center gap-1 px-2 py-0.5 my-1 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-emerald-50 border-emerald-200 text-emerald-700 dark:bg-emerald-950/40 dark:border-emerald-700/40 dark:text-emerald-300 whitespace-nowrap">
-            <Icon
-              icon="mingcute:ai-fill"
-              className="text-emerald-500 text-lg md:text-xl"
-            />
-            AI/ML
-          </span>
-          , where I enjoy turning ideas into{" "}
-          <strong>intuitive digital experiences</strong>.
-        </motion.p> */}
-
-        {/* Second Paragraph */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="text-gray-600 dark:text-gray-300 text-base md:text-lg leading-7 md:leading-8 mb-6 text-left md:text-justify"
-        >
-          <div>
-            From{" "}
-            <span className="inline-flex items-center gap-1 px-2 py-0.5 my-1 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-pink-50 border-pink-200 text-pink-700 dark:bg-pink-950/40 dark:border-pink-700/40 dark:text-pink-300 whitespace-nowrap">
-              <Icon
-                icon="ix:theme-filled"
-                className="text-pink-500 text-lg md:text-xl"
-              />
-              designing interfaces
-            </span>{" "}
-            to developing{" "}
-            <span className="inline-flex items-center gap-1 px-2 py-0.5 my-1 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-indigo-50 border-indigo-200 text-indigo-700 dark:bg-indigo-950/40 dark:border-indigo-700/40 dark:text-indigo-300 whitespace-nowrap">
-              <Icon
-                icon="hugeicons:developer"
-                className="text-indigo-500 text-lg md:text-xl"
-              />
-              full-stack applications
-            </span>
-            , I love creating products that are both <strong>functional</strong>{" "}
-            and <strong>enjoyable to use</strong>. I also share what I learn by
-            writing <LinkedInPreview />, helping other developers grow along the
-            way.
-          </div>
-        </motion.div> */}
-
-        {/* Third Paragraph */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="text-gray-600 dark:text-gray-300 text-base md:text-lg leading-7 md:leading-8 mb-6 text-left md:text-justify"
-        >
-          Beyond work, I usually have music playing on{" "}
-          <span className="inline-flex items-center gap-1 px-2 py-0.5 my-1 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-red-50 border-red-200 text-red-700 dark:bg-red-950/40 dark:border-red-700/40 dark:text-red-300 whitespace-nowrap">
-            <Icon
-              icon="selfhst:youtube"
-              className="text-[#FF0000] text-lg md:text-xl"
-            />
-            YouTube
-          </span>{" "}
-          or{" "}
-          <SpotifyHover>
-            <span className="inline-flex items-center gap-1 px-2 py-0.5 my-1 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-emerald-50 border-emerald-200 text-emerald-700 dark:bg-emerald-950/40 dark:border-emerald-700/40 dark:text-emerald-300 whitespace-nowrap">
-              <Icon
-                icon="selfhst:spotify"
-                className="text-[#1DB954] text-lg md:text-xl"
-              />
-              Spotify
-            </span>
-          </SpotifyHover>{" "}
-          whether I'm <strong>coding</strong>, <strong>designing</strong>, or
-          just <strong>taking a break</strong>.
-        </motion.div> */}
-
-        {/* Social Links Container */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="flex flex-col gap-3 mt-8"
-        >
-          <p className="text-gray-600 dark:text-gray-300 text-base md:text-lg leading-6 text-left md:text-justify">
-            Interested in working together? Let's connect.
-          </p>
-
-          <div className="flex flex-wrap gap-2 items-center">
-            <a
-              href="https://github.com/dimuthulk"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-white border-gray-200 text-gray-700 dark:bg-zinc-900/50 dark:border-zinc-800 dark:text-gray-300 shadow-sm"
-            >
-              <Icon
-                icon="mdi:github"
-                className="text-black dark:text-white text-lg"
-              />
-              GitHub
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/dimuthu-rathnayaka/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-white border-gray-200 text-gray-700 dark:bg-zinc-900/50 dark:border-zinc-800 dark:text-gray-300 shadow-sm"
-            >
-              <Icon
-                icon="selfhst:linkedin"
-                className="text-[#0A66C2] text-lg"
-              />
-              LinkedIn
-            </a>
-            <a
-              href="https://drive.google.com/file/d/1dB-6jeOpj2RbDQI08O5kbXrOzwiCAoJ-/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-blue-400 dark:border-blue-500 font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 shadow-[0_0_12px_rgba(96,165,250,0.5)] hover:shadow-[0_0_16px_rgba(96,165,250,0.7)] dark:shadow-[0_0_12px_rgba(59,130,246,0.4)] dark:hover:shadow-[0_0_16px_rgba(59,130,246,0.6)]"
-            >
-              <Icon
-                icon="ph:download-fill"
-                className="text-blue-600 dark:text-blue-400 text-lg"
-              />
-              Download Resume
-            </a>
-            <a
-              href="https://medium.com/@dimuthulk"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-white border-gray-200 text-gray-700 dark:bg-zinc-900/50 dark:border-zinc-800 dark:text-gray-300 shadow-sm"
-            >
-              <Icon
-                icon="simple-icons:medium"
-                className="text-black dark:text-white text-lg"
-              />
-              Medium
-            </a>
-            <a
-              href="mailto:info.dimuthulk@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-white border-gray-200 text-gray-700 dark:bg-zinc-900/50 dark:border-zinc-800 dark:text-gray-300 shadow-sm"
-            >
-              <Icon icon="selfhst:gmail" className="text-[#EA4335] text-lg" />
-              Email
-            </a>
-            <a
-              href="https://wa.me/94768050633"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-white border-gray-200 text-gray-700 dark:bg-zinc-900/50 dark:border-zinc-800 dark:text-gray-300 shadow-sm"
-            >
-              <Icon
-                icon="logos:whatsapp-icon"
-                className="text-[#25D366] text-lg"
-              />
-              WhatsApp
-            </a>
-          </div>
-        </motion.div> */}
 
         {/* ABOUT ME PREMIUM CARD */}
         <motion.div
@@ -548,7 +359,7 @@ export default function Portfolio() {
       <Experience limit={3} />
 
       {/* Projects Gallery */}
-      <section className="mt-24 md:mt-32 mb-12 w-full">
+      {/* <section className="mt-24 md:mt-32 mb-12 w-full">
         <h2 className="text-2xl font-semibold mb-8 text-gray-950 dark:text-white">
           Curious? Check out my projects.
         </h2>
@@ -603,6 +414,11 @@ export default function Portfolio() {
             </div>
           </div>
         </div>
+      </section> */}
+
+      {/* Projects Gallery */}
+      <section className="mt-2 md:mt-5 mb-12 w-full">
+        <Projects limit={2} />
       </section>
     </main>
   );
