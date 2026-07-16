@@ -5,8 +5,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import experienceData from "@/data/experience.json";
 import { Icon } from "@iconify/react";
+
+// JSON Data Imports
+import experienceData from "@/data/experience.json";
+import educationData from "@/data/education.json"; // අලුතින් හදපු JSON එක
 
 interface ExperienceItem {
   company: string;
@@ -26,7 +29,7 @@ const ExperienceCard = ({ data }: { data: ExperienceItem }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div className="flex flex-col mb-6 last:mb-0">
+    <div className="flex flex-col mb-5 last:mb-0">
       {/* Company + Logo */}
       <div className="flex items-center gap-3">
         <div
@@ -57,7 +60,7 @@ const ExperienceCard = ({ data }: { data: ExperienceItem }) => {
             {data.company}
           </h3>
 
-          {/* Premium Green Pulse */}
+          {/* Premium Green Pulse - Present Data වලට විතරක් */}
           {data.endDate.toLowerCase() === "present" && (
             <span className="relative flex h-3 w-3">
               <span className="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping"></span>
@@ -68,7 +71,7 @@ const ExperienceCard = ({ data }: { data: ExperienceItem }) => {
       </div>
 
       {/* Timeline Connector */}
-      <div className="relative ml-6 mt-3 pl-7">
+      <div className="relative ml-6 mt-2 pl-7">
         <div className="pointer-events-none absolute -top-6 left-[-2px] h-10 w-6 rounded-bl-xl border-b-2 border-l-2 border-gray-200 dark:border-white/10"></div>
 
         {/* Clickable Header */}
@@ -132,27 +135,29 @@ const ExperienceCard = ({ data }: { data: ExperienceItem }) => {
                   ))}
                 </ul>
 
-                {/* Technologies */}
-                <div className="mt-5 flex flex-wrap gap-2.5">
-                  {data.technologies.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="
-                        rounded-lg border border-white/20 
-                        bg-white/30 dark:bg-white/5 
-                        backdrop-blur-md 
-                        px-3 py-1.5 text-xs font-medium 
-                        text-gray-800 dark:text-gray-300 
-                        shadow-sm 
-                        transition-all duration-300 
-                        hover:bg-white/50 dark:hover:bg-white/10 
-                        hover:shadow-[0_4px_12px_rgba(0,0,0,0.12)]
-                      "
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+                {/* Technologies (Optional) */}
+                {data.technologies && data.technologies.length > 0 && (
+                  <div className="mt-3 flex flex-wrap gap-2.5">
+                    {data.technologies.map((tech, i) => (
+                      <span
+                        key={i}
+                        className="
+                          rounded-lg border border-white/20 
+                          bg-white/30 dark:bg-white/5 
+                          backdrop-blur-md 
+                          px-3 py-1.5 text-xs font-medium 
+                          text-gray-800 dark:text-gray-300 
+                          shadow-sm 
+                          transition-all duration-300 
+                          hover:bg-white/50 dark:hover:bg-white/10 
+                          hover:shadow-[0_4px_12px_rgba(0,0,0,0.12)]
+                        "
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
             </motion.div>
           )}
@@ -163,35 +168,99 @@ const ExperienceCard = ({ data }: { data: ExperienceItem }) => {
 };
 
 export default function Experience({ limit }: { limit?: number }) {
+  // Tabs වල State එක
+  const [activeTab, setActiveTab] = useState<"experience" | "education">(
+    "experience",
+  );
+
   const experiences = experienceData as ExperienceItem[];
-  const displayedExperiences = limit
-    ? experiences.slice(0, limit)
-    : experiences;
+  const education = educationData as ExperienceItem[];
+
+  // තෝරපු Tab එකට අදාල Data ටික වෙන් කරගැනීම
+  const currentData = activeTab === "experience" ? experiences : education;
+
+  // limit එකක් දීලා තියෙනවා නම් සහ ඉන්නේ experience tab එකේ නම් විතරක් limit කරනවා.
+  // (Education ටික ඔක්කොම පෙන්නනවා)
+  const displayedData =
+    limit && activeTab === "experience"
+      ? currentData.slice(0, limit)
+      : currentData;
 
   return (
     <section className="w-full py-4">
+      {/* Header with Tabs */}
       {limit ? (
-        <div className="mb-5 flex items-center justify-between">
-          <h2 className="text-xl font-semibold text-gray-900 dark:text-white font-reckless">
-            Story So Far
-          </h2>
-          <Link
-            href="/experience"
-            className="group flex items-center gap-1.5 text-sm font-medium text-gray-700 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
-          >
-            See All
-            <Icon
-              icon="famicons:arrow-redo-outline"
-              className="text-lg transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-            />
-          </Link>
+        <div className="mb-3 flex items-center justify-between">
+          <div className="flex gap-5 border-b border-gray-900/10 dark:border-white/10 pb-1">
+            <button
+              onClick={() => setActiveTab("experience")}
+              className={`text-xl font-semibold font-reckless transition-all duration-300 ${
+                activeTab === "experience"
+                  ? "text-gray-900 dark:text-white border-b-1 border-black dark:border-white pb-1"
+                  : "text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 pb-1"
+              }`}
+            >
+              Experience
+            </button>
+            <button
+              onClick={() => setActiveTab("education")}
+              className={`text-xl font-semibold font-reckless transition-all duration-300 ${
+                activeTab === "education"
+                  ? "text-gray-900 dark:text-white border-b-1 border-black dark:border-white pb-1"
+                  : "text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 pb-1"
+              }`}
+            >
+              Education
+            </button>
+          </div>
+
+          {/* See All (Only shows on Experience tab) */}
+          <AnimatePresence>
+            {activeTab === "experience" && (
+              <motion.div
+                initial={{ opacity: 0, x: 10 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 10 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Link
+                  href="/experience"
+                  className="group flex items-center gap-1.5 text-sm font-medium text-gray-700 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+                >
+                  See All
+                  <Icon
+                    icon="famicons:arrow-redo-outline"
+                    className="text-lg transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  />
+                </Link>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       ) : (
-        <div className="mb-5 flex items-center justify-between">
-          <div className="inline-block border-b border-gray-900 dark:border-white pb-1">
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white font-reckless">
+        // For the full /experience page
+        <div className="mb-3 flex items-center justify-between">
+          <div className="flex gap-5 border-b border-gray-900/10 dark:border-white/10 pb-1">
+            <button
+              onClick={() => setActiveTab("experience")}
+              className={`text-xl font-semibold font-reckless transition-all duration-300 ${
+                activeTab === "experience"
+                  ? "text-gray-900 dark:text-white border-b-2 border-black dark:border-white pb-1"
+                  : "text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 pb-1"
+              }`}
+            >
               Experience
-            </h2>
+            </button>
+            <button
+              onClick={() => setActiveTab("education")}
+              className={`text-xl font-semibold font-reckless transition-all duration-300 ${
+                activeTab === "education"
+                  ? "text-gray-900 dark:text-white border-b-2 border-black dark:border-white pb-1"
+                  : "text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 pb-1"
+              }`}
+            >
+              Education
+            </button>
           </div>
           <Link
             href="/"
@@ -217,17 +286,6 @@ export default function Experience({ limit }: { limit?: number }) {
         {/* Vignette */}
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/5 to-transparent opacity-40 dark:from-white/5"></div>
 
-        {/* Glow Layer */}
-        {/* <div
-          className="
-            pointer-events-none absolute inset-0 
-            opacity-0 group-hover/card:opacity-100 
-            transition-all duration-700 
-            bg-gradient-to-br from-cyan-400/20 via-purple-500/20 to-transparent 
-            blur-3xl
-          "
-        /> */}
-
         {/* Shine Sweep */}
         <motion.div
           animate={{ x: ["-150%", "250%"] }}
@@ -240,25 +298,35 @@ export default function Experience({ limit }: { limit?: number }) {
           "
         />
 
-        {/* Content */}
-        <div className="relative z-10">
-          {displayedExperiences.map((exp, index) => (
-            <div key={index} className="relative">
-              <ExperienceCard data={exp} />
+        {/* Content (Animated Switcher) */}
+        <div className="relative z-10 min-h-[200px]">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTab} // tab එක මාරු වෙනකොට animation එක trigger වෙන්නේ මේ key එකෙන්
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            >
+              {displayedData.map((exp, index) => (
+                <div key={index} className="relative">
+                  <ExperienceCard data={exp} />
 
-              {/* Horizontal Divider */}
-              {index !== displayedExperiences.length - 1 && (
-                <div
-                  className="
-  w-full my-6 
-  border-t border-dashed 
-  border-gray-400/60 
-  dark:border-white/30
-"
-                ></div>
-              )}
-            </div>
-          ))}
+                  {/* Horizontal Divider */}
+                  {index !== displayedData.length - 1 && (
+                    <div
+                      className="
+                        w-full my-6 
+                        border-t border-dashed 
+                        border-gray-400/60 
+                        dark:border-white/30
+                      "
+                    ></div>
+                  )}
+                </div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
     </section>

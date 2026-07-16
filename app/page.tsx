@@ -11,6 +11,7 @@ import ThemeToggle from "../components/ThemeToggle";
 import GitHubGraph from "../components/GitHubGraph";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
+import Certificates from "@/components/Certificates";
 
 export default function Portfolio() {
   return (
@@ -415,6 +416,10 @@ export default function Portfolio() {
           </div>
         </div>
       </section> */}
+
+      <section className="mt-2 md:mt-2 w-full">
+        <Certificates limit={3} />
+      </section>
 
       {/* Projects Gallery */}
       <section className="mt-2 md:mt-5 mb-12 w-full">

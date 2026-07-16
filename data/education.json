@@ -1,0 +1,32 @@
+[
+  {
+    "company": "University of Kelaniya",
+    "logo": "https://res.cloudinary.com/dntnpxxst/image/upload/v1784212365/kelaniya_nce7kk.jpg",
+    "role": "BSc (Hons) in Electronics and Computer Science",
+    "startDate": "2022",
+    "endDate": "Present",
+    "location": "Kelaniya, Sri Lanka",
+    "employmentType": "Undergraduate",
+    "workMode": "On-site",
+    "expanded": false,
+    "description": [
+      "Studying core modules in software engineering, embedded systems, and circuit design."
+    ],
+    "technologies": []
+  },
+  {
+    "company": "Agrabodhi College - Kantale",
+    "logo": "https://res.cloudinary.com/dntnpxxst/image/upload/v1784212365/agrabodhi_vpyrik.jpg",
+    "role": "G.C.E. Advanced Level",
+    "startDate": "2018",
+    "endDate": "2021",
+    "location": "Kantale, Sri Lanka",
+    "employmentType": "Physical Science Stream",
+    "workMode": "On-site",
+    "expanded": false,
+    "description": [
+      "Completed secondary education focusing on Combined Mathematics, Physics, and Chemistry."
+    ],
+    "technologies": []
+  }
+]
