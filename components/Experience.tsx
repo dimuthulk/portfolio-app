@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
@@ -12,8 +12,9 @@ import experienceData from "@/data/experience.json";
 import educationData from "@/data/education.json"; // අලුතින් හදපු JSON එක
 
 interface ExperienceItem {
+  id: number; // අලුතින් එකතු කරපු id එක
   company: string;
-  logo: string;
+  logo: string | string[]; // ලෝගෝ එක array එකක් විදියටත් ගන්න පුළුවන් විදියට හැදුවා
   role: string;
   startDate: string;
   endDate: string;
@@ -27,6 +28,24 @@ interface ExperienceItem {
 
 const ExperienceCard = ({ data }: { data: ExperienceItem }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+
+  // ලෝගෝ එක මාරු කරන්න හදන State එක
+  const [logoIndex, setLogoIndex] = useState(0);
+
+  // තත්පර 2න් 2කට ලෝගෝ එක මාරු කරන Effect එක
+  useEffect(() => {
+    if (Array.isArray(data.logo) && data.logo.length > 1) {
+      const interval = setInterval(() => {
+        setLogoIndex((prev) => (prev + 1) % data.logo.length);
+      }, 2000); // තත්පර 2යි
+      return () => clearInterval(interval);
+    }
+  }, [data.logo]);
+
+  // දැනට පෙන්නන්න ඕනේ ලෝගෝ එක තෝරාගැනීම
+  const currentLogo = Array.isArray(data.logo)
+    ? data.logo[logoIndex]
+    : data.logo;
 
   return (
     <div className="flex flex-col mb-5 last:mb-0">
@@ -45,14 +64,25 @@ const ExperienceCard = ({ data }: { data: ExperienceItem }) => {
         >
           <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-40 blur-xl"></div>
 
-          <Image
-            src={data.logo}
-            alt={data.company}
-            width={40}
-            height={40}
-            className="h-full w-full object-cover relative z-10 rounded-lg"
-            unoptimized
-          />
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={logoIndex} // key එක වෙනස් වෙද්දී අලුත් ලෝගෝ එක load වෙනවා
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="absolute inset-0 p-1 flex items-center justify-center"
+            >
+              <Image
+                src={currentLogo}
+                alt={data.company}
+                width={40}
+                height={40}
+                className="h-full w-full object-cover relative z-10 rounded-lg"
+                unoptimized
+              />
+            </motion.div>
+          </AnimatePresence>
         </div>
 
         <div className="flex items-center gap-2.5">
@@ -309,9 +339,10 @@ export default function Experience({ limit }: { limit?: number }) {
               transition={{ duration: 0.3, ease: "easeInOut" }}
             >
               {displayedData.map((exp, index) => (
-                <div key={index} className="relative">
+                <div key={exp.id} className="relative">
+                  {" "}
+                  {/* key එක විදියට exp.id පාවිච්චි කළා */}
                   <ExperienceCard data={exp} />
-
                   {/* Horizontal Divider */}
                   {index !== displayedData.length - 1 && (
                     <div

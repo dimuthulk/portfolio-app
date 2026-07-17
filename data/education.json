@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "company": "University of Kelaniya",
     "logo": "https://res.cloudinary.com/dntnpxxst/image/upload/v1784212365/kelaniya_nce7kk.jpg",
     "role": "BSc (Hons) in Electronics and Computer Science",
@@ -15,6 +16,7 @@
     "technologies": []
   },
   {
+    "id": 2,
     "company": "Agrabodhi College - Kantale",
     "logo": "https://res.cloudinary.com/dntnpxxst/image/upload/v1784212365/agrabodhi_vpyrik.jpg",
     "role": "G.C.E. Advanced Level",
@@ -26,6 +28,22 @@
     "expanded": false,
     "description": [
       "Completed secondary education focusing on Combined Mathematics, Physics, and Chemistry."
+    ],
+    "technologies": []
+  },
+  {
+    "id": 3,
+    "company": "T/Wan-Ela M.V",
+    "logo": "https://res.cloudinary.com/dntnpxxst/image/upload/v1784249332/wmv_sbmwcl.jpg",
+    "role": "Primary & Secondary Education (G.C.E. O/L)",
+    "startDate": "2007",
+    "endDate": "2017",
+    "location": "Kantale, Sri Lanka",
+    "employmentType": "General Education",
+    "workMode": "On-site",
+    "expanded": false,
+    "description": [
+      "Completed primary and secondary education from Grade 1 and successfully passed the G.C.E. Ordinary Level examinations."
     ],
     "technologies": []
   }
