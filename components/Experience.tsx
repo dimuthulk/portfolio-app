@@ -203,7 +203,9 @@ export default function Experience({ limit }: { limit?: number }) {
     "experience",
   );
 
-  const experiences = experienceData as ExperienceItem[];
+  const experiences = (experienceData as ExperienceItem[]).sort(
+    (a, b) => a.id - b.id,
+  );
   const education = educationData as ExperienceItem[];
 
   // තෝරපු Tab එකට අදාල Data ටික වෙන් කරගැනීම

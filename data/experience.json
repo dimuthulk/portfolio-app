@@ -1,30 +1,72 @@
 [
   {
     "id": 1,
-    "company": "Sri Lanka Rugby",
-    "logo": "https://srilankarugby.lk/Theme/images/logo.png",
-    "role": "Creative Designer",
+    "company": "Self-Employed",
+    "logo": "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHZ1dW05dTJmZmZhcDJvMDZlOXV2NWt5Y3M4eDhodzBpNWVlcXZvaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SvRmX9NAeUeiyLcMtw/giphy.gif",
+    "role": "Graphic Designer & Video Editor",
+    "startDate": "Jan 2019",
+    "endDate": "Present",
+    "location": "Remote",
+    "employmentType": "Self-Employed",
+    "workMode": "Remote",
+    "expanded": true,
+    "description": [
+      "Managing end-to-end creative projects, client communications, and delivering high-quality visual content."
+    ],
+    "technologies": [
+      "Adobe Photoshop",
+      "Adobe Illustrator",
+      "Adobe Premiere Pro"
+    ]
+  },
+  {
+    "id": 2,
+    "company": "Fiverr & Freelancer.com",
+    "logo": [
+      "https://res.cloudinary.com/dntnpxxst/image/upload/v1784287146/fiverr_uccwrp.jpg",
+      "https://res.cloudinary.com/dntnpxxst/image/upload/v1784287146/freelancer_w5ee71.jpg"
+    ],
+    "role": "Art Director, Full-Stack Developer & UI/UX Designer",
     "startDate": "Jan 2025",
+    "endDate": "Present",
+    "location": "Remote",
+    "employmentType": "Freelance",
+    "workMode": "Remote",
+    "expanded": false,
+    "description": [
+      "Specializing in all aspects of graphic design including flyers, brochures, social media posts, and logo creation.",
+      "Providing full-stack web development and user interface/user experience (UI/UX) design services."
+    ],
+    "technologies": [
+      "Adobe Photoshop",
+      "Adobe Illustrator",
+      "Art Direction",
+      "Logo Design",
+      "Full-Stack Development",
+      "UI/UX Design"
+    ]
+  },
+  {
+    "id": 4,
+    "company": "Sri Lanka Rugby",
+    "logo": "https://res.cloudinary.com/dntnpxxst/image/upload/v1784287146/srilankarugby_chmaxy.jpg",
+    "role": "Creative Designer",
+    "startDate": "Nov 2025",
     "endDate": "Present",
     "location": "Colombo, Sri Lanka",
     "employmentType": "Part-Time",
-    "workMode": "Hybrid",
+    "workMode": "Remote",
     "expanded": true,
     "description": [
       "Working as a creative designer focusing on promotional graphics and marketing content.",
       "Ensuring brand consistency across digital and print media for rugby tournaments and matches."
     ],
-    "technologies": [
-      "Adobe Photoshop",
-      "Adobe Illustrator",
-      "Social Media Design",
-      "Brand Identity"
-    ]
+    "technologies": ["Adobe Photoshop", "Adobe Illustrator"]
   },
   {
-    "id": 2,
+    "id": 5,
     "company": "Lions Club Ederamulla",
-    "logo": "https://banner2.cleanpng.com/20180617/jeu/aa6ulxnc5.webp",
+    "logo": "https://res.cloudinary.com/dntnpxxst/image/upload/v1784287146/lions_xit1el.jpg",
     "role": "Freelance Graphic Designer",
     "startDate": "Jan 2024",
     "endDate": "Present",
@@ -33,91 +75,12 @@
     "workMode": "Remote",
     "expanded": false,
     "description": [
-      "Providing freelance graphic design services for club events, charity programs, and community initiatives.",
       "Creating engaging flyers, banners, and social media posts for local projects."
     ],
-    "technologies": ["Adobe Illustrator", "Graphic Design", "Print Design"]
+    "technologies": ["Adobe Illustrator", "Adobe Photoshop", "Print Design"]
   },
   {
     "id": 3,
-    "company": "Fiverr & Freelancer.com",
-    "logo": [
-      "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/fiverr-icon.png",
-      "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/freelancer-icon.png"
-    ],
-    "role": "Art Director & Graphic Designer",
-    "startDate": "Jan 2017",
-    "endDate": "Present",
-    "location": "Remote",
-    "employmentType": "Freelance",
-    "workMode": "Remote",
-    "expanded": false,
-    "description": [
-      "Helping brands and businesses turn ideas into visually powerful, consistent designs across print and digital platforms with over 9 years of industry experience.",
-      "Specializing in all aspects of graphic design including flyers, brochures, social media posts, and logo creation."
-    ],
-    "technologies": [
-      "Adobe Photoshop",
-      "Adobe Illustrator",
-      "Art Direction",
-      "Logo Design"
-    ]
-  },
-  {
-    "id": 4,
-    "company": "Freelance",
-    "logo": "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/fiverr-icon.png",
-    "role": "Full Stack Developer & UI/UX Designer",
-    "startDate": "Mar 2025",
-    "endDate": "Present",
-    "location": "Sri Lanka",
-    "employmentType": "Freelance",
-    "workMode": "Remote",
-    "expanded": false,
-    "description": [
-      "Worked with multiple clients to build modern web applications and user experiences.",
-      "Developed responsive websites using React, Next.js, Tailwind CSS and TypeScript.",
-      "Built backend services with Node.js, Express.js and Spring Boot.",
-      "Designed UI/UX using Figma and Adobe XD.",
-      "Integrated APIs, optimized performance and deployed production-ready applications."
-    ],
-    "technologies": [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Node.js",
-      "Express.js",
-      "Spring Boot",
-      "MongoDB",
-      "MySQL",
-      "Docker",
-      "Git",
-      "GitHub",
-      "Figma",
-      "Adobe XD",
-      "Vercel"
-    ]
-  },
-  {
-    "id": 5,
-    "company": "Premium Digital Assets Provider",
-    "logo": "https://res.cloudinary.com/dntnpxxst/image/upload/v1784212365/default_logo.jpg",
-    "role": "Freelance Service Provider",
-    "startDate": "Feb 2026",
-    "endDate": "Present",
-    "location": "Remote",
-    "employmentType": "Self-employed",
-    "workMode": "Remote",
-    "expanded": false,
-    "description": [
-      "Operating a commercial service to source and download premium assets from Envato Elements and Freepik for client projects.",
-      "Ensuring fast and reliable delivery of requested design files to support other designers and businesses."
-    ],
-    "technologies": ["Envato Elements", "Freepik", "Asset Management"]
-  },
-  {
-    "id": 6,
     "company": "Electronics and Computer Science Club",
     "logo": "https://res.cloudinary.com/dntnpxxst/image/upload/v1784212365/ecsc_rxvn86.jpg",
     "role": "Head of Design",
@@ -129,20 +92,12 @@
     "expanded": false,
     "description": [
       "Led the design team of the Electronics and Computer Science Club.",
-      "Managed branding and visual identity for technical events and workshops.",
-      "Mentored junior designers and coordinated creative workflows.",
       "Collaborated with the EXCO to deliver promotional materials on schedule."
     ],
-    "technologies": [
-      "Adobe Photoshop",
-      "Adobe Illustrator",
-      "Figma",
-      "Brand Identity",
-      "Leadership"
-    ]
+    "technologies": ["Adobe Photoshop", "Adobe Illustrator", "Leadership"]
   },
   {
-    "id": 7,
+    "id": 6,
     "company": "Electronics and Computer Science Club",
     "logo": "https://res.cloudinary.com/dntnpxxst/image/upload/v1784212365/ecsc_rxvn86.jpg",
     "role": "Graphic Designer",
@@ -153,14 +108,12 @@
     "workMode": "On-site",
     "expanded": false,
     "description": [
-      "Designed posters, banners and social media creatives for club activities.",
-      "Created marketing materials for workshops, competitions and events.",
-      "Worked closely with organizing committees to maintain consistent branding."
+      "Designed posters, banners and social media creatives for club activities."
     ],
-    "technologies": ["Adobe Photoshop", "Adobe Illustrator", "Graphic Design"]
+    "technologies": ["Adobe Photoshop", "Adobe Illustrator"]
   },
   {
-    "id": 8,
+    "id": 7,
     "company": "VidE - University of Kelaniya",
     "logo": "https://res.cloudinary.com/dntnpxxst/image/upload/v1784212365/vide_pmokdp.jpg",
     "role": "Graphic Designer",
@@ -171,19 +124,13 @@
     "workMode": "Hybrid",
     "expanded": false,
     "description": [
-      "Designed promotional graphics and event branding.",
       "Produced social media campaigns and digital artwork.",
       "Worked with the media team to deliver creative assets for university events."
     ],
-    "technologies": [
-      "Adobe Photoshop",
-      "Adobe Illustrator",
-      "Brand Design",
-      "Social Media Design"
-    ]
+    "technologies": ["Adobe Photoshop", "Adobe Illustrator", "Canva"]
   },
   {
-    "id": 9,
+    "id": 8,
     "company": "Jay Jay Mills Lanka (Pvt) Ltd",
     "logo": "https://res.cloudinary.com/dntnpxxst/image/upload/v1784212365/jayjay_to9uwg.jpg",
     "role": "Data Entry Assistant",
@@ -194,15 +141,9 @@
     "workMode": "On-site",
     "expanded": false,
     "description": [
-      "Maintained accurate production and operational data.",
       "Verified and organized records to ensure data integrity.",
       "Collaborated with team members to achieve daily operational targets."
     ],
-    "technologies": [
-      "Microsoft Excel",
-      "Data Entry",
-      "Documentation",
-      "Teamwork"
-    ]
+    "technologies": ["Microsoft Excel", "Teamwork"]
   }
 ]
