@@ -233,8 +233,8 @@ export default function Portfolio() {
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-white border-gray-200 text-gray-700 dark:bg-zinc-900/50 dark:border-zinc-800 dark:text-gray-300 shadow-sm"
                 >
                   <Icon
-                    icon="tabler:file-cv-filled"
-                    className="text-black dark:text-white text-lg"
+                    icon="mdi:resume"
+                    className="text-black dark:text-white text-xl"
                   />
                   Resume
                 </a>
@@ -248,7 +248,7 @@ export default function Portfolio() {
                 >
                   <Icon
                     icon="simple-icons:medium"
-                    className="text-black dark:text-white text-lg"
+                    className="text-black dark:text-white text-md"
                   />
                   Medium
                 </a>
@@ -417,12 +417,12 @@ export default function Portfolio() {
         </div>
       </section> */}
 
-      <section className="mt-2 md:mt-2 w-full">
+      <section className="mt-5 md:mt-5 w-full">
         <Certificates limit={3} />
       </section>
 
       {/* Projects Gallery */}
-      <section className="mt-2 md:mt-5 mb-12 w-full">
+      <section className="mt-10 md:mt-8 mb-12 w-full">
         <Projects limit={2} />
       </section>
     </main>

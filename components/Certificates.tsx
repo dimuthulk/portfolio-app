@@ -7,7 +7,7 @@ import { Icon } from "@iconify/react";
 import certificatesData from "@/data/certificates.json";
 
 interface CertificateItem {
-  id: string;
+  id: number;
   title: string;
   issuer: string;
   issueDate: string;
@@ -35,7 +35,7 @@ const CertificateCard = ({ data }: { data: CertificateItem }) => {
           className="object-cover transition-transform duration-500 group-hover:scale-105"
           unoptimized
         />
-        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1px]">
+        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
           <div className="bg-white/20 p-3 rounded-full backdrop-blur-md">
             <Icon icon="lucide:external-link" className="text-white text-2xl" />
           </div>
@@ -78,9 +78,13 @@ const CertificateCard = ({ data }: { data: CertificateItem }) => {
 
 export default function Certificates({ limit }: { limit?: number }) {
   const certificates = certificatesData as CertificateItem[];
+
+  // ID එක අනුව ascending order එකට (1, 2, 3...) sort කිරීම
+  const sortedCertificates = [...certificates].sort((a, b) => a.id - b.id);
+
   const displayedCertificates = limit
-    ? certificates.slice(0, limit)
-    : certificates;
+    ? sortedCertificates.slice(0, limit)
+    : sortedCertificates;
 
   return (
     <section className="w-full py-0">

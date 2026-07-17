@@ -1,34 +1,82 @@
 [
   {
-    "id": "devops-prerequisite",
-    "title": "DevOps Prerequisite Course",
-    "issuer": "KodeKloud",
-    "issueDate": "Dec 2025",
-    "image": "https://res.cloudinary.com/dntnpxxst/image/upload/v1784217505/Figma_Essential_Training_The_Basics_page-0001_vh6uwr.jpg",
-    "url": "https://www.coursera.org/account/accomplishments/verify/8Q261MJ9YS2U"
+    "id": 4,
+    "title": "Programming Foundations with JavaScript, HTML and CSS",
+    "issuer": "Duke University",
+    "issueDate": "June 2024",
+    "image": "https://res.cloudinary.com/dntnpxxst/image/upload/v1784244552/Programming_Foundations_with_JavaScript_HTML_and_CSS_vzlt1m.jpg",
+    "url": "https://www.coursera.org/account/accomplishments/verify/CWTL4CPCY9XJ"
   },
   {
-    "id": "cisco-packet-tracer",
+    "id": 6,
+    "title": "Start the UX Design Process: Empathize, Define, and Ideate",
+    "issuer": "Google Career Certificates",
+    "issueDate": "July 2024",
+    "image": "https://res.cloudinary.com/dntnpxxst/image/upload/v1784244789/Start_the_UX_Design_Process_Empathize_Define_and_Ideate_zrbqvz.jpg",
+    "url": "https://coursera.org/share/06e3225f228e7843043c786e5f58e15b"
+  },
+  {
+    "id": 2,
+    "title": "Foundations of User Experience (UX) Design",
+    "issuer": "Google Career Certificates",
+    "issueDate": "May 2024",
+    "image": "https://res.cloudinary.com/dntnpxxst/image/upload/v1784244975/Foundations_of_User_Experience_UX_Design_p0qqvj.jpg",
+    "url": "https://www.coursera.org/account/accomplishments/verify/PV88B9CFXTCN"
+  },
+  {
+    "id": 7,
+    "title": "Figma Essential Training: The Basics",
+    "issuer": "LinkedIn",
+    "issueDate": "July 2024",
+    "image": "https://res.cloudinary.com/dntnpxxst/image/upload/v1784245157/Figma_Essential_Training_The_Basics_et515z.jpg",
+    "url": "https://www.linkedin.com/learning/certificates/8f7ab03a738d0144b8832d5388c842305807539a90c6f00c89fe84fa4c6390fc"
+  },
+  {
+    "id": 8,
+    "title": "Adobe XD for Designers (2018)",
+    "issuer": "LinkedIn",
+    "issueDate": "July 2024",
+    "image": "https://res.cloudinary.com/dntnpxxst/image/upload/v1784245293/Adobe_XD_for_Designers_2018_dfkcfq.jpg",
+    "url": "https://www.linkedin.com/learning/certificates/30d5679c3a5548b718092bd733e92d7d2eb33ad0e32ba9decb0395cd7b2eae3b?trk=share_certificate"
+  },
+  {
+    "id": 3,
+    "title": "Python for Beginners",
+    "issuer": "Department of Computer Science & Engineering, University of Moratuwa",
+    "issueDate": "August 2025",
+    "image": "https://res.cloudinary.com/dntnpxxst/image/upload/v1784245735/Python_for_Beginners_E-Certificate_lerzal.jpg",
+    "url": "https://open.uom.lk/lms/mod/customcert/verify_certificate.php"
+  },
+  {
+    "id": 9,
+    "title": "AWS Educate Introduction to Cloud 101 - Training Badge",
+    "issuer": "Amazon Web Services (AWS)",
+    "issueDate": "September 2025",
+    "image": "https://res.cloudinary.com/dntnpxxst/image/upload/v1784246530/AWS_Educate_Introduction_to_Cloud_101_-_Training_Badge_ytwymr.jpg",
+    "url": "https://www.credly.com/badges/9e5a1d53-db88-404c-90b0-cb728544dd83/linked_in_profile"
+  },
+  {
+    "id": 5,
+    "title": "Introduction to Google SEO",
+    "issuer": "University of California, Davis",
+    "issueDate": "October 2025",
+    "image": "https://res.cloudinary.com/dntnpxxst/image/upload/v1784246639/Introduction_to_Google_SEO_c97yl8.jpg",
+    "url": "https://www.coursera.org/account/accomplishments/verify/S1E3DBYDBVI6"
+  },
+  {
+    "id": 10,
     "title": "Getting Started with Cisco Packet Tracer",
     "issuer": "Cisco Networking Academy",
-    "issueDate": "Dec 2025",
-    "image": "https://res.cloudinary.com/dntnpxxst/image/upload/v1784217494/Coursera_CWTL4CPCY9XJ_exhmgp.jpg",
-    "url": "https://verify-url-here.com/456"
+    "issueDate": "December 2025",
+    "image": "https://res.cloudinary.com/dntnpxxst/image/upload/v1784246936/Getting_Started_with_Cisco_Packet_Tracer_certificate_p0u7w8.jpg",
+    "url": "https://www.netacad.com/courses/getting-started-cisco-packet-tracer?courseLang=en-US"
   },
   {
-    "id": "google-seo",
-    "title": "Introduction to Google SEO",
-    "issuer": "University of California, Davis",
-    "issueDate": "Oct 2025",
-    "image": "https://res.cloudinary.com/dntnpxxst/image/upload/v1784217494/Coursera_CWTL4CPCY9XJ_exhmgp.jpg",
-    "url": "https://verify-url-here.com/789"
-  },
-  {
-    "id": "google-seo",
-    "title": "Introduction to Google SEO",
-    "issuer": "University of California, Davis",
-    "issueDate": "Oct 2025",
-    "image": "https://res.cloudinary.com/dntnpxxst/image/upload/v1784217494/Coursera_CWTL4CPCY9XJ_exhmgp.jpg",
-    "url": "https://verify-url-here.com/789"
+    "id": 1,
+    "title": "DevOps Prerequisite Course",
+    "issuer": "KodeKloud",
+    "issueDate": "December 2025",
+    "image": "https://res.cloudinary.com/dntnpxxst/image/upload/v1784247204/DevOps_Prerequisite_Course_ds5z3s.jpg",
+    "url": "https://www.coursera.org/account/accomplishments/records/8Q261MJ9YS2U"
   }
 ]
