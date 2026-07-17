@@ -47,7 +47,7 @@
       "status": "in-progress",
       "thumbnail": {
         "type": "video",
-        "url": "projects/videos/02.mp4"
+        "url": "projects/videos/02_1.mp4"
       },
       "techStack": [
         {
@@ -84,7 +84,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": 4,
       "title": "ICC Men's T20 World Cup 2026 Streaming Platform",
       "description": "An interactive web application dedicated to the ICC Men's T20 World Cup 2026, offering live streaming features, real-time match scores, and up-to-date tournament schedules.",
       "status": "completed",
@@ -115,13 +115,13 @@
       ]
     },
     {
-      "id": 4,
+      "id": 3,
       "title": "AI Powered Invoice Generator",
       "description": "An AI-driven web application that allows users to seamlessly generate, manage, and export professional invoices as PDF documents.",
       "status": "completed",
       "thumbnail": {
         "type": "video",
-        "url": "projects/videos/04.mp4"
+        "url": "projects/videos/04_1.mp4"
       },
       "techStack": [
         {
@@ -158,6 +158,81 @@
         {
           "platform": "GitHub",
           "url": "https://github.com/dimuthulk/AI-Powered-Invoice-Generator.git",
+          "icon": "mdi:github"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Blushify Online Store",
+      "description": "An elegant e-commerce platform for skincare and beauty products, featuring a modern UI with product carousels, seamless routing, and responsive design.",
+      "status": "completed",
+      "thumbnail": {
+        "type": "video",
+        "url": "projects/videos/05_1.mp4"
+      },
+      "techStack": [
+        {
+          "name": "Vite",
+          "icon": "logos:vitejs"
+        },
+        {
+          "name": "React",
+          "icon": "logos:react"
+        },
+        {
+          "name": "Bootstrap",
+          "icon": "logos:bootstrap"
+        }
+      ],
+      "links": [
+        {
+          "platform": "Live Demo",
+          "url": "https://blushify-coral.vercel.app/",
+          "icon": "fluent:live-16-regular"
+        },
+        {
+          "platform": "GitHub",
+          "url": "https://github.com/dimuthulk/Blushify.git",
+          "icon": "mdi:github"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Taxi Meeya - Modern Taxi Booking System",
+      "description": "A comprehensive, modern taxi booking website built with PHP, MySQL, and vanilla JavaScript. Features a responsive frontend, robust backend, admin dashboard, and real-time booking management.",
+      "status": "completed",
+      "thumbnail": {
+        "type": "video",
+        "url": "https://res.cloudinary.com/dntnpxxst/video/upload/v1784326035/06_w8ozly.mp4"
+      },
+      "techStack": [
+        {
+          "name": "HTML",
+          "icon": "vscode-icons:file-type-html"
+        },
+        {
+          "name": "CSS",
+          "icon": "devicon:css3"
+        },
+        {
+          "name": "JavaScript",
+          "icon": "logos:javascript"
+        },
+        {
+          "name": "PHP",
+          "icon": "logos:php"
+        },
+        {
+          "name": "MySQL",
+          "icon": "logos:mysql"
+        }
+      ],
+      "links": [
+        {
+          "platform": "GitHub",
+          "url": "https://github.com/dimuthulk/taxi-meeya-car-rental.git",
           "icon": "mdi:github"
         }
       ]
