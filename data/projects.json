@@ -147,6 +147,10 @@
         {
           "name": "MongoDB",
           "icon": "logos:mongodb-icon"
+        },
+        {
+          "name": "Google AI Studio",
+          "icon": "vscode-icons:file-type-gemini"
         }
       ],
       "links": [
@@ -233,6 +237,33 @@
         {
           "platform": "GitHub",
           "url": "https://github.com/dimuthulk/taxi-meeya-car-rental.git",
+          "icon": "mdi:github"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Custom Canvas Image Generator",
+      "description": "A simple web application built with Flask that generates custom images based on user-defined width and height dimensions. Access via URL (e.g., /50/60) to create a gray canvas with the dimensions displayed.",
+      "status": "completed",
+      "thumbnail": {
+        "type": "image",
+        "url": "projects/07.jpg"
+      },
+      "techStack": [
+        {
+          "name": "Python",
+          "icon": "logos:python"
+        },
+        {
+          "name": "Flask",
+          "icon": "file-icons:flask"
+        }
+      ],
+      "links": [
+        {
+          "platform": "GitHub",
+          "url": "https://github.com/dimuthulk/Custom-Canvas-Generator.git",
           "icon": "mdi:github"
         }
       ]
