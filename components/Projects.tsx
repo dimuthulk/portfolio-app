@@ -32,7 +32,8 @@ interface ProjectItem {
 
 const ProjectCard = ({ data }: { data: ProjectItem }) => {
   return (
-    <div className="flex flex-col md:flex-row gap-4 p-3 rounded-2xl bg-white/30 dark:bg-white/5 border border-white/20 dark:border-white/10 backdrop-blur-md transition-all duration-300 hover:bg-white/40 dark:hover:bg-white/10">
+    // md:items-start එකතු කළා
+    <div className="flex flex-col md:flex-row md:items-start gap-4 p-3 rounded-2xl bg-white/30 dark:bg-white/5 border border-white/20 dark:border-white/10 backdrop-blur-md transition-all duration-300 hover:bg-white/40 dark:hover:bg-white/10">
       {/* Thumbnail Section */}
       <div className="w-full md:w-5/12 shrink-0 aspect-video relative rounded-xl overflow-hidden border border-white/20 dark:border-white/10 shadow-sm bg-gray-100 dark:bg-zinc-900/50">
         {data.thumbnail.type === "video" ? (
@@ -61,25 +62,25 @@ const ProjectCard = ({ data }: { data: ProjectItem }) => {
           <h3 className="text-xl font-bold text-gray-900 dark:text-white">
             {data.title}
           </h3>
-          <span className="px-3 py-1 text-xs font-medium rounded-full border border-gray-300 dark:border-zinc-700 bg-gray-100 dark:bg-zinc-800/50 text-gray-700 dark:text-zinc-300 capitalize">
+          <span className="px-1 py-0 text-xs font-medium rounded-md border border-gray-300 dark:border-zinc-700 bg-gray-300 dark:bg-gray-400/20 text-gray-700 dark:text-zinc-300 capitalize">
             {data.status}
           </span>
         </div>
 
-        <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-6">
+        <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-2">
           {data.description}
         </p>
 
         {/* Tech Stack - Expanding on Hover */}
-        <div className="flex flex-wrap gap-2 mb-6">
+        <div className="flex flex-wrap gap-0 mb-3">
           {data.techStack.map((tech, i) => (
             <div
               key={i}
-              className="group/tech flex items-center justify-center h-10 min-w-[40px] rounded-full border border-white/40 dark:border-white/10 bg-white/50 dark:bg-white/5 backdrop-blur-md px-2.5 transition-all duration-300 ease-in-out hover:bg-white dark:hover:bg-white/10 hover:shadow-sm cursor-default"
+              className="group/tech flex items-center justify-center h-8 min-w-[30px] rounded-full border border-white/40 dark:border-white/10 bg-black/15 dark:bg-gray-800 backdrop-blur-xs px-2 transition-all duration-300 ease-in-out hover:bg-white dark:hover:bg-white/5 hover:shadow-sm cursor-default"
             >
               <Icon
                 icon={tech.icon}
-                className="text-xl text-gray-700 dark:text-gray-300"
+                className="text-lg text-gray-700 dark:text-gray-300"
               />
               <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 transition-all duration-300 ease-in-out group-hover/tech:max-w-[100px] group-hover/tech:opacity-100 group-hover/tech:ml-2 text-sm font-medium text-gray-800 dark:text-gray-200">
                 {tech.name}
@@ -89,17 +90,17 @@ const ProjectCard = ({ data }: { data: ProjectItem }) => {
         </div>
 
         {/* Links / Action Buttons */}
-        <div className="flex flex-wrap gap-3 mt-auto">
+        <div className="flex flex-wrap gap-2 mt-auto">
           {data.links.map((link, i) => (
             <a
               key={i}
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 shadow-sm hover:-translate-y-0.5 ${
+              className={`flex items-center gap-1.5 px-2 py-1 rounded-xl text-sm font-medium transition-all duration-300 shadow-sm hover:-translate-y-0.5 ${
                 i === 0
-                  ? "bg-gray-900 text-white dark:bg-white dark:text-black hover:shadow-md"
-                  : "bg-white/50 dark:bg-transparent border border-gray-300 dark:border-white/20 text-gray-800 dark:text-gray-200 hover:bg-white dark:hover:bg-white/5"
+                  ? "bg-gray-300/50 border-1 dark:bg-transparent border-gray-300 dark:border-white/20 text-black dark:text-white hover:shadow-md hover:bg-green-200 dark:hover:bg-black"
+                  : "bg-gray-300/50 dark:bg-transparent border border-gray-300 dark:border-white/20 text-gray-800 dark:text-gray-200 hover:bg-white dark:hover:bg-white/5"
               }`}
             >
               <Icon icon={link.icon} className="text-lg" />
@@ -114,7 +115,9 @@ const ProjectCard = ({ data }: { data: ProjectItem }) => {
 
 export default function Projects({ limit }: { limit?: number }) {
   // projects.json එකේ තියෙන data array එක ගන්නවා
-  const projects = projectsData.projects as ProjectItem[];
+  const projects = (projectsData.projects as ProjectItem[]).sort(
+    (a, b) => a.id - b.id,
+  );
   const displayedProjects = limit ? projects.slice(0, limit) : projects;
 
   return (

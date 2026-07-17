@@ -1,146 +1,164 @@
 {
   "projects": [
     {
-      "id": 1,
-      "title": "Creative Portfolio & UI Library",
-      "description": "A comprehensive portfolio showcasing graphic design, brand identity, and modern UI components.",
-      "status": "live",
+      "id": 2,
+      "title": "Sinhala Hate Speech Detector",
+      "description": "This is a deep learning-based text classification application built to detect offensive and hate speech in the Sinhala language.",
+      "status": "completed",
       "thumbnail": {
-        "type": "image",
-        "url": "https://res.cloudinary.com/dntnpxxst/image/upload/v1759728775/main-sample.png"
+        "type": "video",
+        "url": "projects/videos/01.mp4"
       },
       "techStack": [
         {
-          "name": "Next.js",
-          "icon": "logos:nextjs-icon"
+          "name": "Python",
+          "icon": "logos:python"
+        },
+        {
+          "name": "PyTorch",
+          "icon": "logos:pytorch-icon"
+        },
+        {
+          "name": "Hugging Face",
+          "icon": "devicon:huggingface"
+        },
+        {
+          "name": "Gradio",
+          "icon": "logos:gradio-icon"
+        }
+      ],
+      "links": [
+        {
+          "platform": "Hugging Face",
+          "url": "https://huggingface.co/dimuthulk/sinhala-hate-speech-detector",
+          "icon": "devicon:huggingface"
+        },
+        {
+          "platform": "GitHub",
+          "url": "https://github.com/dimuthulk/Sinhala-Hate-Speech-Detector.git",
+          "icon": "mdi:github"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "title": "AutoHive - Vehicle Spare Parts",
+      "description": "A comprehensive full-stack application for managing a vehicle spare parts inventory and sales system, developed using Spring Boot for the backend and React for the frontend.",
+      "status": "in-progress",
+      "thumbnail": {
+        "type": "video",
+        "url": "projects/videos/02.mp4"
+      },
+      "techStack": [
+        {
+          "name": "Java",
+          "icon": "logos:java"
+        },
+        {
+          "name": "Spring Boot",
+          "icon": "logos:spring-icon"
+        },
+        {
+          "name": "MySQL",
+          "icon": "logos:mysql"
+        },
+        {
+          "name": "Postman",
+          "icon": "skill-icons:postman"
         },
         {
           "name": "React",
           "icon": "logos:react"
         },
         {
-          "name": "SCSS",
-          "icon": "logos:sass"
+          "name": "Tailwind CSS",
+          "icon": "devicon:tailwindcss"
         }
       ],
       "links": [
         {
-          "platform": "Live Demo",
-          "url": "https://your-portfolio.com",
-          "icon": "mdi:web"
-        },
-        {
           "platform": "GitHub",
-          "url": "https://github.com/yourusername/portfolio",
+          "url": "https://github.com/dimuthulk/autohive.git",
           "icon": "mdi:github"
         }
       ]
     },
     {
-      "id": 2,
-      "title": "IoT & Cloud Monitor Dashboard",
-      "description": "A real-time dashboard for monitoring electronic sensors, automated deployments, and cloud infrastructure.",
-      "status": "building",
-      "thumbnail": {
-        "type": "video",
-        "url": "https://res.cloudinary.com/dntnpxxst/video/upload/v1759728760/samples/cld-sample-video.mp4"
-      },
-      "techStack": [
-        {
-          "name": "JavaScript",
-          "icon": "logos:javascript"
-        },
-        {
-          "name": "Tailwind CSS",
-          "icon": "logos:tailwindcss-icon"
-        },
-        {
-          "name": "Git",
-          "icon": "logos:git-icon"
-        }
-      ],
-      "links": [
-        {
-          "platform": "Live",
-          "url": "https://cloud-dashboard.app",
-          "icon": "mdi:web"
-        },
-        {
-          "platform": "Hugging Face",
-          "url": "https://huggingface.co/",
-          "icon": "logos:huggingface-icon"
-        }
-      ]
-    },
-    {
-      "id": 1,
-      "title": "Creative Portfolio & UI Library",
-      "description": "A comprehensive portfolio showcasing graphic design, brand identity, and modern UI components.",
-      "status": "live",
+      "id": 3,
+      "title": "ICC Men's T20 World Cup 2026 Streaming Platform",
+      "description": "An interactive web application dedicated to the ICC Men's T20 World Cup 2026, offering live streaming features, real-time match scores, and up-to-date tournament schedules.",
+      "status": "completed",
       "thumbnail": {
         "type": "image",
-        "url": "https://res.cloudinary.com/dntnpxxst/image/upload/v1759728775/main-sample.png"
+        "url": "projects/03.jpg"
       },
       "techStack": [
         {
-          "name": "Next.js",
-          "icon": "logos:nextjs-icon"
+          "name": "Vite",
+          "icon": "logos:vitejs"
         },
         {
           "name": "React",
           "icon": "logos:react"
         },
         {
-          "name": "SCSS",
-          "icon": "logos:sass"
+          "name": "Tailwind CSS",
+          "icon": "devicon:tailwindcss"
         }
       ],
       "links": [
         {
-          "platform": "Live Demo",
-          "url": "https://your-portfolio.com",
-          "icon": "mdi:web"
-        },
-        {
           "platform": "GitHub",
-          "url": "https://github.com/yourusername/portfolio",
+          "url": "https://github.com/dimuthulk/t20-live.git",
           "icon": "mdi:github"
         }
       ]
     },
     {
-      "id": 2,
-      "title": "IoT & Cloud Monitor Dashboard",
-      "description": "A real-time dashboard for monitoring electronic sensors, automated deployments, and cloud infrastructure.",
-      "status": "building",
+      "id": 4,
+      "title": "AI Powered Invoice Generator",
+      "description": "An AI-driven web application that allows users to seamlessly generate, manage, and export professional invoices as PDF documents.",
+      "status": "completed",
       "thumbnail": {
         "type": "video",
-        "url": "https://res.cloudinary.com/dntnpxxst/video/upload/v1759728760/samples/cld-sample-video.mp4"
+        "url": "projects/videos/04.mp4"
       },
       "techStack": [
         {
-          "name": "JavaScript",
-          "icon": "logos:javascript"
+          "name": "Vite",
+          "icon": "logos:vitejs"
+        },
+        {
+          "name": "React",
+          "icon": "logos:react"
         },
         {
           "name": "Tailwind CSS",
-          "icon": "logos:tailwindcss-icon"
+          "icon": "devicon:tailwindcss"
         },
         {
-          "name": "Git",
-          "icon": "logos:git-icon"
+          "name": "Node.js",
+          "icon": "logos:nodejs-icon"
+        },
+        {
+          "name": "Express",
+          "icon": "skill-icons:expressjs-light"
+        },
+        {
+          "name": "MongoDB",
+          "icon": "logos:mongodb-icon"
         }
       ],
       "links": [
         {
-          "platform": "Live",
-          "url": "https://cloud-dashboard.app",
-          "icon": "mdi:web"
+          "platform": "Live Demo",
+          "url": "https://ai-powered-invoice-generator-rho.vercel.app/",
+          "icon": "fluent:live-16-regular"
         },
         {
-          "platform": "Hugging Face",
-          "url": "https://huggingface.co/",
-          "icon": "logos:huggingface-icon"
+          "platform": "GitHub",
+          "url": "https://github.com/dimuthulk/AI-Powered-Invoice-Generator.git",
+          "icon": "mdi:github"
         }
       ]
     }
