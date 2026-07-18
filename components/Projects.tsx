@@ -51,7 +51,7 @@ const ProjectCard = ({ data }: { data: ProjectItem }) => {
             alt={data.title}
             fill
             className="object-cover"
-            unoptimized
+            sizes="(max-width: 768px) 100vw, 42vw"
           />
         )}
       </div>

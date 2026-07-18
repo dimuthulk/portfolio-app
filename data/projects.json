@@ -7,7 +7,7 @@
       "status": "completed",
       "thumbnail": {
         "type": "video",
-        "url": "projects/videos/01_1.mp4"
+        "url": "https://res.cloudinary.com/dntnpxxst/video/upload/v1784370470/01_1_sqg6zb.mp4"
       },
       "techStack": [
         {
@@ -47,7 +47,7 @@
       "status": "in-progress",
       "thumbnail": {
         "type": "video",
-        "url": "projects/videos/02_1.mp4"
+        "url": "https://res.cloudinary.com/dntnpxxst/video/upload/v1784370474/02_1_boeymo.mp4"
       },
       "techStack": [
         {
@@ -67,8 +67,8 @@
           "icon": "skill-icons:postman"
         },
         {
-          "name": "React",
-          "icon": "logos:react"
+          "name": "Next.js",
+          "icon": "file-icons:nextjs"
         },
         {
           "name": "Tailwind CSS",
@@ -90,7 +90,7 @@
       "status": "completed",
       "thumbnail": {
         "type": "image",
-        "url": "projects/03.jpg"
+        "url": "/projects/03.jpg"
       },
       "techStack": [
         {
@@ -121,7 +121,7 @@
       "status": "completed",
       "thumbnail": {
         "type": "video",
-        "url": "projects/videos/04_1.mp4"
+        "url": "https://res.cloudinary.com/dntnpxxst/video/upload/v1784370476/04_1_fhcdmh.mp4"
       },
       "techStack": [
         {
@@ -173,7 +173,7 @@
       "status": "completed",
       "thumbnail": {
         "type": "video",
-        "url": "projects/videos/05_1.mp4"
+        "url": "https://res.cloudinary.com/dntnpxxst/video/upload/v1784370486/05_1_qzkvzw.mp4"
       },
       "techStack": [
         {
@@ -248,7 +248,7 @@
       "status": "completed",
       "thumbnail": {
         "type": "image",
-        "url": "projects/07.jpg"
+        "url": "/projects/07.jpg"
       },
       "techStack": [
         {
@@ -258,6 +258,10 @@
         {
           "name": "Flask",
           "icon": "file-icons:flask"
+        },
+        {
+          "name": "HTML",
+          "icon": "vscode-icons:file-type-html"
         }
       ],
       "links": [
