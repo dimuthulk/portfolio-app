@@ -40,8 +40,41 @@ const reckless = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Dimuthu Rathnayaka",
-  description: "Software Engineer Portfolio",
+  title: {
+    template: "%s | Dimuthu Rathnayaka",
+    default: "Dimuthu Rathnayaka | Art Director & Developer",
+  },
+  description:
+    "Portfolio of Dimuthu Rathnayaka, an Electronics and Computer Science undergraduate specializing in Next.js development and creative graphic design with 9+ years of industry experience.",
+  keywords: [
+    "Graphic Designer",
+    "Art Director",
+    "Next.js Developer",
+    "Electronics and Computer Science",
+    "Freelancer",
+    "Sri Lanka Rugby",
+    "University of Kelaniya",
+    "Agrabodhi College",
+    "Wanela Maha Viddayalaya",
+  ],
+  openGraph: {
+    title: "Dimuthu Rathnayaka | Portfolio",
+    description: "Explore my design and development projects.",
+    url: "https://dimuthulk.vercel.app/",
+    siteName: "Dimuthu Rathnayaka Portfolio",
+    images: [
+      {
+        url: "https://dimuthulk.vercel.app/og-image.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({
