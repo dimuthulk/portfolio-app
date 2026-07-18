@@ -33,7 +33,7 @@ const CertificateCard = ({ data }: { data: CertificateItem }) => {
           alt={data.title}
           fill
           className="object-cover transition-transform duration-500 group-hover:scale-105"
-          unoptimized
+          sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
         />
         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
           <div className="bg-white/20 p-3 rounded-full backdrop-blur-md">

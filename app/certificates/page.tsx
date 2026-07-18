@@ -1,8 +1,17 @@
+import type { Metadata } from "next";
 import Certificates from "@/components/Certificates";
 
-export const metadata = {
-  title: "Certificates | Dimuthu Rathnayaka",
-  description: "My licenses and certifications.",
+export const metadata: Metadata = {
+  title: "Certificates & Education",
+  description:
+    "Explore the academic background and professional qualifications of Dimuthu Rathnayaka, including undergraduate studies in Electronics and Computer Science at the University of Kelaniya.",
+  keywords: [
+    "Dimuthu Rathnayaka Certificates",
+    "Electronics and Computer Science",
+    "University of Kelaniya",
+    "Qualifications",
+    "Tech Enthusiast",
+  ],
 };
 
 export default function CertificatesPage() {
