@@ -79,7 +79,6 @@ const ExperienceCard = ({ data }: { data: ExperienceItem }) => {
                 width={40}
                 height={40}
                 className="h-full w-full object-cover relative z-10 rounded-lg"
-                unoptimized
               />
             </motion.div>
           </AnimatePresence>
