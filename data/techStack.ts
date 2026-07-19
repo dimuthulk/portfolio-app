@@ -1,52 +1,5 @@
 export const techCategories = [
   {
-    title: "UI/UX & VISUAL DESIGN",
-    items: [
-      { name: "Figma", icon: "logos:figma", color: "text-[#F24E1E]" },
-      {
-        name: "Adobe XD",
-        icon: "logos:adobe-xd",
-        color: "text-[#FF61F6]",
-      },
-      {
-        name: "Adobe Photoshop",
-        icon: "logos:adobe-photoshop",
-        color: "text-[#31A8FF]",
-      },
-      {
-        name: "Adobe Illustrator",
-        icon: "logos:adobe-illustrator",
-        color: "text-[#FF9A00]",
-      },
-      {
-        name: "Adobe InDesign",
-        icon: "logos:adobe-indesign",
-        color: "text-[#FF1493]",
-      },
-      {
-        name: "Adobe Lightroom",
-        icon: "logos:adobe-lightroom",
-        color: "text-[#31A8FF]",
-      },
-
-      {
-        name: "Adobe Acrobat",
-        icon: "selfhst:adobe-acrobat",
-        color: "text-[#FF1493]",
-      },
-      {
-        name: "Canva",
-        icon: "bxl:canva",
-        color: "text-[#00C4CC]",
-      },
-      {
-        name: "Affinity",
-        icon: "vscode-icons:file-type-affinity",
-        color: "text-[#00C4CC]",
-      },
-    ],
-  },
-  {
     title: "CORE PROGRAMMING",
     items: [
       {
@@ -67,9 +20,9 @@ export const techCategories = [
       { name: "HTML", icon: "devicon:html5", color: "text-[#E34F26]" },
       { name: "CSS", icon: "devicon:css3", color: "text-[#1572B6]" },
       {
-        name: "SCSS",
-        icon: "vscode-icons:file-type-scss2",
-        color: "text-[#CC6699]",
+        name: "SQL",
+        icon: "tabler:sql",
+        color: "text-[#003B57]",
       },
     ],
   },
@@ -91,6 +44,11 @@ export const techCategories = [
         name: "Bootstrap",
         icon: "devicon:bootstrap",
         color: "text-[#7952B3]",
+      },
+      {
+        name: "Vite",
+        icon: "logos:vitejs",
+        color: "text-[#646CFF]",
       },
       {
         name: "Framer Motion",
@@ -140,6 +98,11 @@ export const techCategories = [
         icon: "logos:postgresql",
         color: "text-[#4169E1]",
       },
+      {
+        name: "MS SQL Server",
+        icon: "simple-icons:microsoftsqlserver",
+        color: "text-[#CC292B]",
+      },
     ],
   },
   {
@@ -159,6 +122,31 @@ export const techCategories = [
         name: "Google AI Studio",
         icon: "vscode-icons:file-type-gemini",
         color: "text-[#4285F4]",
+      },
+      {
+        name: "PyTorch",
+        icon: "devicon:pytorch",
+        color: "text-[#EE4C2C]",
+      },
+      {
+        name: "Scikit-learn",
+        icon: "devicon:scikitlearn",
+        color: "text-[#F7931E]",
+      },
+      {
+        name: "Pandas",
+        icon: "devicon:pandas",
+        color: "text-[#150458]",
+      },
+      {
+        name: "NumPy",
+        icon: "devicon:numpy",
+        color: "text-[#4D77CF]",
+      },
+      {
+        name: "Prompt Engineering",
+        icon: "lucide:sparkles",
+        color: "text-[#10B981]",
       },
     ],
   },
@@ -203,6 +191,47 @@ export const techCategories = [
         name: "Postman",
         icon: "skill-icons:postman",
         color: "text-[#FF6C37]",
+      },
+    ],
+  },
+  {
+    title: "UI/UX & VISUAL DESIGN",
+    items: [
+      { name: "Figma", icon: "logos:figma", color: "text-[#F24E1E]" },
+      {
+        name: "Adobe XD",
+        icon: "logos:adobe-xd",
+        color: "text-[#FF61F6]",
+      },
+      {
+        name: "Adobe Photoshop",
+        icon: "logos:adobe-photoshop",
+        color: "text-[#31A8FF]",
+      },
+      {
+        name: "Adobe Illustrator",
+        icon: "logos:adobe-illustrator",
+        color: "text-[#FF9A00]",
+      },
+      {
+        name: "Adobe InDesign",
+        icon: "logos:adobe-indesign",
+        color: "text-[#FF1493]",
+      },
+      {
+        name: "Adobe Lightroom",
+        icon: "logos:adobe-lightroom",
+        color: "text-[#31A8FF]",
+      },
+      {
+        name: "Canva",
+        icon: "bxl:canva",
+        color: "text-[#00C4CC]",
+      },
+      {
+        name: "Affinity",
+        icon: "vscode-icons:file-type-affinity",
+        color: "text-[#00C4CC]",
       },
     ],
   },
