@@ -84,7 +84,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": 5,
       "title": "ICC Men's T20 World Cup 2026 Streaming Platform",
       "description": "An interactive web application dedicated to the ICC Men's T20 World Cup 2026, offering live streaming features, real-time match scores, and up-to-date tournament schedules.",
       "status": "completed",
@@ -167,7 +167,7 @@
       ]
     },
     {
-      "id": 5,
+      "id": 7,
       "title": "Blushify Online Store",
       "description": "An elegant e-commerce platform for skincare and beauty products, featuring a modern UI with product carousels, seamless routing, and responsive design.",
       "status": "completed",
@@ -242,7 +242,7 @@
       ]
     },
     {
-      "id": 7,
+      "id": 9,
       "title": "Custom Canvas Image Generator",
       "description": "A simple web application built with Flask that generates custom images based on user-defined width and height dimensions. Access via URL (e.g., /50/60) to create a gray canvas with the dimensions displayed.",
       "status": "completed",
@@ -269,6 +269,60 @@
           "platform": "GitHub",
           "url": "https://github.com/dimuthulk/Custom-Canvas-Generator.git",
           "icon": "mdi:github"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Medusa 1.0 Website UI Design",
+      "description": "A modern, clean, and user-friendly interface design created for the Medusa 1.0 website.",
+      "status": "completed",
+      "thumbnail": {
+        "type": "video",
+        "url": "/projects/videos/08_1.mp4"
+      },
+      "techStack": [
+        {
+          "name": "Figma",
+          "icon": "logos:figma"
+        },
+        {
+          "name": "Photoshop",
+          "icon": "logos:adobe-photoshop"
+        }
+      ],
+      "links": [
+        {
+          "platform": "Figma",
+          "url": "https://www.figma.com/design/2B1SUttXI5UtxgwXS7onbh/Medusa?node-id=0-1&m=dev&t=Kkn2lpPMjhY8ECVu-1",
+          "icon": "devicon:figma"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Sri Lanka vs New Zealand U85kg Rugby Tour 2026",
+      "description": "Designed official marketing materials and event-specific content for the Sri Lanka vs New Zealand U85kg Rugby Tour 2026, including ticket sales flyers and match fixtures.",
+      "status": "completed",
+      "thumbnail": {
+        "type": "image",
+        "url": "/projects/09.jpg"
+      },
+      "techStack": [
+        {
+          "name": "Photoshop",
+          "icon": "logos:adobe-photoshop"
+        },
+        {
+          "name": "Illustrator",
+          "icon": "logos:adobe-illustrator"
+        }
+      ],
+      "links": [
+        {
+          "platform": "View Designs",
+          "url": "https://www.linkedin.com/posts/dimuthu-rathnayaka_freelancegraphicdesigner-srilanka-newzealand-activity-7464865405988311040-I9Pe?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEhwnxIBzYaflLj6VOrV934Yt8ryzcXXQg0",
+          "icon": "mdi:open-in-new"
         }
       ]
     }
