@@ -40,6 +40,7 @@ const reckless = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://dimuthulk.vercel.app"),
   title: {
     template: "%s | Dimuthu Rathnayaka",
     default: "Dimuthu Rathnayaka | Art Director & Developer",
@@ -59,7 +60,8 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Dimuthu Rathnayaka | Portfolio",
-    description: "Explore my design and development projects.",
+    description:
+      "Art Director and Full-Stack Developer crafting visually powerful designs and modern web applications.",
     url: "https://dimuthulk.vercel.app/",
     siteName: "Dimuthu Rathnayaka Portfolio",
     images: [
@@ -103,6 +105,40 @@ export default function RootLayout({
           <div className="relative z-10">{children}</div>
         </ThemeProvider>
         <SpeedInsights />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Dimuthu Rathnayaka",
+              alternateName: ["dimuthulk", "Dimuthu Lakmal Rathnayaka"],
+              url: "https://dimuthulk.vercel.app",
+              jobTitle: "Full-Stack Developer",
+              alumniOf: {
+                "@type": "CollegeOrUniversity",
+                name: "University of Kelaniya",
+              },
+              knowsAbout: [
+                "Electronics and computer science",
+                "Software Development",
+                "Next.js",
+                "React",
+              ],
+              sameAs: [
+                "https://huggingface.co/dimuthulk",
+                "https://github.com/dimuthulk",
+                "https://www.linkedin.com/in/dimuthu-rathnayaka/",
+                "https://www.facebook.com/dimuthulkonline",
+                "https://x.com/DimuthuLKR",
+                "https://medium.com/@dimuthulk",
+                "https://www.fiverr.com/s/wkXYGw8",
+                "https://www.instagram.com/_dimuthu_lk_/",
+              ],
+            }),
+          }}
+        />
       </body>
     </html>
   );

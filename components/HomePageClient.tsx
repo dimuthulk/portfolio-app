@@ -31,7 +31,13 @@ export default function HomePageClient() {
   return (
     <main className="min-h-screen selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black px-4 sm:px-6 md:px-12 py-0 md:py-0 max-w-5xl mx-auto overflow-x-hidden">
       {/* Hero Section */}
+      <h1 className="sr-only">
+        Dimuthu Rathnayaka - Art Director & Full-Stack Developer
+      </h1>
       <section className="mt-4 md:mt-10 w-full">
+        {/* <h1 className="sr-only md:not-sr-only">
+          Dimuthu Rathnayaka — Full-Stack Developer & AI Engineer
+        </h1> */}
         {/* Title Section */}
         <div className="flex flex-col-reverse sm:flex-row items-start sm:items-center justify-between mb-4">
           <motion.h2
