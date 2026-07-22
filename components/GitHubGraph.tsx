@@ -1,19 +1,25 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { GitHubCalendar } from "react-github-calendar";
+import { ActivityCalendar } from "react-activity-calendar";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
+import useSWR from "swr";
+
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export default function GitHubGraph() {
   const [mounted, setMounted] = useState(false);
   const { theme } = useTheme();
 
+  // අලුත් API එකෙන් data fetch කිරීම
+  const { data, isLoading } = useSWR("/api/github", fetcher);
+
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  if (!mounted) {
+  if (!mounted || isLoading) {
     return (
       <div className="h-32 w-full animate-pulse bg-gray-200 dark:bg-zinc-800 rounded-2xl" />
     );
@@ -50,24 +56,25 @@ export default function GitHubGraph() {
         overflow-hidden
       "
     >
-      {/* Content */}
       <div className="w-full flex justify-center items-center overflow-hidden px-2">
-        <div
-          className="
-          w-full
-          origin-top
-          flex justify-center
-        "
-        >
-          <GitHubCalendar
-            key={theme}
-            username="dimuthulk"
-            blockSize={12}
-            blockMargin={3}
-            fontSize={14}
-            colorScheme={colorScheme}
-            theme={customTheme}
-          />
+        <div className="w-full origin-top flex justify-center">
+          {data && data.length > 0 ? (
+            <ActivityCalendar
+              data={data}
+              colorScheme={colorScheme}
+              theme={customTheme}
+              blockSize={12}
+              blockMargin={3}
+              fontSize={14}
+              labels={{
+                totalCount: `{{count}} contributions in the last year`,
+              }}
+            />
+          ) : (
+            <div className="text-sm text-gray-500 py-10">
+              Failed to load contributions.
+            </div>
+          )}
         </div>
       </div>
     </motion.div>
