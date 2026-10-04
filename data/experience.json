@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": 2,
     "company": "Self-Employed",
     "logo": "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHZ1dW05dTJmZmZhcDJvMDZlOXV2NWt5Y3M4eDhodzBpNWVlcXZvaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SvRmX9NAeUeiyLcMtw/giphy.gif",
     "role": "Graphic Designer & Video Editor",
@@ -20,31 +20,21 @@
     ]
   },
   {
-    "id": 2,
-    "company": "Fiverr & Freelancer.com",
-    "logo": [
-      "https://res.cloudinary.com/dntnpxxst/image/upload/v1784287146/fiverr_uccwrp.jpg",
-      "https://res.cloudinary.com/dntnpxxst/image/upload/v1784287146/freelancer_w5ee71.jpg"
-    ],
-    "role": "Art Director, Full-Stack Developer & UI/UX Designer",
-    "startDate": "Jan 2025",
+    "id": 1,
+    "company": "Gdoop Platforms (Pvt) Ltd.",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTluvWGWkqO6JHy5wyYjm5hYl9rp4bS_izOvM906-oECw&s",
+    "role": "Software Engineer Intern",
+    "startDate": "Sep 2026",
     "endDate": "Present",
     "location": "Remote",
-    "employmentType": "Freelance",
+    "employmentType": "Internship",
     "workMode": "Remote",
     "expanded": false,
     "description": [
-      "Specializing in all aspects of graphic design including flyers, brochures, social media posts, and logo creation.",
-      "Providing full-stack web development and user interface/user experience (UI/UX) design services."
+      "Contributing to the design and development of a team-based web application as part of a software engineering internship.",
+      "Collaborating with teammates, participating in code reviews, and submitting regular progress reports."
     ],
-    "technologies": [
-      "Adobe Photoshop",
-      "Adobe Illustrator",
-      "Art Direction",
-      "Logo Design",
-      "Full-Stack Development",
-      "UI/UX Design"
-    ]
+    "technologies": ["PHP", "MySQL", "JavaScript", "HTML", "CSS", "Git"]
   },
   {
     "id": 4,
@@ -68,7 +58,7 @@
     "company": "Lions Club Ederamulla",
     "logo": "https://res.cloudinary.com/dntnpxxst/image/upload/v1784287146/lions_xit1el.jpg",
     "role": "Freelance Graphic Designer",
-    "startDate": "Jan 2024",
+    "startDate": "Jan 2024 - Sep 2026",
     "endDate": "Present",
     "location": "Ederamulla, Sri Lanka",
     "employmentType": "Freelance",

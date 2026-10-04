@@ -1,0 +1,27 @@
+{
+  "id": 2,
+  "company": "Fiverr & Freelancer.com",
+  "logo": [
+    "https://res.cloudinary.com/dntnpxxst/image/upload/v1784287146/fiverr_uccwrp.jpg",
+    "https://res.cloudinary.com/dntnpxxst/image/upload/v1784287146/freelancer_w5ee71.jpg"
+  ],
+  "role": "Art Director, Full-Stack Developer & UI/UX Designer",
+  "startDate": "Jan 2025",
+  "endDate": "Present",
+  "location": "Remote",
+  "employmentType": "Freelance",
+  "workMode": "Remote",
+  "expanded": false,
+  "description": [
+    "Specializing in all aspects of graphic design including flyers, brochures, social media posts, and logo creation.",
+    "Providing full-stack web development and user interface/user experience (UI/UX) design services."
+  ],
+  "technologies": [
+    "Adobe Photoshop",
+    "Adobe Illustrator",
+    "Art Direction",
+    "Logo Design",
+    "Full-Stack Development",
+    "UI/UX Design"
+  ]
+}

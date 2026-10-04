@@ -238,7 +238,7 @@ export default function HomePageClient() {
 
                 {/* Resume*/}
                 <a
-                  href="/Dimuthu_Rathnayaka_Master_CV.pdf"
+                  href="/"
                   download="Dimuthu_Rathnayaka_CV_SoftwareEngineer.pdf"
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border font-semibold text-sm md:text-base align-middle transition-all duration-300 hover:scale-105 bg-white border-gray-200 text-gray-700 dark:bg-zinc-900/50 dark:border-zinc-800 dark:text-gray-300 shadow-sm"
                 >
